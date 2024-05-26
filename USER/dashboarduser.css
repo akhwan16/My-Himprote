@@ -1,7 +1,44 @@
-*{
-    margin:0;
-    padding: 0;
+body {
+    font-family: 'Poppins', sans-serif;
 }
-img{
-    width: 200px;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    border-bottom: 2px solid #1f4e79;
+}
+.logo {
+    display: flex;
+    align-items: left;
+}
+.logo img {
+    height: 25px;
+}
+.reminder {
+    font-size: small;
+    font-weight: bold;
+    font-family: poppins;
+    color: black;
+}
+.welcome-message {
+    font-size: larger;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 32px 25px;
+}
+.sub-message {
+  font-family: poppins;
+  font-weight: bold;
+  font-size: small;
+  display: flex;
+  align-items: center;
+  padding: 0px 25px;
+}
+.sub-message a {
+    color: #0000FF;
+    text-decoration: none;
+    font-family: poppins;
+    font-weight: bold;
 }
