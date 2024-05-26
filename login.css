@@ -1,13 +1,61 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #002469;
     font-family: 'Poppins', sans-serif;
     color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-body, h1 {
-    font-weight: 700;
+.container {
+    flex: 1;
 }
 
-body, h2 {
+nav img {
+    width: 280px; 
+    height: auto;
+    margin: 20px;
+}
+
+.login-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+a{
+    text-decoration: none;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
     font-weight: 400;
+    color: #808080;
+    border: none;
+    border-radius: 22.5px;
+    margin: 10px;
+}
+
+button img {
+    height: fit-content;
+    width: 25px;
+    margin-right: 10px;
+}
+
+footer {
+    padding: 50px 0;
+    background-image: url('Assets/img/Vector.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

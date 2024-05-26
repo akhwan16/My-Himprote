@@ -1,0 +1,72 @@
+/* Reset margin dan padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pengaturan dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+img {
+    width: 100px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left {
+    display: flex;
+}
+
+.navbar-left div {
+    display: flex;
+    flex-direction: ;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar-right {
+    display: flex;
+}
+
+.navbar-right div {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+/* Responsif */
+@media (max-width: 812px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-left, .navbar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navbar-left img {
+        margin-bottom: 10px;
+    }
+
+    .navbar-left div, .navbar-right div {
+        margin-left: 0;
+    }
+
+    .navbar-left h1, .navbar-right h1 {
+        font-size: 1.2em;
+    }
+}
