@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      body {
+        body {
             font-family: 'Poppins', sans-serif;
         }
         .header-container {
@@ -28,28 +28,22 @@
         .reminder {
             font-size: small;
             font-weight: bold;
-            font-family: poppins;
             color: black;
+        }
+        .welcome-container {
+            padding: 32px 25px;
         }
         .welcome-message {
             font-size: larger;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            padding: 32px 25px;
         }
         .sub-message {
-          font-family: poppins;
-          font-weight: bold;
-          font-size: small;
-          display: flex;
-          align-items: center;
-          padding: 0px 25px;
+            font-weight: bold;
+            font-size: small;
         }
-        .sub-message a {
+        .sub-message span {
             color: #0000FF;
             text-decoration: none;
-            font-family: poppins;
             font-weight: bold;
         }
     </style>
@@ -64,10 +58,11 @@
                 REMINDER!
             </div>
         </div>
+        <div class="welcome-container">
+            <div class="welcome-message">Selamat datang, Farid Akhwan</div>
+            <div class="sub-message">Kamu login sebagai <span href="#">Admin</span>!</div>
+        </div>
     </div>
-    <div class="welcome-message">Selamat datang, Farid Akhwan</div>
-    <div class="sub-message">Kamu login sebagai <a href="#">  Admin</a>!</div>
-
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>

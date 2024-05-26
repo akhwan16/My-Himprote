@@ -18,27 +18,21 @@ body {
 .reminder {
     font-size: small;
     font-weight: bold;
-    font-family: poppins;
     color: black;
+}
+.welcome-container {
+    padding: 32px 25px;
 }
 .welcome-message {
     font-size: larger;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    padding: 32px 25px;
 }
 .sub-message {
-  font-family: poppins;
-  font-weight: bold;
-  font-size: small;
-  display: flex;
-  align-items: center;
-  padding: 0px 25px;
+    font-weight: bold;
+    font-size: small;
 }
-.sub-message a {
+.sub-message span {
     color: #0000FF;
     text-decoration: none;
-    font-family: poppins;
     font-weight: bold;
 }
