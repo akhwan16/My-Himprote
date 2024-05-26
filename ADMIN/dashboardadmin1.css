@@ -1,0 +1,45 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    border-bottom: 2px solid #1f4e79;
+}
+.logo {
+    display: flex;
+    align-items: left;
+}
+.logo img {
+    height: 25px;
+}
+.reminder {
+    font-size: small;
+    font-weight: bold;
+    color: black;
+}
+.welcome-container {
+    padding: 32px 25px;
+    content: center;
+ 
+   
+}
+.welcome-message {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+.sub-message {
+    font-weight: bold;
+    font-size: small;
+    text-align: center;
+    
+}
+.sub-message span {
+    color: #0000FF;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}

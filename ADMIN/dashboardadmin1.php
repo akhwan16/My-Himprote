@@ -1,6 +1,21 @@
+<?php
+include 'D:\My-Himprote\db.php';
+
+// Query untuk mendapatkan nama dari database berdasarkan email (contoh)
+$email = 'faridakhwan57@unnnes.students.ac.id';
+$sql = "SELECT nama FROM akun WHERE email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$stmt->bind_result($nama);
+$stmt->fetch();
+$stmt->close();
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
@@ -8,49 +23,10 @@
     <link rel="stylesheet" href="dashboardadmin1.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 5px 5px;
-            border-bottom: 2px solid #1f4e79;
-        }
-        .logo {
-            display: flex;
-            align-items: left;
-        }
-        .logo img {
-            height: 25px;
-        }
-        .reminder {
-            font-size: small;
-            font-weight: bold;
-            color: black;
-        }
-        .welcome-container {
-            padding: 32px 25px;
-        }
-        .welcome-message {
-            font-size: larger;
-            font-weight: bold;
-        }
-        .sub-message {
-            font-weight: bold;
-            font-size: small;
-        }
-        .sub-message span {
-            color: #0000FF;
-            text-decoration: none;
-            font-weight: bold;
-            font-style: italic;
-        }
-    </style>
+   
 </head>
 <body>
+  
     <div class="container-fluid">
         <div class="header-container">
             <div class="logo">
@@ -61,7 +37,7 @@
             </div>
         </div>
         <div class="welcome-container">
-            <div class="welcome-message">Selamat datang, Farid Akhwan</div>
+          <div class="welcome-message">Selamat datang, <?php echo htmlspecialchars($nama); ?></div>
             <div class="sub-message">Kamu login sebagai <span href="#">Admin</span>!</div>
         </div>
     </div>
