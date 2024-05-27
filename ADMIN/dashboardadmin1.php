@@ -1,16 +1,28 @@
 <?php
-include 'D:\My-Himprote\db.php';
+// Mulai session
+session_start();
 
-// Query untuk mendapatkan nama dari database berdasarkan email (contoh)
-$email = 'faridakhwan57@unnnes.students.ac.id';
-$sql = "SELECT nama FROM akun WHERE email = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->bind_result($nama);
-$stmt->fetch();
-$stmt->close();
-$conn->close();
+// Pastikan email tersedia dalam variabel session
+if(isset($_SESSION['email'])) {
+    // Email tersedia, ambil nilai email dari session
+    $email = $_SESSION['email'];
+
+    // Include file koneksi ke database
+    include 'D:\My-Himprote\db.php';
+
+    // Query untuk mendapatkan nama dan role dari database berdasarkan email
+    $sql = "SELECT nama, role FROM akun WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->bind_result($nama, $role);
+    $stmt->fetch();
+    $stmt->close();
+    $conn->close();
+} else {
+    echo '<script>window.location.href = "../index.html";</script>';
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -38,7 +50,7 @@ $conn->close();
         </div>
         <div class="welcome-container">
           <div class="welcome-message">Selamat datang, <?php echo htmlspecialchars($nama); ?></div>
-            <div class="sub-message">Kamu login sebagai <span href="#">Admin</span>!</div>
+          <div class="sub-message">Kamu login sebagai <span href="#"><?php echo htmlspecialchars($role); ?></span>!</div>
         </div>
     </div>
 

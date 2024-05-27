@@ -1,61 +1,62 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+/* CSS file */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #002469;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  background-color: #002469;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.container {
-    flex: 1;
+header {
+  flex: 0;
 }
 
 nav img {
-    width: 280px; 
-    height: auto;
-    margin: 20px;
+  width: 280px;
+  height: auto;
+  margin: 20px;
+}
+
+main {
+  flex: 1;
 }
 
 .login-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
 }
-a{
-    text-decoration: none;
+
+h1 {
+  text-align: center;
+  font-size: medium;
 }
-.content {
-    display: flex;
-    flex-direction: column;
+
+a {
+  text-decoration: none;
 }
 
 button {
-    font-weight: 400;
-    color: #808080;
-    border: none;
-    border-radius: 22.5px;
-    margin: 10px;
+  font-weight: 400;
+  color: #808080;
+  border: none;
+  border-radius: 22.5px;
+  margin: 10px;
 }
 
 button img {
-    height: fit-content;
-    width: 25px;
-    margin-right: 10px;
-}
-
-footer {
-    padding: 50px 0;
-    background-image: url('Assets/img/Vector.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  height: fit-content;
+  width: 25px;
+  margin-right: 10px;
 }
