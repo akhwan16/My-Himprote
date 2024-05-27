@@ -1,6 +1,6 @@
 <?php
 // Include file koneksi ke database
-include 'D:\My-Himprote\db.php';
+include 'db.php';
 
 // Mulai session
 session_start();
@@ -33,8 +33,11 @@ if(isset($_POST['email'])) {
             exit;
         } 
     } else {
-          $_SESSION['status'] = "NO";
-        // Jika email tidak ditemukan dalam database, tampilkan pesan kesalahan menggunakan jendela peringatan
+        // Jika email tidak ditemukan dalam database
+        // Hapus token login Google dari local storage
+        echo '<script>localStorage.removeItem("accessToken");</script>';
+
+        // Tampilkan pesan kesalahan menggunakan jendela peringatan
         echo '<script>alert("Email '.$email.' tidak terdaftar sebagai FUNGSIONARIS HIMPROTE FT UNNES.");</script>';
        
         // Redirect ke halaman utama
@@ -47,3 +50,4 @@ if(isset($_POST['email'])) {
     exit;
 }
 ?>
+
