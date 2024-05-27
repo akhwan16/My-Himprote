@@ -1,35 +1,27 @@
 /* CSS file */
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   background-color: #002469;
   font-family: "Poppins", sans-serif;
-  color: white;
+}
+
+nav {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center; 
 }
 
-header {
-  flex: 0;
-}
 
-nav img {
+#logohimprote {
   width: 280px;
-  height: auto;
-  margin: 20px;
+  height: auto; 
+  padding-top: 20px;
 }
 
-main {
-  flex: 1;
+#masuk{
+  color:white;
+  font-family: "Poppins";
 }
-
 .login-button {
   display: flex;
   flex-direction: column;
@@ -37,12 +29,6 @@ main {
   align-items: center;
   min-height: 60vh;
 }
-
-h1 {
-  text-align: center;
-  font-size: medium;
-}
-
 
 button {
   font-weight: 400;
@@ -55,5 +41,12 @@ button {
 button img {
   height: fit-content;
   width: 25px;
-  margin-right: 10px;
+  margin-right: 8px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  position: fixed; 
+  bottom: 0; 
 }
