@@ -33,8 +33,10 @@ if(isset($_POST['email'])) {
             exit;
         } 
     } else {
+          $_SESSION['status'] = "NO";
         // Jika email tidak ditemukan dalam database, tampilkan pesan kesalahan menggunakan jendela peringatan
         echo '<script>alert("Email '.$email.' tidak terdaftar sebagai FUNGSIONARIS HIMPROTE FT UNNES.");</script>';
+       
         // Redirect ke halaman utama
         echo '<script>window.location.href = "../index.html";</script>';
         exit;
