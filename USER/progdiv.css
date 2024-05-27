@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header img {
+    width: 30px;
+}
+
+header {
+    border-bottom: 1px solid #002469;
+    margin: 5px;
+}
+
+header h1 {
+    font-size: 10px;
+}
+
+header h1 p {
+    text-align: center;
+    font-size: 1px;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+header nav ul h1 {
+    padding: 5px;
+}
+
+header nav ul p {
+    font-size: 10px;
+}
+
+main {
+    position: relative;
+    top: 35vh;
+    text-align: center;
+}
+
+button img {
+    width: 20px;
+}
+
+button {
+    border: none;
+    outline: none;
+    margin: 10px;
+    width: 200px;
+    border-radius: 40px;
+}
