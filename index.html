@@ -19,15 +19,11 @@
     />
 </head>
 <body>
-    <div class="container">
-      <div class="navbar">
-        <nav>
-          <img src="Assets/img/Group 75.png" alt="Logo" />
-        </nav>
-      </div>
+  <nav>
+    <img id="logohimprote" src="Assets/img/Group 75.png" alt="Logo" />
+  </nav>
       <div class="login-button">
-        <div class="content">
-          Masuk Dengan Email UNNES
+      <span id="masuk">Masuk Dengan Email UNNES</span>
           <form id="loginForm" method="post" action="../check_login.php"> <!-- Menambahkan formulir dan aksi -->
             <input type="hidden" id="email" name="email"> <!-- Input tersembunyi untuk menyimpan email -->
             <button type="button" onclick="loginWithGoogle()"> <!-- Mengganti tipe tombol menjadi "button" -->
@@ -35,8 +31,7 @@
             </button>
           </form>
         </div>
-      </div>
-    </div>
+   
     <script>
       
       function loginWithGoogle() {
@@ -99,4 +94,7 @@
       crossorigin="anonymous"
     ></script>
   </body>
+  <footer>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,224L60,202.7C120,181,240,139,360,112C480,85,600,75,720,85.3C840,96,960,128,1080,117.3C1200,107,1320,53,1380,26.7L1440,0L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+  </footer>
 </html>
