@@ -1,5 +1,4 @@
 
-
 body {
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
@@ -14,7 +13,41 @@ body {
     border-bottom: 2px solid #1f4e79;
     width:auto;
     margin: 0 auto; /* Center the container horizontally */
- 
+}
+.slideshow-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.slide {
+    display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.slide-content {
+
+    text-align: center;
+}
+
+.prev, .next {
+    position: relative;
+    top: 50%;
+    cursor: pointer;
+    color: navy;
+    font-weight: bold;
+    font-size: 10px;
+    border-radius: 5px;
+    user-select: none;
+    left: 95%;
 }
 
 .logo {
@@ -199,6 +232,8 @@ body {
     width: 350px;
 padding-top:15px;
     margin: 0 auto; /* Menempatkan di tengah */
+    padding-bottom:15px;
+
    
 }
 
@@ -254,4 +289,53 @@ padding-top:15px;
 
 .task {
 position: relative; /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
+}
+
+.task-date {
+    font-weight: bold;
+   
+    padding-bottom: 10px;
+  
+}
+.task-date span {
+    margin-left: 30px; /* Menggeser border ke kanan */
+    border-bottom: 2px solid #1f4e79; /* Menambahkan border ke kanan */
+}
+.navbar {
+display: flex;
+align-items: center;
+width: 300px;
+height: 50px;
+background-color: #fff;
+border-radius: 30px;
+position: fixed;
+bottom: 5px; /* Adjust bottom margin if necessary */
+left: 50%; /* Center horizontally */
+transform: translateX(-50%); /* Center horizontally */
+border: 2px solid  #ccc; /* Added border */
+justify-content: space-evenly;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* existing shadow */
+ 0 6px 20px rgba(0, 0, 0, 0.1); /* enhanced shadow */
+}
+
+.navbar-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+color: #333;
+cursor: pointer;
+transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-item.active {
+color: #002469;
+}
+
+.navbar-item i {
+font-size: 15px;
+}
+
+.navbar-item span {
+font-size: 9px;
+margin-top: 5px; /* Add space between icon and text */
 }

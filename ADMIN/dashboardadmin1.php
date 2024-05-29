@@ -14,55 +14,7 @@ include 'checkakun.php'
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-    .task-date {
-            font-weight: bold;
-           
-            padding-bottom: 10px;
-     
-          
-        }
-        .task-date span {
-            margin-left: 30px; /* Menggeser border ke kanan */
-            border-bottom: 2px solid #1f4e79; /* Menambahkan border ke kanan */
-        }
-    .navbar {
-    display: flex;
-    align-items: center;
-    width: 280px;
-    height: 60px;
-    background-color: #fff;
-    border-radius: 30px;
-    position: fixed;
-    bottom: 10px; /* Adjust bottom margin if necessary */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
-    border: 2px solid  #ccc; /* Added border */
-justify-content: space-evenly;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* existing shadow */
-                0 6px 20px rgba(0, 0, 0, 0.1); /* enhanced shadow */
-}
-
-.navbar-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar-item.active {
-    color: #002469;
-}
-
-.navbar-item i {
-    font-size: 24px;
-}
-
-.navbar-item span {
-    font-size: 12px;
-    margin-top: 5px; /* Add space between icon and text */
-}
+  
 
 
 </style>
@@ -82,7 +34,14 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* existing shadow */
 </head>
 <body>
   
-    <div class="container-fluid">
+    
+<a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+    <div class="slideshow-container">
+    <div class="slide fade">
+        <div class="slide-content">
+        <div class="container-fluid">
         
         <div class="welcome-container">
           <div class="welcome-message">Selamat datang, <?php echo htmlspecialchars($nama); ?></div>
@@ -160,13 +119,26 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* existing shadow */
                 <div class="task-subtitle">Electrical Campus Observation</div>
             </div>
         </div>
+     
+    </div>
+
+  
+        </div>
+        
+    </div>
+   <!-- Tombol untuk berganti slide -->
+ 
+
+    <div class="slide fade">
+        <div class="slide-content">
+            <h2>Slide 2</h2>
+            <p>Ini adalah konten slide 2.</p>
+        </div>
     </div>
  
-<!-- Bootstrap JS and dependencies -->
-<script src="calendar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+   
+</div>
+
 </body>
 <footer>
 
@@ -186,16 +158,12 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* existing shadow */
         <span>Profil</span>
     </div>
 </div>
-
-<script>
-    const navbarItems = document.querySelectorAll('.navbar-item');
-
-    navbarItems.forEach(item => {
-        item.addEventListener('click', () => {
-            navbarItems.forEach(nav => nav.classList.remove('active'));
-            item.classList.add('active');
-        });
-    });
-</script>
+<!-- Bootstrap JS and dependencies -->
+<script src="nav.js"></script>
+<script src="slide.js"></script>
+<script src="calendar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </footer>
 </html>
