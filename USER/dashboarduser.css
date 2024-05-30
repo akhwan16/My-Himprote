@@ -59,8 +59,8 @@ main {
 
 .calendar-container {
   height: 280px;
-  width: 320px;
-  max-width: 350px;
+  width: 90%;
+  max-width: 100%;
   background-color: transparent;
   border: 2px solid #002469;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -78,7 +78,6 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-
 }
 
 .calendar-header {
@@ -126,27 +125,8 @@ main {
 }
 
 .calendar-days div span {
-  position: absolute;
+  position: relative;
   pointer-events: none;
-}
-
-.year-picker {
-  display: flex;
-}
-
-.year-change {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  margin: 0 10px;
-  cursor: pointer;
-  transition: all ease;
-}
-
-.year-change:hover {
-  background-color: #edf0f5;
 }
 
 .calendar-footer {
@@ -165,24 +145,6 @@ main {
   color: #002469;
 }
 
-.month-list>div {
-  display: grid;
-  place-items: center;
-}
-
-.month-list>div>div {
-  width: 100%;
-  padding: 5px;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  color: white;
-}
-
-.month-list>div>div:hover {
-  background-color: #666666;
-}
-
 .event {
   background-color: #002469;
 }
@@ -196,16 +158,19 @@ main {
   font-weight: bold;
   font-size: 10px;
 }
-#task-list{
+
+#task-list {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
+
 .task-list {
   background-color: #f4f4f4ff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 320px;
+  width: 90%;
   max-width: 100%;
   padding: 10px;
   border: 2px solid #002469;

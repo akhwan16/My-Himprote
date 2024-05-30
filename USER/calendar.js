@@ -100,7 +100,7 @@ let curr_year = { value: currDate.getFullYear() };
 
 generateCalendar(curr_month.value, curr_year.value);
 
-document.querySelector('#prev-year').onclick = () => {
+document.querySelector('#prev-month').onclick = () => {
     if (curr_month.value === 0) {
         // Jika bulan adalah Januari, kurangi tahun dan atur bulan ke Desember
         curr_year.value--;
@@ -111,7 +111,7 @@ document.querySelector('#prev-year').onclick = () => {
     generateCalendar(curr_month.value, curr_year.value);
 };
 
-document.querySelector('#next-year').onclick = () => {
+document.querySelector('#next-month').onclick = () => {
     if (curr_month.value === 11) {
         // Jika bulan adalah Desember, tambahkan tahun dan atur bulan ke Januari
         curr_year.value++;

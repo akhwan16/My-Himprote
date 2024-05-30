@@ -1,263 +1,290 @@
-body * {
-    padding: 0;
-    margin: 0;
-    font-family: poppins, sans-serif;
-    box-sizing: border-box;
-    overflow: hidden;
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-header img {
-    width: 30px;
-    padding: 5px;
+#header {
+  padding: 10px;
 }
 
-header {
-    border-bottom: 1px solid black;
-    font-size: 7px;
-    display: flex;
-    margin: 6px;
-    justify-content: space-between;
-    font-weight: bold;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 2px solid #002469;
 }
 
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.logo img {
+  width: 60%;
 }
 
-li {
-    list-style: none;
-}
-
-i {
-    position: relative;
-    left: 90%;
-    font-size: small;
-    color: #002469;
-    font-weight: bold;
+.reminder {
+  font-size: small;
+  font-weight: bold;
 }
 
 main {
-    flex: 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  width: 100%;
+}
+.progja-list{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  gap: 1em;
+  margin: auto;
+}
+.progja{
+  border: 2px solid #002469;
+  border-radius: 15px;
+  max-width: 100%;
+  padding: 15px;
+  margin: 15px auto;
+}
+.progja .button{
+  display: flex;
+  justify-content: space-around;
+  gap: 8em;
+  margin-top: 10px;
+}
+.button .details{
+  border: none;
+  outline: none;
+  color: #002469;
+  font-weight: bold;
+  background-color: transparent;
+}
+.button .divisi{
+  border: none;
+  outline: none;
+  background-color: #002469;
+  border-radius: 30px;
+  color: white;
+  padding: 5px 10px;
 }
 
-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 100%;
-    margin: 5px;
-    gap: 1em;
+.deskripsi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #002469;
+  border-radius: 15px;
+  width: 90%;
+  padding: 10px;
+  margin: 15px auto;
+  text-align: justify;
+}
+.judul{
+  font-size: 20px;
+  font-weight: bold;
+}
+.deskripsi .teks{
+  font-size: small;
+  font-weight: 600;
 }
 
-h1 {
-    font-size: small;
+.choice {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  max-width: 100%;
+  margin-bottom: 10px;
+  /* Membatasi lebar navbar */
+  height: fit-content;
+  background-color: transparent;
+  border: 3px solid #002469;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.Details {
-    border: none;
-    margin-top: 25px;
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: transparent;
-    color: #002469;
-    font-size: 8px;
+.choice-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
 }
 
-.Divisi {
-    border: none;
-    margin-top: 25px;
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #002469;
-    color: white;
-    font-size: 8px;
+.choice-item.active {
+  color: #002469;
+  transform: translateY(-5px);
 }
 
-.progja1 {
-    padding: 10px;
-    border: 2px solid #002469;
-    box-shadow: 0px 0px 5px 0px rgba(59, 59, 132, 0.75);
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(59, 59, 132, 0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(59, 59, 132, 0.75);
-    border-radius: 10px;
+.choice-item span {
+  font-size: 15px;
+  margin-top: 5px;
 }
 
-.progja1 div {
-    display: flex;
-    justify-content: space-between;
+.choice-item::after {
+  content: "";
+  height: 3px;
+  background-color: #002469;
+  width: 0;
+  transition: all 0.3s ease;
 }
 
-.progja2 {
-    padding: 10px;
-    border: 2px solid #002469;
-    box-shadow: 0px 0px 5px 0px rgba(59, 59, 132, 0.75);
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(59, 59, 132, 0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(59, 59, 132, 0.75);
-    border-radius: 10px;
+.choice-item:hover::after {
+  color: #002469;
+  width: 100%;
 }
 
-.progja2 div {
-    display: flex;
-    justify-content: space-between;
+#job-list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.Deskripsi {
-    border: 2px solid #002469;
-    border-radius: 14px;
-    padding: 7px;
-    margin-top: 15px;
-    font-size: small;
-}
-
-.Deskripsi p {
-    margin-top: 5px;
-    text-align: justify;
-    font-size: 10px;
-    font-weight: bold;
-}
-
-
-button {
-    position: relative;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    font-weight: bold;
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    padding: 0 10px;
+.job-list {
+  background-color: #f4f4f4ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 90%;
+  max-width: 100%;
+  padding: 10px;
+  border: 2px solid #002469;
+  /* Tambahkan border biru tua */
 }
 
 .jobdesk {
-    border: 2px solid #002469;
-    border-radius: 15px;
-    padding: 10px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 10%;
-    overflow: scroll;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-<!--hehe-->
-#mid-nav{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.navigasi{
-    margin-top: 10px;
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border: 3px solid #002469;
-    border-radius: 15px;
-    background-color: #DCDCDC;
-    padding: 3px;
-}
-.mid-nav{
-    position: relative;
-    padding: 0 10px;
-}
-.mid-nav::after{
-    content: "";
-    position: relative;
-    height: 3px;
-    background-color: #002469;
-    width: 100%;
-    bottom: -1px;
+.jobdesk-time {
+  font-size: 1.1em;
+  margin-right: 16px;
+  color: #333;
+  width: 50px;
+  padding-left: 30px;
 }
 
-#jodesk-list{
-    width: 100%;
-}
-.jobdesk label {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    border: none;
-    border-radius: 10px;
-    background-color: #002469;
-    color: white;
-    font-size: 10px;
-    width: fit-content;
-    padding: 5px;
-    box-shadow: 0px 5px 5px 0px rgba(157, 157, 157, 0.75);
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(157, 157, 157, 0.75);
-    -moz-box-shadow: 0px 5px 5px 0px rgba(157, 157, 157, 0.75);
+.jobdesk-content {
+  flex-grow: 1;
+  background-color: rgb(225, 223, 223);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
 }
 
-.jobdesk img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+.jobdesk-title {
+  font-size: 0.9em;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.jobdesk-subtitle {
+  font-size: 0.7em;
+  color: #888;
+}
+
+.jobdesk-checkbox {
+  margin-right: 16px;
+}
+
+.jobdesk:last-child {
+  margin-bottom: 0;
+}
+
+.jobdesk-checkbox {
+  display: none;
+  /* Sembunyikan checkbox */
+}
+
+.jobdesk {
+  position: relative;
+  /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
+}
+
+.jobdesk-time:before {
+  content: " ";
+  position: absolute;
+  left: 15px;
+  /* Sesuaikan jarak dari sisi kiri */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  /* Mengurangi lebar */
+  height: 10px;
+  /* Mengurangi tinggi */
+  border-radius: 50%;
+  /* Membuat lingkaran */
+  background-color: red;
+  /* Warna biru tua */
 
 }
 
-.jobdesk div {
-    display: flex;
-    align-items: center;
-    width: 100%;
+.jobdesk-checkbox:checked+.jobdesk:before {
+  background-color: lightblue;
+  /* Warna ketika tugas selesai */
 }
 
-.task1 {
-    border: 2px solid #002469;
-    background-color: #DCDCDC;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    width: 100%;
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  /* Membatasi lebar navbar */
+  height: 60px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.task1 p {
-    margin-top: 15px;
-    font-size: 8px;
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-footer {
-    position: static;
-    left: 0;
-    border-top: 1px solid black;
-    background-color: white;
-    border-radius: 30px 30px 0 0;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    height: 100px;
-    margin-bottom: 100px;
+.navbar-item.active {
+  color: #002469;
+  transform: translateY(-5px);
 }
 
-.home .Progdiv .profile,
-img {
-    width: 25px;
+.navbar-item i {
+  font-size: 24px;
 }
 
-footer nav ul {
-    display: flex;
-    justify-content: space-between;
+.navbar-item span {
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-.home .Progdiv .profile,
-a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #999999;
-    font-size: small;
-    padding: 5px;
-}
-
-.home,
-.Progdiv,
-.profile {
-    text-align: center;
+.navbar-item:hover {
+  color: #007BFF;
 }
