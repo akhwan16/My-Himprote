@@ -15,7 +15,9 @@
 </head>
 
 <body>
-  <header>
+
+
+  <header id="header">
     <div class="header-container">
       <div class="logo">
         <img src="/My-Himprote/Assets/img/Group 207.png" alt="">
@@ -24,71 +26,91 @@
         REMINDER!
       </div>
     </div>
+  </header>
+  
+  
+  <main>
     <div class="welcome-container">
       <div class="welcome-message">Selamat datang, Farid Akhwan</div>
       <div class="sub-message">
         Kamu login sebagai <span href="#">User</span>!
       </div>
     </div>
-  </header>
-  <main>
     <section class="calendar">
-      <header class="calendar-header">
-        <span style="margin-left: -10px;" class="year-change" id="prev-year">
-          <pre>&lt;</pre>
-        </span>
-        <span style="margin-left: -140px; margin-top: 15px; font-size: 11px;" class="month-picker"
-          id="month-picker">&lt;February&gt;</span> <!-- Menggunakan entity HTML untuk tanda <> -->
-        <span style="margin-left: -130px;" class="year-change" id="next-year">
-          <pre>&gt;</pre>
-        </span>
-
-
-
-        <!-- Menggunakan pre untuk tanda < -->
-        </span>
-        <div style="margin-top: 15px;" class="year-picker">
-          <span id="year"></span>
-
+    <div class="calendar-container">
+        <header class="calendar-header">
+          <span style="margin-left: -10px;" class="year-change" id="prev-year">
+            <pre>&lt;</pre>
+          </span>
+          <span style="margin-left: -140px; margin-top: 15px; font-size: 11px;" class="month-picker"
+            id="month-picker">&lt;February&gt;</span>
+          <span style="margin-left: -130px;" class="year-change" id="next-year">
+            <pre>&gt;</pre>
+          </span>
+          <div style="margin-top: 15px;" class="year-picker">
+            <span id="year"></span>
+          </div>
+        </header>
+        <div class="calendar-body">
+          <div class="calendar-week-day">
+            <div>Minggu</div>
+            <div>Senin</div>
+            <div>Selasa</div>
+            <div>Rabu</div>
+            <div>Kamis</div>
+            <div>Jumat</div>
+            <div>Sabtu</div>
+          </div>
+          <div class="calendar-days"></div>
         </div>
-      </header>
-      <div class="calendar-body">
-        <div class="calendar-week-day">
-          <div>Minggu</div>
-          <div>Senin</div>
-          <div>Selasa</div>
-          <div>Rabu</div>
-          <div>Kamis</div>
-          <div>Jumat</div>
-          <div>Sabtu</div>
+        <div class="calendar-footer">
+          <div class="toggle"></div>
         </div>
-
-        <div class="calendar-days"></div>
+        <div id="month-picker"></div>
+        <div class="month-list"></div>
+      </section>
+      <section>
+      <div class="task">
+          <div class="task-time">18:40</div>
+              <div class="task-content">
+                  <div class="task-title">Absensi Rapat ELCO</div>
+                  <div class="task-subtitle">Electrical Campus Observation</div>
+              </div>
+          </div>
+      <div class="task">
+          <div class="task-time">18:40</div>
+              <div class="task-content">
+                  <div class="task-title">Absensi Rapat ELCO</div>
+                  <div class="task-subtitle">Electrical Campus Observation</div>
+              </div>
+          </div>
+      <div class="task">
+          <div class="task-time">18:40</div>
+              <div class="task-content">
+                  <div class="task-title">Absensi Rapat ELCO</div>
+                  <div class="task-subtitle">Electrical Campus Observation</div>
+              </div>
+          </div>
+      </section>
+      <footer>
+      <div class="navbar">
+        <div class="navbar-item active" id="home">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </div>
+        <div class="navbar-item" id="task">
+          <i class="fas fa-tasks"></i>
+          <span>Progdiv</span>
+        </div>
+        <div class="navbar-item" id="profile">
+          <i class="fas fa-user"></i>
+          <span>Profile</span>
+        </div>
       </div>
-      <div class="calendar-footer">
-        <div class="toggle"></div>
-      </div>
-      <div id="month-picker"></div>
-
-      <div class="month-list"></div>
-    </section>
-  </main>
-  <footer>
-    <div class="navbar">
-      <div class="navbar-item active" id="home">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-      </div>
-      <div class="navbar-item" id="task">
-        <i class="fas fa-tasks"></i>
-        <span>Progdiv</span>
-      </div>
-      <div class="navbar-item" id="profile">
-        <i class="fas fa-user"></i>
-        <span>Profile</span>
-      </div>
-    </div>
+    </main>
   </footer>
+
+
   <script src="nav.js"></script>
   <script src="calendar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
