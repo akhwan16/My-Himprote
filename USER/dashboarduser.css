@@ -206,6 +206,7 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 320px;
+  max-width: 100%;
   padding: 10px;
   border: 2px solid #002469;
   /* Tambahkan border biru tua */
@@ -295,7 +296,7 @@ main {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   /* Membatasi lebar navbar */
   height: 60px;
   background-color: #fff;
