@@ -63,6 +63,7 @@ main {
   max-width: 350px;
   background-color: transparent;
   border: 2px solid #002469;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 10px;
   padding-top: 0px;
@@ -195,33 +196,33 @@ main {
   font-weight: bold;
   font-size: 10px;
 }
-
+#task-list{
+  display: flex;
+  justify-content: center;
+}
 .task-list {
+  background-color: #f4f4f4ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 350px;
-  padding-top: 15px;
-  margin: 0 auto;
-  /* Menempatkan di tengah */
-  padding-bottom: 15px;
-
-
+  width: 320px;
+  padding: 10px;
+  border: 2px solid #002469;
+  /* Tambahkan border biru tua */
 }
 
 .task {
   display: flex;
   align-items: center;
-
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin-bottom: 10px;
-  width: 90%;
-  /* Mengurangi lebar */
-  height: 50px;
-
 }
 
 .task-time {
-  font-size: 1em;
-
+  font-size: 1.1em;
   margin-right: 16px;
   color: #333;
   width: 50px;
@@ -229,23 +230,22 @@ main {
 }
 
 .task-content {
-  flex-grow: 5;
-  background-color: #e0e0e0;
-  border-radius: 8.5px;
+  flex-grow: 1;
+  background-color: rgb(225, 223, 223);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   padding: 10px;
-
 }
 
 .task-title {
-  font-size: 10px;
+  font-size: 0.9em;
   margin: 0;
   color: #333;
   font-weight: bold;
-
 }
 
 .task-subtitle {
-  font-size: 8px;
+  font-size: 0.7em;
   color: #888;
 }
 
@@ -257,24 +257,37 @@ main {
   margin-bottom: 0;
 }
 
+.task-checkbox {
+  display: none;
+  /* Sembunyikan checkbox */
+}
 
 .task {
   position: relative;
   /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
 }
 
-.task-date {
-  font-weight: bold;
-
-  padding-bottom: 10px;
+.task:before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  /* Sesuaikan jarak dari sisi kiri */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  /* Mengurangi lebar */
+  height: 10px;
+  /* Mengurangi tinggi */
+  border-radius: 50%;
+  /* Membuat lingkaran */
+  background-color: red;
+  /* Warna biru tua */
 
 }
 
-.task-date span {
-  margin-left: 30px;
-  /* Menggeser border ke kanan */
-  border-bottom: 2px solid #1f4e79;
-  /* Menambahkan border ke kanan */
+.task-checkbox:checked+.task:before {
+  background-color: lightblue;
+  /* Warna ketika tugas selesai */
 }
 
 .navbar {
