@@ -35,51 +35,65 @@ main {
   padding-bottom: 100px;
   width: 100%;
 }
-#progja-list{
-  max-height: fit-content;
+.divisi-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   max-width: 100%;
-  padding: 5px;
-  display: flex;
-}
-.progja-list{
-  display: flex;
-  height: fit-content;
-  padding: 5px;
-  overflow-x: auto;
-}
-.progja-list::-webkit-scrollbar{
-  width: 0;
-}
-.progja-list .progja{
-  min-width: 200px;
-  min-height: fit-content;
-  margin-right: 10px;
-  border: 2px solid #002469;
-  box-shadow: 0 4px 4px rgba(0, 0.5, 0, 0.5);
-  border-radius: 15px;
   padding: 10px;
-  font-size: small;
+  gap: 1em;
+  margin: auto;
 }
-
-.progja .button{
+.divisi {
+  border: 2px solid #002469;
+  border-radius: 15px;
+  max-width: 100%;
+  padding: 15px;
+  margin: 15px auto;
+}
+.divisi .button {
   display: flex;
   justify-content: space-around;
-  margin-top: 40px;
+  gap: 8em;
+  margin-top: 10px;
 }
-.button .details{
+.button .details {
   border: none;
   outline: none;
   color: #002469;
   font-weight: bold;
   background-color: transparent;
 }
-.button .divisi{
+.button .divisi {
   border: none;
   outline: none;
   background-color: #002469;
   border-radius: 30px;
   color: white;
-  padding: 5px 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 30px;
+}
+
+.divisiku {
+  width: 200px;
+  height: 50px;
+  background-color: #002469;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 10px auto;
+  gap: 1em;
+}
+
+.divisiku img {
+  max-width: 80%;
+  max-height: 80%;
+  display: block;
 }
 
 .deskripsi {
@@ -93,72 +107,20 @@ main {
   margin: 15px auto;
   text-align: justify;
 }
-.judul{
-  font-size: 15px;
+.judul {
+  font-size: 20px;
   font-weight: bold;
 }
-.deskripsi .teks{
+.deskripsi .teks {
   font-size: small;
   font-weight: 600;
-}
-
-.choice {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 90%;
-  max-width: 100%;
-  margin-bottom: 10px;
-  /* Membatasi lebar navbar */
-  height: fit-content;
-  background-color: transparent;
-  border: 3px solid #002469;
-  border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.choice-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px;
-  color: #333;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
-  font-weight: bold;
-}
-
-.choice-item.active {
-  color: #002469;
-  transform: translateY(-5px);
-}
-
-.choice-item span {
-  font-size: 15px;
-  margin-top: 5px;
-}
-
-.choice-item::after {
-  content: "";
-  height: 3px;
-  background-color: #002469;
-  width: 0;
-  transition: all 0.3s ease;
-}
-
-.choice-item:hover::after {
-  color: #002469;
-  width: 100%;
 }
 
 #job-list {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin: 10px auto;
 }
 
 .job-list {
@@ -170,7 +132,23 @@ main {
   max-width: 100%;
   padding: 10px;
   border: 2px solid #002469;
-  /* Tambahkan border biru tua */
+}
+
+.progress {
+  border: none;
+  outline: none;
+  background-color: #002469;
+  border-radius: 60px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  width: 100px;
+  height: 40px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+  font-size: small;
+  font-weight: 200;
 }
 
 .jobdesk {
@@ -181,6 +159,7 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 .jobdesk-time {
@@ -208,7 +187,20 @@ main {
 
 .jobdesk-subtitle {
   font-size: 0.7em;
+  font-weight: bold;
   color: #888;
+}
+
+.jobdesk-more-info {
+  color: #2550a2;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.jobdesk-upload {
+    margin: 1px auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .jobdesk-checkbox {
@@ -244,10 +236,9 @@ main {
   /* Membuat lingkaran */
   background-color: red;
   /* Warna biru tua */
-
 }
 
-.jobdesk-checkbox:checked+.jobdesk:before {
+.jobdesk-checkbox:checked + .jobdesk:before {
   background-color: lightblue;
   /* Warna ketika tugas selesai */
 }
@@ -295,5 +286,5 @@ main {
 }
 
 .navbar-item:hover {
-  color: #007BFF;
+  color: #007bff;
 }
