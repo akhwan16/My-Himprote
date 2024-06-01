@@ -35,22 +35,38 @@ main {
   padding-bottom: 100px;
   width: 100%;
 }
-#progja-list{
+#progja-list {
   max-height: fit-content;
   max-width: 100%;
   padding: 5px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.progja-list{
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.progja-list-wrapper {
+  overflow: hidden;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.progja-list {
   display: flex;
   height: fit-content;
   padding: 5px;
-  overflow-x: auto;
+  transition: transform 0.5s ease;
+ 
 }
-.progja-list::-webkit-scrollbar{
-  width: 0;
-}
-.progja-list .progja{
+
+.progja-list .progja {
   min-width: 200px;
   min-height: fit-content;
   margin-right: 10px;
@@ -61,25 +77,47 @@ main {
   font-size: small;
 }
 
-.progja .button{
+.progja .button {
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
 }
-.button .details{
+.button .details {
   border: none;
   outline: none;
   color: #002469;
   font-weight: bold;
   background-color: transparent;
 }
-.button .divisi{
+.button .divisi {
   border: none;
   outline: none;
   background-color: #002469;
   border-radius: 30px;
   color: white;
   padding: 5px 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+}
+
+.dot i {
+  font-size: 24px;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+.dot.active i,
+.dot:hover i {
+  color: #717171;
+}
+
+.hidden {
+  display: none;
 }
 
 .deskripsi {
@@ -93,11 +131,11 @@ main {
   margin: 15px auto;
   text-align: justify;
 }
-.judul{
+.judul {
   font-size: 15px;
   font-weight: bold;
 }
-.deskripsi .teks{
+.deskripsi .teks {
   font-size: small;
   font-weight: 600;
 }
@@ -244,10 +282,9 @@ main {
   /* Membuat lingkaran */
   background-color: red;
   /* Warna biru tua */
-
 }
 
-.jobdesk-checkbox:checked+.jobdesk:before {
+.jobdesk-checkbox:checked + .jobdesk:before {
   background-color: lightblue;
   /* Warna ketika tugas selesai */
 }
@@ -295,5 +332,5 @@ main {
 }
 
 .navbar-item:hover {
-  color: #007BFF;
+  color: #007bff;
 }
