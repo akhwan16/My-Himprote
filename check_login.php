@@ -7,8 +7,9 @@ session_start();
 
 // Mengecek apakah ada email yang dikirimkan melalui metode POST
 if(isset($_POST['email'])) {
-    // Mengambil email dari metode POST
+    // Mengambil email dan URL gambar profil dari metode POST
     $email = $_POST['email'];
+    $profile_image = $_POST['profile_image'];
 
     // Query database untuk memeriksa apakah email ada dalam tabel akun
     $sql = "SELECT * FROM akun WHERE email = '$email'";
@@ -22,12 +23,25 @@ if(isset($_POST['email'])) {
         // Simpan email dalam variabel session
         $_SESSION['email'] = $email;
 
+        if ($result->num_rows > 0) {
+            // Email sudah ada, update gambar profil
+            $update_sql = "UPDATE akun SET profile_image='$profile_image' WHERE email='$email'";
+            if ($conn->query($update_sql) === TRUE) {
+                // Update berhasil
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+        }
+
         // Periksa rolenya
-        if($user['role'] == 'Admin') {
-            // Jika pengguna adalah admin, arahkan ke halaman admin menggunakan JavaScript
-            echo '<script>window.location.href = "../ADMIN/dashboardadmin1.php";</script>';
+        if($user['role'] == 'admin') {
+            // Jika pengguna adalah admin, atur slideIndex di localStorage dan arahkan ke halaman admin
+            echo '<script>
+                localStorage.setItem("slideIndex", 1);
+                window.location.href = "../ADMIN/dashboardadmin.php";
+                </script>';
             exit;
-        } elseif($user['role'] == 'User') {
+        } elseif($user['role'] == 'user') {
             // Jika pengguna adalah user, arahkan ke halaman user menggunakan PHP header
             header("Location: ../dashboarduser1.php");
             exit;
@@ -50,4 +64,3 @@ if(isset($_POST['email'])) {
     exit;
 }
 ?>
-
