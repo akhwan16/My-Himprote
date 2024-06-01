@@ -21,7 +21,7 @@ if (isset($_GET['q'])) {
            echo "<div class='card-content'>";
            echo "<img id='profileImage' src='" . $data['profile_image'] . "' alt='Profile Image' class='profile-image'>";
            echo "<div class='text-content'>";
-           echo "<div id='divisi' class='division'>" . $data['divisi'] . "</div>";
+           echo "<div id='departemen' class='division'>" . $data['departemen'] . "</div>";
            echo "<div id='jabatan' class='title'>" . $data['jabatan'] . "</div>";
            echo "<div id='nama' class='name'>" . $data['nama'] . "</div>";
            echo "<div id='email' class='email'>" . $data['email'] . "</div>";

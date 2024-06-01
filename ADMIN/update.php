@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Proses update data di database
     // Gunakan $email sebagai parameter untuk kueri UPDATE
-    $stmt = $conn->prepare("UPDATE akun SET nama=?, divisi=?, jabatan=?, email=? WHERE email=?");
+    $stmt = $conn->prepare("UPDATE akun SET nama=?, departemen=?, jabatan=?, email=? WHERE email=?");
     $stmt->bind_param("sssss", $name, $division, $position, $email, $value); // Menggunakan $email sebagai email yang akan diupdate
     $stmt->execute();
     

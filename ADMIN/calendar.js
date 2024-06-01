@@ -75,23 +75,8 @@ generateCalendar = (month, year) => {
     calendar_days.style.paddingBottom = `${(totalRows * 15) + 5}px`; // Sesuaikan nilai padding sesuai dengan preferensi Anda
 };
 
-
-let month_list = calendar.querySelector('.month-list');
-
-month_names.forEach((e, index) => {
-    let month = document.createElement('div');
-    month.innerHTML = `<div data-month="${index}">${e}</div>`;
-    month.querySelector('div').onclick = () => {
-        month_list.classList.remove('show');
-        curr_month.value = index;
-        generateCalendar(index, curr_year.value);
-    };
-    month_list.appendChild(month);
-});
-
+// Remove month list menu handling
 let month_picker = calendar.querySelector('#month-picker');
-
-
 
 let currDate = new Date();
 

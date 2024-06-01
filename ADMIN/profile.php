@@ -12,8 +12,7 @@
 
     <title>Profil</title>
 
-    <style>
-        body {
+    <style>       body {
             background-color: #f0f2f5;
             font-family: Poppins;
         }
@@ -74,44 +73,50 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .navbar {
-display: flex;
-align-items: center;
-width: 300px;
-height: 50px;
-background-color: #fff;
-border-radius: 30px;
-position: fixed;
-bottom: 5px; /* Adjust bottom margin if necessary */
-left: 50%; /* Center horizontally */
-transform: translateX(-50%); /* Center horizontally */
-border: 2px solid  #ccc; /* Added border */
-justify-content: space-evenly;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* existing shadow */
- 0 6px 20px rgba(0, 0, 0, 0.1); /* enhanced shadow */
+        nav{
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 304px;
+    height: 54px;
+    background-color: #fff;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 5px; /* Adjust bottom margin if necessary */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    border: 2px solid  #ccc; /* Added border */
+    justify-content: space-evenly;
+    box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.1); /* enhanced shadow */
 }
 
 .navbar-item {
-display: flex;
-flex-direction: column;
-align-items: center;
-color: #333;
-cursor: pointer;
-transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+    padding-top: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-item.active {
-color: #002469;
+    color: #002469;
 }
 
 .navbar-item i {
-font-size: 15px;
+    font-size: 15px;
 }
 
 .navbar-item span {
-font-size: 9px;
-margin-top: 5px; /* Add space between icon and text */
+    font-size: 9px;
+    margin-top: 5px; /* Add space between icon and text */
 }
+
+
 .fade-in {
     animation: fadeIn ease 1s;
 }

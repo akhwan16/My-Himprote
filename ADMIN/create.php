@@ -47,7 +47,7 @@ if ($position === 'Ketua HIMPROTE') {
 }
 
 // Buat query untuk menambahkan data ke tabel akun
-$sql = "INSERT INTO akun (email, nama, divisi, jabatan, role) VALUES ('$email', '$name', '$division', '$position', '$peran')";
+$sql = "INSERT INTO akun (email, nama, departemen ,jabatan, role) VALUES ('$email', '$name', '$division', '$position', '$peran')";
 
 // Jalankan query
 if ($conn->query($sql) === TRUE) {

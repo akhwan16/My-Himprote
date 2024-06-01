@@ -7,7 +7,7 @@ header("Access-Control-Allow-Methods: GET");
 // Izinkan header yang spesifik
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 // Coba jalankan kueri SQL
-$sql = "SELECT profile_image, nama, email, divisi, jabatan FROM akun";
+$sql = "SELECT profile_image, nama, email, departemen, jabatan FROM akun";
 $result = $conn->query($sql);
 
 $data = array();
@@ -20,7 +20,7 @@ if ($result) {
                 "profile_image" => $row['profile_image'],
                 "nama" => $row['nama'],
                 "email" => $row['email'],
-                "divisi" => $row['divisi'],
+                "departemen" => $row['departemen'],
                 "jabatan" => $row['jabatan']
             );
         }

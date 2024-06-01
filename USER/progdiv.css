@@ -6,10 +6,14 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+n
 }
 
 #header {
   padding: 10px;
+ 
+  display: flex;
+ 
 }
 
 .header-container {
@@ -18,7 +22,10 @@ body {
   justify-content: space-between;
   padding: 5px;
   border-bottom: 2px solid #002469;
+  width: 100%; /* Menambahkan lebar penuh */
+
 }
+
 
 .logo img {
   width: 60%;
@@ -42,7 +49,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Menambahkan ini untuk pusat vertikal */
+  margin: 0 auto; /* Menambahkan ini untuk pusat horizontal */
+  overflow: hidden; /* Menghindari overflow */
 }
+
 
 .slideshow-container {
   max-width: 1000px;
@@ -55,6 +66,8 @@ main {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  max-width: 700px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+
   
 }
 
@@ -89,7 +102,7 @@ main {
   font-weight: bold;
   background-color: transparent;
 }
-.button .divisi {
+.button .departemen{
   border: none;
   outline: none;
   background-color: #002469;
@@ -130,6 +143,8 @@ main {
   padding: 10px;
   margin: 15px auto;
   text-align: justify;
+  max-width: 340px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+
 }
 .judul {
   font-size: 15px;
@@ -157,6 +172,8 @@ main {
   left: 50%;
   transform: translateX(-50%);
   transition: transform 0.3s ease, background-color 0.3s ease;
+  max-width: 300px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+
 }
 
 .choice-item {
@@ -197,9 +214,15 @@ main {
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 380px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  margin: 0 auto; /* Menambahkan ini untuk pusat horizontal */
 }
 
+
+
 .job-list {
+  max-width: 280px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+
   background-color: #f4f4f4ff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -291,46 +314,40 @@ main {
 
 .navbar {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  max-width: 100%;
-  /* Membatasi lebar navbar */
-  height: 60px;
+  width: 304px;
+  height: 54px;
   background-color: #fff;
   border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  bottom: 5px; /* Adjust bottom margin if necessary */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  border: 2px solid  #ccc; /* Added border */
+  justify-content: space-evenly;
+  box-shadow: 
+              0 4px 8px rgba(0, 0, 0, 0.1); /* enhanced shadow */
 }
 
 .navbar-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
   color: #333;
   cursor: pointer;
+  padding-top: 1px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-item.active {
   color: #002469;
-  transform: translateY(-5px);
 }
 
 .navbar-item i {
-  font-size: 24px;
+  font-size: 15px;
 }
 
 .navbar-item span {
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.navbar-item:hover {
-  color: #007bff;
+  font-size: 9px;
+  margin-top: 5px; /* Add space between icon and text */
 }

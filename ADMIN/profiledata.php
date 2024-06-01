@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
 
     // Proses pencarian data di database
-    $stmt = $conn->prepare("SELECT nama, divisi, jabatan, email, profile_image FROM akun WHERE email = ?");
+    $stmt = $conn->prepare("SELECT nama, departemen, jabatan, email, profile_image FROM akun WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();

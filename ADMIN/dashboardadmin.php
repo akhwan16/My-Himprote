@@ -55,7 +55,7 @@ include 'listview.php';
                             <pre>&lt;</pre>
                         </span>
                         <span style="margin-left: -140px; margin-top: 15px; font-size: 11px;" class="month-picker" id="month-picker">&lt;February&gt;</span> <!-- Menggunakan entity HTML untuk tanda <> -->
-                        <span style="margin-left: -130px;" class="year-change" id="next-year">
+                        <span style="margin-left: -130px; " class="year-change" id="next-year">
                             <pre>&gt;</pre>
                         </span>
 
@@ -149,9 +149,9 @@ include 'listview.php';
 
                                 <label for="name">Nama *</label>
                                 <input type="text" id="name" name="name" required>
-                                <label for="division">Pilih Divisi *</label>
+                                <label for="division">Pilih Departemen*</label>
                                 <select id="division" name="division" required>
-                                    <option value="">--Pilih Divisi--</option>
+                                    <option value="">--Pilih Departemen--</option>
                                     <option value="Pengurus Harian">Pengurus Harian</option>
                                     <option value="Departemen A">Departemen A</option>
                                     <option value="Departemen B">Departemen B</option>
@@ -233,7 +233,7 @@ include 'listview.php';
                             <div class="card-content">
                                 <img id="profileImage" src="<?php echo $data['profile_image']; ?>" alt="Profile Image" class="profile-image">
                                 <div class="text-content">
-                                    <div id="divisi" class="division"><?php echo $data['divisi']; ?></div>
+                                    <div id="departemen" class="division"><?php echo $data['departemen']; ?></div>
                                     <div id="jabatan" class="title"><?php echo $data['jabatan']; ?> </div>
                                     <div id="nama" class="name"><?php echo $data['nama']; ?></div>
                                     <div id="email" class="email"><?php echo $data['email']; ?></div>
@@ -267,9 +267,9 @@ include 'listview.php';
                 <span id="nameValue" class="value"><?php echo $data['nama'];  ?></span>
       
                 
-                <label for="division">Pilih Divisi *</label>
+                <label for="division">Pilih Departemen*</label>
                 <select id="division" name="division" required>
-                    <option value="">--Pilih Divisi--</option>
+                    <option value="">--Pilih Departemen--</option>
                     <option value="Pengurus Harian">Pengurus Harian</option>
                     <option value="Departemen A">Departemen A</option>
                     <option value="Departemen B">Departemen B</option>
@@ -278,7 +278,7 @@ include 'listview.php';
                     <option value="Departemen E">Departemen E</option>
                     <option value="Departemen F">Departemen F</option>
                 </select>
-                <span id="divisionValue" class="value"><?php echo $data['divisi'];  ?></span>
+                <span id="divisionValue" class="value"><?php echo $data['departemen'];  ?></span>
 
                 <label for="position">Jabatan *</label>
                 <select id="position" name="position" required>
@@ -305,7 +305,7 @@ include 'listview.php';
 
 
 <div class="icon-container">
-<i alt="Edit Icon" class="fas fa-pencil" id="icon1" onclick="openPopup('<?php echo $data['email']; ?>', '<?php echo $data['nama']; ?>', '<?php echo $data['divisi']; ?>', '<?php echo $data['jabatan']; ?>')"></i>
+<i alt="Edit Icon" class="fas fa-pencil" id="icon1" onclick="openPopup('<?php echo $data['email']; ?>', '<?php echo $data['nama']; ?>', '<?php echo $data['departemen']; ?>', '<?php echo $data['jabatan']; ?>')"></i>
 
 
 
@@ -323,12 +323,12 @@ include 'listview.php';
     }
 
     // Function to open the popup and fetch data
-    function openPopup(email,nama,divisi,jabatan) {
+    function openPopup(email,nama,departemen,jabatan) {
         document.getElementById('popup2').style.display = 'block';
         document.getElementById('emailValue').value = email;
         document.getElementById('emailValue2').textContent = email;
         document.getElementById('nameValue').textContent = nama; 
-        document.getElementById('divisionValue').textContent = divisi; 
+        document.getElementById('divisionValue').textContent = departemen; 
         document.getElementById('positionValue').textContent = jabatan; 
   
       
