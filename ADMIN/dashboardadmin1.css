@@ -3,7 +3,15 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
     overflow-x: hidden; /* Mengunci scroll horizontal */
+    margin: 0;
+    padding: 0;
+    flex-direction: column; /* Mengatur semua elemen body agar vertikal */
+    align-items: center; /* Menyelaraskan konten secara horizontal di tengah */
 }
+nav{
+    width: 100%;
+}
+
 
 .header-container {
     display: flex;
@@ -12,6 +20,7 @@ body {
     padding: 5px 5px;
     border-bottom: 2px solid #1f4e79;
     width:auto;
+  
     margin: 0 auto; /* Center the container horizontally */
 }
 .slideshow-container {
