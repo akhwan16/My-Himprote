@@ -36,10 +36,7 @@ if(isset($_POST['email'])) {
         // Periksa rolenya
         if($user['role'] == 'admin') {
             // Jika pengguna adalah admin, atur slideIndex di localStorage dan arahkan ke halaman admin
-            echo '<script>
-                localStorage.setItem("slideIndex", 1);
-                window.location.href = "../ADMIN/dashboardadmin.php";
-                </script>';
+            header("Location: ../ADMIN/dashboardadmin.php");
             exit;
         } elseif($user['role'] == 'user') {
             // Jika pengguna adalah user, arahkan ke halaman user menggunakan PHP header
