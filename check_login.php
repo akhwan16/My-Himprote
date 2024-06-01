@@ -38,7 +38,7 @@ if(isset($_POST['email'])) {
             // Jika pengguna adalah admin, atur slideIndex di localStorage dan arahkan ke halaman admin
             echo '<script>
                 localStorage.setItem("slideIndex", 1);
-                window.location.href = "../ADMIN/dashboardadmin1.php";
+                window.location.href = "../ADMIN/dashboardadmin.php";
                 </script>';
             exit;
         } elseif($user['role'] == 'user') {

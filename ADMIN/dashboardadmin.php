@@ -11,244 +11,11 @@ include 'listview.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="dashboardadmin1.css">
+    <link rel="stylesheet" href="dashboardadmin.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <style>
-        .popup {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
-
-        .popup-content {
-            background-color: #fefefe;
-            margin: 80px auto;
-            padding: 20px;
-            border: 1px solid #1f4e79;
-
-
-            width: 80%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
-            border: 3px solid navy;
-            max-width: 350px;
-        }
-
-        .form {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .search-container {
-            margin-top: 20px;
-            text-align: center;
-            padding-bottom: 20px;
-        }
-
-        .search-box {
-
-            padding: 10px;
-            /* Tambahkan padding di sisi kanan untuk ikon */
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            width: 280px;
-            max-width: 100%;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        .search-button {
-
-            border: none;
-            border-radius: 10px;
-
-            color: #1f4e79;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .action-button {
-
-            border: none;
-            background-color: #1f4e79;
-            border-radius: 5px;
-            border-style: 2px;
-            margin-right: 10px;
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            padding: 10px 10px 10px 10px;
-        }
-
-
-
-
-        .containerlist {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            width: 100%;
-            height: 100%;
-            padding-bottom: 20px;
-        }
-
-        .card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 2px solid #1f4e79;
-            padding: 5px 10px;
-            /* Mengurangi padding */
-            width: 80%;
-            /* Mengurangi lebar */
-            max-width: 280px;
-            /* Mengurangi lebar maksimal */
-        }
-
-        .card-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .profile-image {
-            border-radius: 50%;
-            width: 40px;
-            /* Mengurangi ukuran gambar */
-            height: 40px;
-            /* Mengurangi ukuran gambar */
-            margin-right: 15px;
-            /* Mengurangi margin kanan */
-        }
-
-        .text-content {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .title {
-            font-size: 8px;
-            /* Mengurangi ukuran font */
-            font-style: italic;
-            text-align: left;
-        }
-
-        .name {
-            font-size: 8px;
-            /* Mengurangi ukuran font */
-            text-align: left;
-
-        }
-
-        .division {
-            font-size: 8px;
-            /* Mengurangi ukuran font */
-            text-align: left;
-            font-weight: bold;
-        }
-
-        .email {
-            font-size: 8px;
-            /* Mengurangi ukuran font */
-            text-align: left;
-        }
-
-        .delete-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .delete-icon {
-            width: 20px;
-            /* Mengurangi ukuran ikon */
-            height: 20px;
-            /* Mengurangi ukuran ikon */
-        }
-
-        label {
-            margin-top: 10px;
-        }
-
-        input[type="email"],
-        input[type="text"],
-        select {
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-
-            background-color: #e8f0fe;
-        }
-
-        .submit-button {
-
-            margin: 20px auto;
-            /* Membuat tombol berada di tengah secara horizontal */
-            padding: 10px 20px;
-            background-color: #000080;
-            color: #fff;
-
-            width: 150px;
-            justify-content: center;
-
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .submit-button i {
-            margin-right: 5px;
-        }
-
-        .icon-container {
-            display: flex;
-            align-items: center; /* Align icons vertically */
-        }
-
-        #icon1 {
-            color: darkgreen;
-        cursor: pointer;
-          
-        }
-
-        #icon2 {
-            color: darkred;
-            padding: 10px;
-            cursor: pointer;
-        }
-    </style>
 
     <div class="svg-container">
         <div class="header-container">
@@ -406,7 +173,7 @@ include 'listview.php';
                                     <option value="Ketua Departemen">Ketua Departemen</option>
                                     <option value="Sekretaris Departemen">Sekretaris Departemen</option>
                                     <option value="Staff Ahli">Staff Ahli</option>
-                                    <option value="Staf Muda">Staf Muda</option>
+                                    <option value="Staf Muda">Staff Muda</option>
                                 </select>
 
 
@@ -575,7 +342,7 @@ function submitForm() {
                 // Handle response from server if needed
                 console.log(xhr.responseText);
                    // Contoh: Refresh halaman
-                  
+                                                    
             }
         };
         xhr.send(formData); // Send form data to server
@@ -602,7 +369,7 @@ function submitForm() {
                                                 var response = xhr.responseText;
                                                 if (response == "success") {
                                                     // Jika penghapusan berhasil, lakukan tindakan sesuai kebutuhan, seperti memperbarui tampilan atau mengarahkan pengguna ke halaman lain
-                                                    alert("Data berhasil dihapus!");
+                                               
                                                     // Contoh: Refresh halaman
                                                     window.location.reload();
                                                 } else {
@@ -660,6 +427,18 @@ function submitForm() {
         </div>
     </div>
     <!-- Bootstrap JS and dependencies -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mendapatkan elemen navbar-item untuk Beranda
+        var homeNavItem = document.getElementById('profile');
+
+        // Menambahkan event listener untuk mengarahkan pengguna ke bagian khusus halaman PHP saat navbar-item Beranda diklik
+        homeNavItem.addEventListener('click', function() {
+            // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
+            window.location.href = "profile.php"; // Ganti "beranda" dengan ID atau anchor pada bagian halaman PHP yang ingin dituju
+        });
+    });
+</script>
     <script src="nav.js"></script>
     <script src="slide.js"></script>
     <script src="calendar.js"></script>

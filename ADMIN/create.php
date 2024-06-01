@@ -52,7 +52,7 @@ $sql = "INSERT INTO akun (email, nama, divisi, jabatan, role) VALUES ('$email', 
 // Jalankan query
 if ($conn->query($sql) === TRUE) {
     // Redirect kembali ke halaman yang diinginkan dengan slide index
-    header("Location: ../ADMIN/dashboardadmin1.php?slide=2");
+    header("Location: ../ADMIN/dashboardadmin.php?slide=2");
     exit(); // Pastikan eksekusi kode berhenti setelah pengalihan
 } else {
     // Jika penyisipan gagal, berikan pesan kesalahan
