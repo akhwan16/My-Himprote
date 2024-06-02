@@ -23,7 +23,9 @@ include 'listview.php';
                 <img src="../Assets/img/Group 207.png" alt="Logo">
             </div>
             <div class="reminder">
-                REMINDER!
+                
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
             </div>
         </div>
 
@@ -34,8 +36,6 @@ include 'listview.php';
 <body>
 
 
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
 
     <div class="slideshow-container">
         <div class="slide fade">
@@ -438,6 +438,8 @@ function submitForm() {
             window.location.href = "profile.php"; // Ganti "beranda" dengan ID atau anchor pada bagian halaman PHP yang ingin dituju
         });
     });
+    
+    window.history.replaceState({}, document.title, "My-Himprote");
 </script>
     <script src="nav.js"></script>
     <script src="slide.js"></script>

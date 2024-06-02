@@ -48,11 +48,11 @@ if(isset($_POST['email'])) {
         // Hapus token login Google dari local storage
         echo '<script>localStorage.removeItem("accessToken");</script>';
 
-        // Tampilkan pesan kesalahan menggunakan jendela peringatan
-        echo '<script>alert("Email '.$email.' tidak terdaftar sebagai FUNGSIONARIS HIMPROTE FT UNNES.");</script>';
        
-        // Redirect ke halaman utama
-        echo '<script>window.location.href = "../index.html";</script>';
+       
+         // Tampilkan pesan kesalahan menggunakan jendela peringatan
+         echo '<script>alert("Email '.$email.' tidak terdaftar sebagai FUNGSIONARIS HIMPROTE FT UNNES."); window.location.href = "../index.html";</script>';
+       
         exit;
     }
 } else {

@@ -11,12 +11,47 @@
 
 
     <title>Profil</title>
+    <div class="svg-container">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../Assets/img/Group 207.png" alt="Logo">
+            </div>
+            <div class="reminder">
+                Profil
+            </div>
+        </div>
 
-    <style>       body {
+    </div>
+
+    <style>       
+    body {
             background-color: #f0f2f5;
             font-family: Poppins;
+            overflow: hidden;
         }
-
+        .header-container {
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    border-bottom: 2px solid #1f4e79;
+    width:auto;
+    max-width:355px;
+    margin: 0 auto; /* Center the container horizontally */
+}
+.logo {
+    display: flex;
+    align-items: left;
+}
+.logo img {
+    height: 25px;
+}
+.reminder {
+    font-size: small;
+    font-weight: bold;
+    color: black;
+}
         .container {
             display: flex;
             padding-top: 100px;
@@ -233,6 +268,8 @@ if (logoutBtn) {
             window.location.href = "dashboardadmin.php"; // Ganti "beranda" dengan ID atau anchor pada bagian halaman PHP yang ingin dituju
         });
     });
+    window.history.replaceState({}, document.title, "My-Himprote");
+    
 </script>
 </footer>
 <script src="nav.js"></script>

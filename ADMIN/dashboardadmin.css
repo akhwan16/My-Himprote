@@ -18,7 +18,7 @@ body {
     padding: 5px 5px;
     border-bottom: 2px solid #1f4e79;
     width:auto;
-  
+    max-width:355px;
     margin: 0 auto; /* Center the container horizontally */
 }
 
@@ -175,6 +175,7 @@ cursor: pointer;
 .welcome-container {
     padding: 15px 0px;
     content: center;
+  
 }
 .welcome-message {
     font-size: larger;
@@ -442,10 +443,10 @@ position: relative; /* Menetapkan posisi relatif untuk memungkinkan penempatan p
   cursor: pointer;
   color: navy;
   font-weight: bold;
-  font-size: 10px;
-  border-radius: 5px;
+  font-size: 15px;
   user-select: none;
-  left: 95%;
+ left:20%; 
+padding:10px;
 }
 .popup {
 display: none;
