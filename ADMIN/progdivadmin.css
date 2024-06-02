@@ -1,0 +1,352 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #header {
+    padding: 10px;
+   
+    display: flex;
+   
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 2px solid #002469;
+    width: 100%; /* Menambahkan lebar penuh */
+  
+  }
+  
+  
+  .logo img {
+    width: 60%;
+  }
+  
+  .reminder {
+    font-size: small;
+    font-weight: bold;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    width: 100%;
+  }
+  #progja-list {
+    max-height: fit-content;
+    max-width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Menambahkan ini untuk pusat vertikal */
+    margin: 0 auto; /* Menambahkan ini untuk pusat horizontal */
+    overflow: hidden; /* Menghindari overflow */
+  }
+  
+  
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .progja-list-wrapper {
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  
+    
+  }
+  
+  .progja-list {
+    display: flex;
+    height: fit-content;
+    padding: 5px;
+    transition: transform 0.5s ease;
+   
+  }
+  
+  .progja-list .progja {
+    min-width: 200px;
+    min-height: fit-content;
+    margin-right: 10px;
+    border: 2px solid #002469;
+    box-shadow: 0 4px 4px rgba(0, 0.5, 0, 0.5);
+    border-radius: 15px;
+    padding: 10px;
+    font-size: small;
+  }
+  
+  .progja .button {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+  }
+  .button .details {
+    border: none;
+    outline: none;
+    color: #002469;
+    font-weight: bold;
+    background-color: transparent;
+  }
+  .button .departemen{
+    border: none;
+    outline: none;
+    background-color: #002469;
+    border-radius: 30px;
+    color: white;
+    padding: 5px 10px;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+  }
+  
+  .dot i {
+    font-size: 24px;
+    color: #bbb;
+    transition: color 0.3s ease;
+  }
+  
+  .dot.active i,
+  .dot:hover i {
+    color: #717171;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .deskripsi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #002469;
+    border-radius: 15px;
+    width: 90%;
+    padding: 10px;
+    margin: 15px auto;
+    text-align: justify;
+    max-width: 340px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  
+  }
+  .judul {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .deskripsi .teks {
+    font-size: small;
+    font-weight: 600;
+  }
+  
+  .choice {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 100%;
+    margin-bottom: 10px;
+    /* Membatasi lebar navbar */
+    height: fit-content;
+    background-color: transparent;
+    border: 3px solid #002469;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    max-width: 300px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  
+  }
+  
+  .choice-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .choice-item.active {
+    color: #002469;
+    transform: translateY(-5px);
+  }
+  
+  .choice-item span {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  
+  .choice-item::after {
+    content: "";
+    height: 3px;
+    background-color: #002469;
+    width: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .choice-item:hover::after {
+    color: #002469;
+    width: 100%;
+  }
+  
+  #job-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+    margin: 0 auto; /* Menambahkan ini untuk pusat horizontal */
+  }
+  
+  
+  
+  .job-list {
+    max-width: 280px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  
+    background-color: #f4f4f4ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 90%;
+    max-width: 100%;
+    padding: 10px;
+    border: 2px solid #002469;
+    /* Tambahkan border biru tua */
+  }
+  
+  .jobdesk {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .jobdesk-time {
+    font-size: 1.1em;
+    margin-right: 16px;
+    color: #333;
+    width: 50px;
+    padding-left: 30px;
+  }
+  
+  .jobdesk-content {
+    flex-grow: 1;
+    background-color: rgb(225, 223, 223);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .jobdesk-title {
+    font-size: 0.9em;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .jobdesk-subtitle {
+    font-size: 0.7em;
+    color: #888;
+  }
+  
+  .jobdesk-checkbox {
+    margin-right: 16px;
+  }
+  
+  .jobdesk:last-child {
+    margin-bottom: 0;
+  }
+  
+  .jobdesk-checkbox {
+    display: none;
+    /* Sembunyikan checkbox */
+  }
+  
+  .jobdesk {
+    position: relative;
+    /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
+  }
+  
+  .jobdesk-time:before {
+    content: " ";
+    position: absolute;
+    left: 15px;
+    /* Sesuaikan jarak dari sisi kiri */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    /* Mengurangi lebar */
+    height: 10px;
+    /* Mengurangi tinggi */
+    border-radius: 50%;
+    /* Membuat lingkaran */
+    background-color: red;
+    /* Warna biru tua */
+  }
+  
+  .jobdesk-checkbox:checked + .jobdesk:before {
+    background-color: lightblue;
+    /* Warna ketika tugas selesai */
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    width: 304px;
+    height: 54px;
+    background-color: #fff;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 5px; /* Adjust bottom margin if necessary */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    border: 2px solid  #ccc; /* Added border */
+    justify-content: space-evenly;
+    box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.1); /* enhanced shadow */
+  }
+  
+  .navbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+    padding-top: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .navbar-item.active {
+    color: #002469;
+  }
+  
+  .navbar-item i {
+    font-size: 15px;
+  }
+  
+  .navbar-item span {
+    font-size: 9px;
+    margin-top: 5px; /* Add space between icon and text */
+  }

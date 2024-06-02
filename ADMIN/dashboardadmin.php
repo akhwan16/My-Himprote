@@ -409,15 +409,12 @@ function submitForm() {
 
 </body>
 <footer>
-
-
-    </div>
     <div class="navbar">
         <div class="navbar-item active" id="home">
             <i class="fas fa-home"></i>
             <span>Beranda</span>
         </div>
-        <div class="navbar-item" id="task">
+        <div class="navbar-item" id="progdiv">
             <i class="fas fa-tasks"></i>
             <span>Progdiv</span>
         </div>
@@ -429,18 +426,24 @@ function submitForm() {
     <!-- Bootstrap JS and dependencies -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Mendapatkan elemen navbar-item untuk Beranda
-        var homeNavItem = document.getElementById('profile');
-
-        // Menambahkan event listener untuk mengarahkan pengguna ke bagian khusus halaman PHP saat navbar-item Beranda diklik
-        homeNavItem.addEventListener('click', function() {
+        var progdivNavItem = document.getElementById('progdiv');
+        
+        progdivNavItem.addEventListener('click', function() {
             // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-            window.location.href = "profile.php"; // Ganti "beranda" dengan ID atau anchor pada bagian halaman PHP yang ingin dituju
+            window.location.href = "progdivadmin1.html"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+        });
+        
+        var profileNavItem = document.getElementById('profile');
+
+        profileNavItem.addEventListener('click', function() {
+            // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
+            window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
         });
     });
     
     window.history.replaceState({}, document.title, "My-Himprote");
-</script>
+    </script>
+
     <script src="nav.js"></script>
     <script src="slide.js"></script>
     <script src="calendar.js"></script>
