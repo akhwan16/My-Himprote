@@ -15,83 +15,216 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <title>Dashboard</title>
+
+    <div class="svg-container">
+      <div class="header-container">
+        <div class="logo">
+          <img src="../Assets/img/Group 207.png" alt="Logo" />
+        </div>
+        <div class="reminder">PROGDIV!</div>
+      </div>
+    </div>
   </head>
 
   <body>
-    <header id="header">
-      <div class="header-container">
-        <div class="logo">
-          <img src="/My-Himprote/Assets/img/Group 207.png" alt="" />
-        </div>
-        <div class="reminder">PROGJA!</div>
-      </div>
-    </header>
-
     <main>
-    
-      </section>
-      <section id="deskripsi">
-        <div class="deskripsi">
-          <div class="judul">Deskripsi :</div>
-          <div class="teks">
-            Elektro Bersuara 2024" adalah forum inisiatif HIMPROTE Fakultas
-            Teknik Universitas Negeri Semarang, membuka ruang bagi mahasiswa
-            Teknik Elektro untuk menyampaikan aspirasi dan solusi inovatif
-            kepada pihak birokrasi. Melalui dialog konstruktif, kami berharap
-            menjembatani kesenjangan antara mahasiswa dan birokrasi, menciptakan
-            lingkungan akademik yang inklusif dan responsif. Kegiatan ini bukan
-            hanya wacana, tapi langkah konkret menuju perubahan positif bagi
-            kemajuan bersama.
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <div class="search-container">
+            <form method="GET" action="">
+              <div class="search-wrapper">
+                <input
+                  type="text"
+                  class="search-box"
+                  name="q"
+                  placeholder="Cari Progja"
+                />
+                <button type="submit" class="search-button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
           </div>
+          <section id="progja-list">
+            <div class="progja-list">
+              <div class="progja">
+                <div class="judul">Electrical Campus Observation</div>
+                <div class="button">
+                  <button class="details" onclick="changeSlide(1)">
+                    Details
+                  </button>
+                  <button class="divisi" onclick="changeSlide(2)">Divisi</button>
+                </div>
+              </div>
+              <div class="progja">
+                <div class="judul">Electrical Campus Observation</div>
+                <div class="button">
+                  <button class="details" onclick="changeSlide(1)">
+                    Details
+                  </button>
+                  <button class="divisi" onclick="changeSlide(2)">Divisi</button>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-      <section id="choice">
-        <div class="choice">
-          <div class="choice-item active" id="administrasi">
-            <span>Administrasi</span>
+        <div class="slide fade">
+          <div class="button-back">
+            <button class="back" onclick="changeSlide(-1)">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
           </div>
-          <div class="choice-item" id="Persiapan">
-            <span>Persiapan</span>
-          </div>
-          <div class="choice-item" id="Hari Acara">
-            <span>Hari Acara</span>
-          </div>
+          <section id="deskripsi">
+            <div class="deskripsi">
+              <div class="judul">Deskripsi :</div>
+              <div class="teks">
+                Elektro Bersuara 2024 adalah forum inisiatif HIMPROTE Fakultas
+                Teknik Universitas Negeri Semarang, membuka ruang bagi mahasiswa
+                Teknik Elektro untuk menyampaikan aspirasi dan solusi inovatif
+                kepada pihak birokrasi. Melalui dialog konstruktif, kami
+                berharap menjembatani kesenjangan antara mahasiswa dan
+                birokrasi, menciptakan lingkungan akademik yang inklusif dan
+                responsif. Kegiatan ini bukan hanya wacana, tapi langkah konkret
+                menuju perubahan positif bagi kemajuan bersama.
+              </div>
+            </div>
+          </section>
+          <section id="choice">
+            <div class="choice">
+              <div class="choice-item active" id="administrasi">
+                <span>Administrasi</span>
+              </div>
+              <div class="choice-item" id="Persiapan">
+                <span>Persiapan</span>
+              </div>
+              <div class="choice-item" id="Hari Acara">
+                <span>Hari Acara</span>
+              </div>
+            </div>
+          </section>
+          <section id="job-list">
+            <div class="job-list">
+              <div class="jobdesk">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">Absensi Rapat ELCO</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
+                  </div>
+                </div>
+              </div>
+              <div class="jobdesk">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">LPJ</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
+                  </div>
+                </div>
+              </div>
+              <div class="jobdesk">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">LPJ</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-      <section id="job-list">
-        <div class="job-list">
-          <div class="jobdesk">
-            <input type="checkbox" class="jobdesk-checkbox" />
-            <div class="jobdesk-time">
-              <i class="fa-solid fa-list-check"></i>
+        <div class="slide fade">
+          <section id="divisiku">
+            <div class="button-back2">
+              <button class="back2" onclick="changeSlide(-2)">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            <div class="divisiku">
+              <img src="/Assets/img/div.png" alt="" />HUMAS
             </div>
-            <div class="jobdesk-content">
-              <div class="jobdesk-title">Absensi Rapat ELCO</div>
-              <div class="jobdesk-subtitle">Electrical Campus Observation</div>
+          </section>
+          <section id="job-list">
+            <div class="job-list">
+              <div class="progress">Progress</div>
+              <div class="jobdesk">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">Absensi Rapat ELCO</div>
+                  <div class="jobdesk-subtitle">Electrical Campus Observation</div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="jobdesk-upload">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="jobdesk">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">LPJ</div>
+                  <div class="jobdesk-subtitle">Electrical Campus Observation</div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="jobdesk-upload">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="jobdesk">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">LPJ</div>
+                  <div class="jobdesk-subtitle">Electrical Campus Observation</div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="jobdesk-upload">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="jobdesk">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">LPJ</div>
+                  <div class="jobdesk-subtitle">Electrical Campus Observation</div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="jobdesk-upload">
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="jobdesk">
-            <input type="checkbox" class="jobdesk-checkbox" />
-            <div class="jobdesk-time">
-              <i class="fa-solid fa-list-check"></i>
-            </div>
-            <div class="jobdesk-content">
-              <div class="jobdesk-title">LPJ</div>
-              <div class="jobdesk-subtitle">Electrical Campus Observation</div>
-            </div>
-          </div>
-          <div class="jobdesk">
-            <input type="checkbox" class="jobdesk-checkbox" />
-            <div class="jobdesk-time">
-              <i class="fa-solid fa-list-check"></i>
-            </div>
-            <div class="jobdesk-content">
-              <div class="jobdesk-title">LPJ</div>
-              <div class="jobdesk-subtitle">Electrical Campus Observation</div>
-            </div>
-          </div>
+          </section>
         </div>
-      </section>
+      </div>
+
       <footer>
         <div class="navbar">
           <div class="navbar-item" id="home">
@@ -109,30 +242,30 @@
         </div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var homeNavItem = document.getElementById('home');
-                
-                homeNavItem.addEventListener('click', function() {
-                    // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-                    window.location.href = "dashboardadmin.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
-                });
-                
-                var profileNavItem = document.getElementById('profile');
-        
-                profileNavItem.addEventListener('click', function() {
-                    // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-                    window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
-                });
-            });
-            
-            window.history.replaceState({}, document.title, "My-Himprote");
-            </script>
+          document.addEventListener("DOMContentLoaded", function () {
+            var homeNavItem = document.getElementById("home");
 
+            homeNavItem.addEventListener("click", function () {
+              // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
+              window.location.href = "dashboardadmin.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+            });
+
+            var profileNavItem = document.getElementById("profile");
+
+            profileNavItem.addEventListener("click", function () {
+              // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
+              window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
+            });
+          });
+
+          window.history.replaceState({}, document.title, "My-Himprote");
+        </script>
       </footer>
     </main>
 
     <script src="nav.js"></script>
     <script src="calendar.js"></script>
+    <script src="/Assets/js/slide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     <script src="/script.js"></script>
