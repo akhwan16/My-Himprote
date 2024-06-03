@@ -74,6 +74,16 @@
               <i class="fa-solid fa-arrow-left"></i>
             </button>
           </div>
+          <section id="progja-ketua">
+            <div class="progja-ketua">
+              <div class="nama-progja">
+                Elektro Bersuara
+              </div>
+              <div class="nama-ketua">
+                Ketua: Haikal Rijaldi
+              </div>
+            </div>
+          </section>
           <section id="deskripsi">
             <div class="deskripsi">
               <div class="judul">Deskripsi :</div>
@@ -91,7 +101,7 @@
           </section>
           <section id="choice">
             <div class="choice">
-              <div class="choice-item active" id="administrasi">
+              <div class="choice-item" id="administrasi">
                 <span>Administrasi</span>
               </div>
               <div class="choice-item" id="Persiapan">
@@ -101,6 +111,25 @@
                 <span>Hari Acara</span>
               </div>
             </div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const choiceItems = document.querySelectorAll(".choice-item");
+              
+                choiceItems.forEach(item => {
+                  item.addEventListener("click", function () {
+                    // Remove active class from all items
+                    choiceItems.forEach(i => i.classList.remove("active"));
+                    
+                    // Add active class to the clicked item
+                    this.classList.add("active");
+              
+                    // Optional: Scroll to the relevant section or perform any other action
+                    
+                  });
+                });
+              });              
+            </script>
           </section>
           <section id="job-list">
             <div class="job-list">
@@ -140,9 +169,16 @@
                   </div>
                 </div>
               </div>
+
+              <div class="jobdesk-create">
+                <button class="create">
+                  <i class="fa-solid fa-circle-plus"></i>
+                </button>
+              </div>
             </div>
           </section>
         </div>
+
         <div class="slide fade">
           <section id="divisiku">
             <div class="button-back2">

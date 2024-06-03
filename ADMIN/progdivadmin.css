@@ -133,7 +133,7 @@ main {
 }
 
 .button-back{
-  max-width: 350px;
+  max-width: 370px;
   display: flex;
   margin: auto;
 }
@@ -161,6 +161,32 @@ button.back:hover {
   background-color: #c0c9df; /* Darker shade of the blue */
 }
 
+.progja-ketua {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.nama-progja {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+  margin-bottom: 1px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #002469;
+}
+
+.nama-ketua {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: small;
+  margin-top: 1px;
+}
+
 .deskripsi {
   display: flex;
   flex-direction: column;
@@ -186,17 +212,15 @@ button.back:hover {
   width: 90%;
   max-width: 100%;
   margin-bottom: 10px;
-  /* Membatasi lebar navbar */
   height: fit-content;
   background-color: transparent;
-  border: 3px solid #002469;
   border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   transition: transform 0.3s ease, background-color 0.3s ease;
-  max-width: 300px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  max-width: 350px;
 }
 
 .choice-item {
@@ -204,15 +228,15 @@ button.back:hover {
   flex-direction: column;
   align-items: center;
   padding: 5px;
-  color: #333;
+  color: #000000;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
-  font-weight: bold;
+  font-weight: 600;
+  position: relative;
 }
 
 .choice-item.active {
   color: #002469;
-  transform: translateY(-5px);
 }
 
 .choice-item span {
@@ -226,11 +250,12 @@ button.back:hover {
   background-color: #002469;
   width: 0;
   transition: all 0.3s ease;
+  position: absolute;
+  bottom: 3px; /* Adjust based on your layout */
 }
 
-.choice-item:hover::after {
-  color: #002469;
-  width: 100%;
+.choice-item.active::after, .choice-item:hover::after {
+  width: 90%;
 }
 
 #job-list {
@@ -331,6 +356,25 @@ button.back:hover {
 .jobdesk-checkbox:checked + .jobdesk:before {
   background-color: lightblue;
   /* Warna ketika tugas selesai */
+}
+
+.jobdesk-create {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button.create {
+  border: none;
+  cursor: pointer;
+}
+
+button i:hover {
+  color: #2550a2;
+}
+
+button i {
+  font-size: 35px;
+  color: #002469;
 }
 
 .divisiku {
