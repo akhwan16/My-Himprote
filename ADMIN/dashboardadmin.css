@@ -1,25 +1,21 @@
-
 body {
-    font-family: 'Poppins', sans-serif;
-  
-   
-    margin: 0;
-    padding: 0;
-    flex-direction: column; /* Mengatur semua elemen body agar vertikal */
-    align-items: center; /* Menyelaraskan konten secara horizontal di tengah */
+  font-family: "Poppins", sans-serif;
+
+  margin: 0;
+  padding: 0;
+  flex-direction: column; /* Mengatur semua elemen body agar vertikal */
+  align-items: center; /* Menyelaraskan konten secara horizontal di tengah */
 }
 
-
-
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 5px;
-    border-bottom: 2px solid #1f4e79;
-    width:auto;
-    max-width:355px;
-    margin: 0 auto; /* Center the container horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px;
+  border-bottom: 2px solid #1f4e79;
+  width: auto;
+  max-width: 355px;
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 .containerlist {
@@ -79,7 +75,6 @@ body {
   font-size: 8px;
   /* Mengurangi ukuran font */
   text-align: left;
-
 }
 
 .division {
@@ -124,7 +119,6 @@ select {
 }
 
 .submit-button {
-
   margin: 20px auto;
   /* Membuat tombol berada di tengah secara horizontal */
   padding: 10px 20px;
@@ -150,8 +144,7 @@ select {
 
 #icon1 {
   color: darkgreen;
-cursor: pointer;
-
+  cursor: pointer;
 }
 
 #icon2 {
@@ -161,257 +154,229 @@ cursor: pointer;
 }
 
 .logo {
-    display: flex;
-    align-items: left;
+  display: flex;
+  align-items: left;
 }
 .logo img {
-    height: 25px;
+  height: 25px;
 }
 .reminder {
-    font-size: small;
-    font-weight: bold;
-    color: black;
+  font-size: small;
+  font-weight: bold;
+  color: black;
 }
 .welcome-container {
-    padding: 15px 0px;
-    content: center;
-  
+  padding: 15px 0px;
+  content: center;
 }
 .welcome-message {
-    font-size: larger;
-    font-weight: bold;
-    text-align: center;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
 }
 .sub-message {
-    font-weight: bold;
-    font-size: small;
-    text-align: center;
-    margin-left:-120px;
-    margin-top:-2px;
-    
+  font-weight: bold;
+  font-size: small;
+  text-align: center;
+  margin-left: -120px;
+  margin-top: -2px;
 }
 .sub-message span {
-    color: #002469;
-    text-decoration: none;
-    font-weight: bold;
-    font-style: italic;
+  color: #002469;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .calendar {
-    height: 280px;
-    width: 280px;
-    max-width: 350px;
-    background-color: transparent;
-    border: 2px solid #002469;
-    border-radius: 10px;
-    padding: 10px;
-    padding-top:0px;
-    padding-bottom: 0px;
-    margin: 0 auto;
-    
-   
-
-  }
-  
-  .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 17px;
-    border-bottom: 2px solid #999999;
-    font-weight: 600;
-    color: black;
-    padding: 0px 0;
-    margin-top: -12px;
-  }
-  
- 
-  
-  .calendar-week-day {
-    height: 50px;
-    display: grid;
-  
-    grid-template-columns: repeat(7, 1fr);
-    font-weight: 600;
-  
-  }
-  
-  .calendar-week-day div {
-    display: grid;
-    place-items: center;
-    color: #002469;
-  }
-  
-  .calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    color: #002469;
-
-    
-  }
-  
-  .calendar-days div {
-  
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3px 0;
-    position: relative;
-    cursor: pointer;
-    transition: all ease;
-    pointer-events: none;
+  height: 280px;
+  width: 280px;
+  max-width: 350px;
+  background-color: transparent;
+  border: 2px solid #002469;
+  border-radius: 10px;
+  padding: 10px;
+  padding-top: 0px;
+  margin: 0 auto;
 }
-  .calendar-days div span {
-    position: absolute;
-    pointer-events: none;
-  }
- 
-  .year-picker {
-    display: flex;
-  }
-  
-  .year-change {
-    height: 40px;
-    width: 40px;
-   
-    display: grid;
-    place-items: center;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: all ease;
 
-    pointer-events: auto; /* Keep pointer events enabled */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  border-bottom: 2px solid #999999;
+  font-weight: 600;
+  color: black;
+  padding: 0px 0;
+}
 
-  }
-  
+.calendar-week-day {
+  height: 50px;
+  display: grid;
 
-  
-  .calendar-footer {
-    padding: 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  .toggle {
-    display: flex;
-  }
-  
-  .toggle span {
-    margin-right: 10px;
-    color: #002469;
-  }
-  
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 600;
+}
 
-  
-  .month-list > div {
-    display: grid;
-    place-items: center;
-  }
-  
-  .month-list > div > div {
-    width: 100%;
-    padding: 5px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .month-list > div > div:hover {
-    background-color: #666666;
-  }
-  
-  .event {
-    background-color: #002469;
-  }
-  .event form {
-    background-color: aqua;
-  }
-  
-  .calendar-week-day div {
-    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
-    font-weight: bold; /* Mengatur tebal (bold) */
-    font-size: 10px; /* Ukuran font */
+.calendar-week-day div {
+  display: grid;
+  place-items: center;
+  color: #002469;
+}
 
-   
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  color: #002469;
+}
+
+.calendar-days div {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 0;
+  position: relative;
+  cursor: pointer;
+  transition: all ease;
+  pointer-events: none;
+}
+.calendar-days div span {
+  position: absolute;
+  pointer-events: none;
+}
+
+.year-picker {
+  display: flex;
+}
+
+.year-change {
+  height: 40px;
+  width: 40px;
+
+  display: grid;
+  place-items: center;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all ease;
+
+  pointer-events: auto; /* Keep pointer events enabled */
+}
+
+.calendar-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.toggle {
+  display: flex;
+}
+
+.toggle span {
+  margin-right: 10px;
+  color: #002469;
+}
+
+.month-list > div {
+  display: grid;
+  place-items: center;
+}
+
+.month-list > div > div {
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+
+.month-list > div > div:hover {
+  background-color: #666666;
+}
+
+.event {
+  background-color: #002469;
+}
+.event form {
+  background-color: aqua;
+}
+
+.calendar-week-day div {
+  font-family: "Poppins", sans-serif; /* Menggunakan font Poppins */
+  font-weight: bold; /* Mengatur tebal (bold) */
+  font-size: 10px; /* Ukuran font */
 }
 
 .task-list {
-
-    width: 350px;
-padding-top:15px;
-    margin: 0 auto; /* Menempatkan di tengah */
-    padding-bottom:15px;
-
-   
+  width: 350px;
+  padding-top: 15px;
+  margin: 0 auto; /* Menempatkan di tengah */
+  padding-bottom: 15px;
 }
 
 .task {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    border-radius: 10px;
-    margin-bottom: 10px;
-    width: 90%; /* Mengurangi lebar */
-    height:50px;
-    
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 90%; /* Mengurangi lebar */
+  height: 50px;
 }
 
 .task-time {
-    font-size: 1em;
-    
-    margin-right: 16px;
-    color: #333;
-    width: 50px;
-    padding-left: 30px;
+  font-size: 1em;
+
+  margin-right: 16px;
+  color: #333;
+  width: 50px;
+  padding-left: 30px;
 }
 
 .task-content {
-    flex-grow: 5;
-    background-color: #e0e0e0;
-    border-radius: 8.5px;
-    padding: 10px;
-   
+  flex-grow: 5;
+  background-color: #e0e0e0;
+  border-radius: 8.5px;
+  padding: 10px;
 }
 
 .task-title {
-    font-size: 10px;
-    margin: 0;
-    color: #333;
-    font-weight: bold;
-    
+  font-size: 10px;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
 }
 
 .task-subtitle {
-    font-size: 8px;
-    color: #888;
+  font-size: 8px;
+  color: #888;
 }
 
 .task-checkbox {
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 .task:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-
 .task {
-position: relative; /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
+  position: relative; /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
 }
 
 .task-date {
-    font-weight: bold;
-   
-    padding-bottom: 10px;
-  
+  font-weight: bold;
+
+  padding-bottom: 10px;
 }
 .task-date span {
-    margin-left: 30px; /* Menggeser border ke kanan */
-    border-bottom: 2px solid #1f4e79; /* Menambahkan border ke kanan */
+  margin-left: 30px; /* Menggeser border ke kanan */
+  border-bottom: 2px solid #1f4e79; /* Menambahkan border ke kanan */
 }
 .slideshow-container {
   max-width: 600px;
@@ -428,16 +393,20 @@ position: relative; /* Menetapkan posisi relatif untuk memungkinkan penempatan p
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .slide-content {
-
   text-align: center;
 }
 
-.prev, .next {
+.prev,
+.next {
   position: relative;
   top: 50%;
   cursor: pointer;
@@ -445,142 +414,134 @@ position: relative; /* Menetapkan posisi relatif untuk memungkinkan penempatan p
   font-weight: bold;
   font-size: 15px;
   user-select: none;
- left:20%; 
-padding:10px;
+  left: 20%;
+  padding: 10px;
 }
 .popup {
-display: none;
-/* Hidden by default */
-position: fixed;
-z-index: 1;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 
-background-color: rgb(0, 0, 0);
-background-color: rgba(0, 0, 0, 0.4);
-/* Black w/ opacity */
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 .popup-content {
-background-color: #fefefe;
-margin: 80px auto;
-padding: 20px;
+  background-color: #fefefe;
+  margin: 80px auto;
+  padding: 20px;
 
-border: 1px solid #1f4e79;
-cegah scroll */
+  border: 1px solid #1f4e79;
 
-width: 80%;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-border-radius: 15px;
-border: 3px solid navy;
-max-width: 350px;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  border: 3px solid navy;
+  max-width: 350px;
 }
 
 .form {
-display: flex;
-flex-direction: column;
-text-align: left;
-
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .close {
-color: #aaa;
-float: right;
-font-size: 28px;
-font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-color: black;
-text-decoration: none;
-cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .search-container {
-margin-top: 20px;
-text-align: center;
-padding-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .search-box {
-
-padding: 10px;
-/* Tambahkan padding di sisi kanan untuk ikon */
-border: 1px solid #ccc;
-border-radius: 20px;
-width: 270px;
-max-width: 100%;
-box-sizing: border-box;
-font-size: 16px;
+  padding: 10px;
+  /* Tambahkan padding di sisi kanan untuk ikon */
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 270px;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 .search-button {
+  border: none;
+  border-radius: 10px;
 
-border: none;
-border-radius: 10px;
-
-color: #1f4e79;
-font-size: 16px;
-cursor: pointer;
+  color: #1f4e79;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .action-button {
-
-border: none;
-background-color: #1f4e79;
-border-radius: 5px;
-border-style: 2px;
-margin-right: 10px;
-color: white;
-font-size: 14px;
-cursor: pointer;
-padding: 10px 10px 10px 10px;
+  border: none;
+  background-color: #1f4e79;
+  border-radius: 5px;
+  border-style: 2px;
+  margin-right: 10px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px 10px 10px 10px;
 }
 
-
-
-
-nav{
+nav {
   width: 100%;
 }
 .navbar {
-display: flex;
-align-items: center;
-width: 300px;
-height: 50px;
-background-color: #fff;
-border-radius: 30px;
-position: fixed;
-bottom: 5px; /* Adjust bottom margin if necessary */
-left: 50%; /* Center horizontally */
-transform: translateX(-50%); /* Center horizontally */
-border: 2px solid  #ccc; /* Added border */
-justify-content: space-evenly;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* existing shadow */
- 0 6px 20px rgba(0, 0, 0, 0.1); /* enhanced shadow */
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 30px;
+  position: fixed;
+  bottom: 5px; /* Adjust bottom margin if necessary */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  border: 2px solid #ccc; /* Added border */
+  justify-content: space-evenly;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+    /* existing shadow */ 0 6px 20px rgba(0, 0, 0, 0.1); /* enhanced shadow */
 }
 
 .navbar-item {
-display: flex;
-flex-direction: column;
-align-items: center;
-color: #333;
-cursor: pointer;
-transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-item.active {
-color: #002469;
+  color: #002469;
 }
 
 .navbar-item i {
-font-size: 15px;
+  font-size: 15px;
 }
 
 .navbar-item span {
-font-size: 9px;
-margin-top: 5px; /* Add space between icon and text */
+  font-size: 9px;
+  margin-top: 5px; /* Add space between icon and text */
 }
