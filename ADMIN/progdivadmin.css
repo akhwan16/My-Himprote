@@ -146,16 +146,15 @@ button.back {
   color: #002469;
   border: 2px solid #002469;
   width: 10%;
-  max-width: 340px;
   border-radius: 30px;
-  padding: 5px 10px;
-  font-size: 14px;
   cursor: pointer;
-  font-weight: bold;
   outline: none;
   transition: background-color 0.3s ease;
 }
 
+button.back i {
+  font-size: large;
+}
 
 button.back:hover {
   background-color: #c0c9df; /* Darker shade of the blue */
@@ -254,7 +253,7 @@ button.back:hover {
   bottom: 3px; /* Adjust based on your layout */
 }
 
-.choice-item.active::after, .choice-item:hover::after {
+.choice-item:hover::after {
   width: 90%;
 }
 
@@ -269,7 +268,7 @@ button.back:hover {
 .job-list {
   max-width: 280px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
   background-color: #f4f4f4ff;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 90%;
@@ -292,10 +291,10 @@ button.back:hover {
 
 .jobdesk-time {
   font-size: 1.1em;
-  margin-right: 16px;
+  margin-right: -18px;
   color: #333;
   width: 50px;
-  padding-left: 30px;
+  padding-left: 25px;
 }
 
 .jobdesk-content {
@@ -361,6 +360,62 @@ button.back:hover {
 .jobdesk-create {
   display: flex;
   justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 80px auto;
+  padding: 20px;
+  border: 1px solid #1f4e79;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  border: 3px solid navy;
+  max-width: 350px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7em;
+}
+
+#icon1 {
+  color: darkgreen;
+  cursor: pointer;
+}
+
+#icon2 {
+  color: darkred;
+  cursor: pointer;
 }
 
 button.create {
@@ -428,7 +483,7 @@ button i {
 }
 
 .button-back2{
-  max-width: 350px;
+  max-width: 370px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -443,16 +498,15 @@ button.back2 {
   color: #002469;
   border: 2px solid #002469;
   width: 10%;
-  max-width: 340px;
   border-radius: 30px;
-  padding: 5px 10px;
-  font-size: 14px;
   cursor: pointer;
-  font-weight: bold;
   outline: none;
   transition: background-color 0.3s ease;
 }
 
+button.back2 i {
+  font-size: large;
+}
 
 button.back2:hover {
   background-color: #c0c9df; /* Darker shade of the blue */
