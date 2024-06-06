@@ -182,10 +182,17 @@ main {
 #job-list {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 100%;/* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  margin: 0 auto; /* Menambahkan ini untuk pusat horizontal */
 }
 
+
+
 .job-list {
+  max-width: 280px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+
+  background-color: #f4f4f4ff;
+  border-radius: 10px;
   background-color: transparent;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -218,19 +225,17 @@ main {
   display: flex;
   align-items: center;
   padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin-bottom: 10px;
 }
-
 .jobdesk-time {
   font-size: 1.1em;
   margin-right: 16px;
   color: #333;
   width: 50px;
   padding-left: 30px;
-  color: white;
-  background-color: greenyellow;
-  border-radius: 50%;
 }
 
 .jobdesk-content {
@@ -240,22 +245,55 @@ main {
   border-radius: 8px;
   padding: 10px;
 }
-
 .jobdesk-title {
   font-size: 0.9em;
   margin: 0;
   color: #333;
   font-weight: bold;
 }
-
 .jobdesk-subtitle {
   font-size: 0.7em;
   color: #888;
 }
 
+.jobdesk-checkbox {
+  margin-right: 16px;
+}
+
+.jobdesk:last-child {
+  margin-bottom: 0;
+}
+
+.jobdesk-checkbox {
+  display: none;
+  /* Sembunyikan checkbox */
+}
+
 .jobdesk {
   position: relative;
   /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
+}
+
+.jobdesk-time:before {
+  content: " ";
+  position: absolute;
+  left: 15px;
+  /* Sesuaikan jarak dari sisi kiri */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  /* Mengurangi lebar */
+  height: 10px;
+  /* Mengurangi tinggi */
+  border-radius: 50%;
+  /* Membuat lingkaran */
+  background-color: red;
+  /* Warna biru tua */
+}
+
+.jobdesk-checkbox:checked + .jobdesk:before {
+  background-color: lightblue;
+  /* Warna ketika tugas selesai */
 }
 
 .navbar {
