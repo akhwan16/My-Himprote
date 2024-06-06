@@ -203,34 +203,10 @@
             }
         };
     </script>
-    <footer>
-        <div class="navbar">
-            <div class="navbar-item" id="home">
-                <i class="fas fa-home"></i>
-                <span>Beranda</span>
-            </div>
-            <div class="navbar-item" id="task">
-                <i class="fas fa-tasks"></i>
-                <span>Progdiv</span>
-            </div>
-            <div class="navbar-item active" id="profile">
-                <i class="fas fa-user"></i>
-                <span>Profil</span>
-            </div>
-        </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var homeNavItem = document.getElementById('home');
-                homeNavItem.addEventListener('click', function() {
-                    window.location.href = "dashboardadmin.php";
-                });
-                var progdivNavItem = document.getElementById('task');
-                progdivNavItem.addEventListener('click', function() {
-                    window.location.href = "progdivadmin1.html";
-                });
-            });
-            window.history.replaceState({}, document.title, "My-Himprote");
-        </script>
-    </footer>
 </body>
+
+<?php 
+    include "/My-Himprote/layout/footer.html" 
+?>
+
 </html>

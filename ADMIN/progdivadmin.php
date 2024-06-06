@@ -327,50 +327,11 @@
           </section>
         </div>
       </div>
-
-      <footer>
-        <div class="navbar">
-          <div class="navbar-item" id="home">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-          </div>
-          <div class="navbar-item active" id="jobdesk">
-            <i class="fas fa-tasks"></i>
-            <span>Progdiv</span>
-          </div>
-          <div class="navbar-item" id="profile">
-            <i class="fas fa-user"></i>
-            <span>Profile</span>
-          </div>
-        </div>
-
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            var homeNavItem = document.getElementById("home");
-
-            homeNavItem.addEventListener("click", function () {
-              // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-              window.location.href = "dashboardadmin.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
-            });
-
-            var profileNavItem = document.getElementById("profile");
-
-            profileNavItem.addEventListener("click", function () {
-              // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-              window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
-            });
-          });
-
-          window.history.replaceState({}, document.title, "My-Himprote");
-        </script>
-      </footer>
     </main>
-
-    <script src="nav.js"></script>
-    <script src="calendar.js"></script>
-    <script src="/Assets/js/slide.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="/script.js"></script>
   </body>
+  
+  <?php 
+    include "/My-Himprote/layout/footer.html"
+  ?>
+
 </html>
