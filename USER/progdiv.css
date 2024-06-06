@@ -126,6 +126,25 @@ main {
   font-weight: 600;
 }
 
+.slideshow-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+.slides {
+  display: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.slides.active {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .choice {
   display: flex;
   justify-content: space-around;
@@ -179,18 +198,11 @@ main {
   width: 100%;
 }
 
-#job-list {
-  display: flex;
-  justify-content: center;
-  width: 100%;/* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
-  margin: 0 auto; /* Menambahkan ini untuk pusat horizontal */
-}
-
-
-
 .job-list {
-  max-width: 280px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
-
+  align-items: center;
+  justify-content: center;
+  max-width: 280px;
+  /* Anda bisa mengatur lbar maksimum sesuai kebutuhan */
   background-color: #f4f4f4ff;
   border-radius: 10px;
   background-color: transparent;
@@ -204,10 +216,8 @@ main {
   /* Tambahkan border biru tua */
 }
 
-.job-list .progress {
-  position: relative;
-  left: 40%;
-  margin: 0 0 10px 0;
+label {
+  margin: auto;
   text-transform: uppercase;
   border: 2px solid #002469;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -218,7 +228,11 @@ main {
   width: fit-content;
   padding: 5px;
   font-size: small;
-
+}
+.job-list label{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .jobdesk {
@@ -230,6 +244,7 @@ main {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
 .jobdesk-time {
   font-size: 1.1em;
   margin-right: 16px;
@@ -245,12 +260,14 @@ main {
   border-radius: 8px;
   padding: 10px;
 }
+
 .jobdesk-title {
   font-size: 0.9em;
   margin: 0;
   color: #333;
   font-weight: bold;
 }
+
 .jobdesk-subtitle {
   font-size: 0.7em;
   color: #888;
@@ -291,7 +308,7 @@ main {
   /* Warna biru tua */
 }
 
-.jobdesk-checkbox:checked + .jobdesk:before {
+.jobdesk-checkbox:checked+.jobdesk:before {
   background-color: lightblue;
   /* Warna ketika tugas selesai */
 }
