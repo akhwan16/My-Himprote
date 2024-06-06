@@ -143,17 +143,12 @@
                   <div class="jobdesk-subtitle">
                     Electrical Campus Observation
                   </div>
-                </div>
-              </div>
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">LPJ</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
                   </div>
                 </div>
               </div>
@@ -166,15 +161,87 @@
                   <div class="jobdesk-title">LPJ</div>
                   <div class="jobdesk-subtitle">
                     Electrical Campus Observation
+                  </div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="jobdesk">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">LPJ</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
+                  </div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
                   </div>
                 </div>
               </div>
 
+              
+            
               <div class="jobdesk-create">
-                <button class="create">
-                  <i class="fa-solid fa-circle-plus"></i>
+                <button id="openPopupBtn1" class="create">
+                    <i class="fa-solid fa-circle-plus"></i>
                 </button>
-              </div>
+            </div>
+            
+            <div id="popup1" class="popup">
+                <div class="popup-content">
+                    <span id="closePopupBtn1" class="close">&times;</span>
+                    <h2>Silahkan isi form</h2>
+                    <div class="form">
+                        <label for="emailCreate">Email *</label>
+                        <input type="email" id="emailCreate" name="email" required>
+                        <label for="nameCreate">Nama *</label>
+                        <input type="text" id="nameCreate" name="name" required>
+                        <label for="divisionCreate">Pilih Departemen*</label>
+                        <select id="divisionCreate" name="division" required>
+                            <option value="">--Pilih Departemen--</option>
+                            <option value="Pengurus Harian">Pengurus Harian</option>
+                            <option value="Departemen A">Departemen A</option>
+                            <option value="Departemen B">Departemen B</option>
+                            <option value="Departemen C">Departemen C</option>
+                            <option value="Departemen D">Departemen D</option>
+                            <option value="Departemen E">Departemen E</option>
+                            <option value="Departemen F">Departemen F</option>
+                        </select>
+                        <label for="positionCreate">Jabatan *</label>
+                        <select id="positionCreate" name="position" required>
+                            <option value="">--Pilih Jabatan--</option>
+                            <option value="Ketua HIMPROTE">Ketua HIMPROTE</option>
+                            <option value="Wakil Ketua HIMPROTE">Wakil Ketua HIMPROTE</option>
+                            <option value="Sekretaris umum">Sekretaris umum</option>
+                            <option value="Bendahara umum">Bendahara umum</option>
+                            <option value="Sekretaris 2">Sekretaris 2</option>
+                            <option value="Bendahara 2">Bendahara 2</option>
+                            <option value="Ketua Departemen">Ketua Departemen</option>
+                            <option value="Sekretaris Departemen">Sekretaris Departemen</option>
+                            <option value="Staff Ahli">Staff Ahli</option>
+                            <option value="Staf Muda">Staf Muda</option>
+                        </select>
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-upload"></i> Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <script src="popup.js"></script>
+            
             </div>
           </section>
         </div>
@@ -260,50 +327,11 @@
           </section>
         </div>
       </div>
-
-      <footer>
-        <div class="navbar">
-          <div class="navbar-item" id="home">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-          </div>
-          <div class="navbar-item active" id="jobdesk">
-            <i class="fas fa-tasks"></i>
-            <span>Progdiv</span>
-          </div>
-          <div class="navbar-item" id="profile">
-            <i class="fas fa-user"></i>
-            <span>Profile</span>
-          </div>
-        </div>
-
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            var homeNavItem = document.getElementById("home");
-
-            homeNavItem.addEventListener("click", function () {
-              // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-              window.location.href = "dashboardadmin.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
-            });
-
-            var profileNavItem = document.getElementById("profile");
-
-            profileNavItem.addEventListener("click", function () {
-              // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-              window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
-            });
-          });
-
-          window.history.replaceState({}, document.title, "My-Himprote");
-        </script>
-      </footer>
     </main>
-
-    <script src="nav.js"></script>
-    <script src="calendar.js"></script>
-    <script src="/Assets/js/slide.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="/script.js"></script>
   </body>
+  
+  <?php 
+    include "/My-Himprote/layout/footer.html"
+  ?>
+
 </html>
