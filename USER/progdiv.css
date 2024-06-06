@@ -10,9 +10,6 @@ body {
 
 #header {
   padding: 10px;
- 
-  display: flex;
- 
 }
 
 .header-container {
@@ -21,10 +18,7 @@ body {
   justify-content: space-between;
   padding: 5px;
   border-bottom: 2px solid #002469;
-  width: 100%; /* Menambahkan lebar penuh */
-
 }
-
 
 .logo img {
   width: 60%;
@@ -41,41 +35,29 @@ main {
   padding-bottom: 100px;
   width: 100%;
 }
+
 #progja-list {
-  max-height: fit-content;
+  height: fit-content;
   max-width: 100%;
   padding: 5px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Menambahkan ini untuk pusat vertikal */
-  margin: 0 auto; /* Menambahkan ini untuk pusat horizontal */
-  overflow: hidden; /* Menghindari overflow */
-}
-
-
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-.progja-list-wrapper {
-  overflow: hidden;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 700px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
-
-  
 }
 
 .progja-list {
   display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  gap: 1em;
+  margin: auto;
   height: fit-content;
   padding: 5px;
-  transition: transform 0.5s ease;
- 
+  overflow-x: auto;
+}
+
+.progja-list::-webkit-scrollbar {
+  width: 0;
 }
 
 .progja-list .progja {
@@ -85,6 +67,9 @@ main {
   border: 2px solid #002469;
   box-shadow: 0 4px 4px rgba(0, 0.5, 0, 0.5);
   border-radius: 15px;
+  max-width: 100%;
+  padding: 15px;
+  margin: 5px 0;
   padding: 10px;
   font-size: small;
 }
@@ -94,61 +79,48 @@ main {
   justify-content: space-around;
   margin-top: 40px;
 }
+
 .button .details {
   border: none;
   outline: none;
+  background-color: transparent;
   color: #002469;
   font-weight: bold;
-  background-color: transparent;
 }
-.button .departemen{
+
+.button .divisi {
+  border-radius: 10px;
   border: none;
-  outline: none;
   background-color: #002469;
-  border-radius: 30px;
   color: white;
-  padding: 5px 10px;
+  font-weight: 100;
+  width: fit-content;
+  padding: 0 10px;
 }
 
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-}
-
-.dot i {
-  font-size: 24px;
-  color: #bbb;
-  transition: color 0.3s ease;
-}
-
-.dot.active i,
-.dot:hover i {
-  color: #717171;
-}
-
-.hidden {
-  display: none;
-}
-
-.deskripsi {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 2px solid #002469;
-  border-radius: 15px;
-  width: 90%;
-  padding: 10px;
-  margin: 15px auto;
-  text-align: justify;
-  max-width: 340px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
-
-}
 .judul {
+  font-size: 20px;
   font-size: 15px;
   font-weight: bold;
 }
+
+#deskripsi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+.deskripsi {
+  border: 2px solid #002469;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: justify;
+  width: 90%;
+  margin: 0 0 10px 0;
+}
+
 .deskripsi .teks {
   font-size: small;
   font-weight: 600;
@@ -158,21 +130,18 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 90%;
-  max-width: 100%;
-  margin-bottom: 10px;
+  width: 92%;
+  margin: 0 0 10px 0;
   /* Membatasi lebar navbar */
   height: fit-content;
   background-color: transparent;
   border: 3px solid #002469;
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%);
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
   transition: transform 0.3s ease, background-color 0.3s ease;
-  max-width: 300px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
-
 }
 
 .choice-item {
@@ -189,6 +158,7 @@ main {
 .choice-item.active {
   color: #002469;
   transform: translateY(-5px);
+  position: relative;
 }
 
 .choice-item span {
@@ -213,17 +183,11 @@ main {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 380px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
-  margin: 0 auto; /* Menambahkan ini untuk pusat horizontal */
 }
 
-
-
 .job-list {
-  max-width: 280px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
-
-  background-color: #f4f4f4ff;
-  border-radius: 10px;
+  background-color: transparent;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 90%;
@@ -233,12 +197,27 @@ main {
   /* Tambahkan border biru tua */
 }
 
+.job-list .progress {
+  position: relative;
+  left: 40%;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  border: 2px solid #002469;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background-color: #002469;
+  border-radius: 15px;
+  color: white;
+  max-width: 100%;
+  width: fit-content;
+  padding: 5px;
+  font-size: small;
+
+}
+
 .jobdesk {
   display: flex;
   align-items: center;
   padding: 10px;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -249,6 +228,9 @@ main {
   color: #333;
   width: 50px;
   padding-left: 30px;
+  color: white;
+  background-color: greenyellow;
+  border-radius: 50%;
 }
 
 .jobdesk-content {
@@ -271,82 +253,53 @@ main {
   color: #888;
 }
 
-.jobdesk-checkbox {
-  margin-right: 16px;
-}
-
-.jobdesk:last-child {
-  margin-bottom: 0;
-}
-
-.jobdesk-checkbox {
-  display: none;
-  /* Sembunyikan checkbox */
-}
-
 .jobdesk {
   position: relative;
   /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
 }
 
-.jobdesk-time:before {
-  content: " ";
-  position: absolute;
-  left: 15px;
-  /* Sesuaikan jarak dari sisi kiri */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  /* Mengurangi lebar */
-  height: 10px;
-  /* Mengurangi tinggi */
-  border-radius: 50%;
-  /* Membuat lingkaran */
-  background-color: red;
-  /* Warna biru tua */
-}
-
-.jobdesk-checkbox:checked + .jobdesk:before {
-  background-color: lightblue;
-  /* Warna ketika tugas selesai */
-}
-
 .navbar {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  width: 304px;
-  height: 54px;
+  width: 100%;
+  max-width: 100%;
+  /* Membatasi lebar navbar */
+  height: 60px;
   background-color: #fff;
   border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
-  bottom: 5px; /* Adjust bottom margin if necessary */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  border: 2px solid  #ccc; /* Added border */
-  justify-content: space-evenly;
-  box-shadow: 
-              0 4px 8px rgba(0, 0, 0, 0.1); /* enhanced shadow */
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0px;
   color: #333;
   cursor: pointer;
-  padding-top: 1px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-item.active {
   color: #002469;
+  transform: translateY(-5px);
 }
 
 .navbar-item i {
-  font-size: 15px;
+  font-size: 24px;
 }
 
 .navbar-item span {
-  font-size: 9px;
-  margin-top: 5px; /* Add space between icon and text */
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.navbar-item:hover {
+  color: #007BFF;
 }
