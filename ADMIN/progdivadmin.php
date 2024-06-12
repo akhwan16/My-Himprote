@@ -229,7 +229,7 @@
                                     <option value="Disman">Disman</option>
                                     <option value="Korlap">Korlap</option>
                                 </select>
-                                <button type="submit" class="submit-button"><i class="fas fa-upload"></i> Submit</button>
+                                <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
                         </button>
                     </div>
                 </div>
