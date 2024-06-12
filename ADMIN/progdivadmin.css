@@ -16,16 +16,19 @@ body {
   border-bottom: 2px solid #1f4e79;
   width: auto;
   max-width: 355px;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
+  /* Center the container horizontally */
 }
 
 .logo {
   display: flex;
   align-items: left;
 }
+
 .logo img {
   height: 25px;
 }
+
 .reminder {
   font-size: small;
   font-weight: bold;
@@ -38,6 +41,7 @@ main {
   padding-bottom: 100px;
   width: 100%;
 }
+
 .search-container {
   margin: 15px auto;
   text-align: center;
@@ -104,6 +108,7 @@ main {
   gap: 4em;
   margin-top: 10px;
 }
+
 .button .details {
   border: none;
   outline: none;
@@ -132,7 +137,7 @@ main {
   cursor: pointer;
 }
 
-.button-back{
+.button-back {
   max-width: 370px;
   display: flex;
   margin: auto;
@@ -157,7 +162,8 @@ button.back i {
 }
 
 button.back:hover {
-  background-color: #c0c9df; /* Darker shade of the blue */
+  background-color: #c0c9df;
+  /* Darker shade of the blue */
 }
 
 .progja-ketua {
@@ -196,7 +202,8 @@ button.back:hover {
   padding: 10px;
   margin: 7px auto;
   text-align: justify;
-  max-width: 340px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  max-width: 340px;
+  /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
 }
 
 .deskripsi .teks {
@@ -250,7 +257,8 @@ button.back:hover {
   width: 0;
   transition: all 0.3s ease;
   position: absolute;
-  bottom: 3px; /* Adjust based on your layout */
+  bottom: 3px;
+  /* Adjust based on your layout */
 }
 
 .choice-item:hover::after {
@@ -261,12 +269,15 @@ button.back:hover {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 380px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
-  margin: 10px auto; /* Menambahkan ini untuk pusat horizontal */
+  max-width: 380px;
+  /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  margin: 10px auto;
+  /* Menambahkan ini untuk pusat horizontal */
 }
 
 .job-list {
-  max-width: 280px; /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
+  max-width: 280px;
+  /* Anda bisa mengatur lebar maksimum sesuai kebutuhan */
   background-color: #f4f4f4ff;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -352,7 +363,7 @@ button.back:hover {
   /* Warna biru tua */
 }
 
-.jobdesk-checkbox:checked + .jobdesk:before {
+.jobdesk-checkbox:checked+.jobdesk:before {
   background-color: lightblue;
   /* Warna ketika tugas selesai */
 }
@@ -378,13 +389,21 @@ button.back:hover {
 .popup-content {
   background-color: #fefefe;
   margin: 80px auto;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
   border: 1px solid #1f4e79;
   width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   border: 3px solid navy;
   max-width: 350px;
+  text-align: center;
+}
+
+.popup-content .form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
 
 .close {
@@ -401,6 +420,33 @@ button.back:hover {
   cursor: pointer;
 }
 
+input[type="nama"],
+input[type="keterangan"],
+select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+
+  background-color: #e8f0fe;
+}
+
+.submit-button {
+  margin: 20px auto;
+  /* Membuat tombol berada di tengah secara horizontal */
+  padding: 10px 20px;
+  background-color: #000080;
+  color: #fff;
+  width: 150px;
+  justify-content: center;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.submit-button i {
+  margin-right: 5px;
+  color: white;
+}
 
 .icon-container {
   display: flex;
@@ -477,17 +523,17 @@ button i {
 }
 
 .jobdesk-upload {
-    margin: 1px auto;
-    display: flex;
-    justify-content: flex-end;
+  margin: 1px auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.button-back2{
+.button-back2 {
   max-width: 370px;
   display: flex;
   flex-direction: column;
   margin: auto;
-  
+
 }
 
 button.back2 {
@@ -509,7 +555,8 @@ button.back2 i {
 }
 
 button.back2:hover {
-  background-color: #c0c9df; /* Darker shade of the blue */
+  background-color: #c0c9df;
+  /* Darker shade of the blue */
 }
 
 .navbar {
@@ -520,12 +567,17 @@ button.back2:hover {
   background-color: #fff;
   border-radius: 30px;
   position: fixed;
-  bottom: 5px; /* Adjust bottom margin if necessary */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  border: 2px solid #ccc; /* Added border */
+  bottom: 5px;
+  /* Adjust bottom margin if necessary */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center horizontally */
+  border: 2px solid #ccc;
+  /* Added border */
   justify-content: space-evenly;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* enhanced shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* enhanced shadow */
 }
 
 .navbar-item {
@@ -548,5 +600,6 @@ button.back2:hover {
 
 .navbar-item span {
   font-size: 9px;
-  margin-top: 5px; /* Add space between icon and text */
+  margin-top: 5px;
+  /* Add space between icon and text */
 }

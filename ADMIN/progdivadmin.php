@@ -204,37 +204,32 @@
                     <span id="closePopupBtn1" class="close">&times;</span>
                     <h2>Silahkan isi form</h2>
                     <div class="form">
-                        <label for="emailCreate">Email *</label>
-                        <input type="email" id="emailCreate" name="email" required>
-                        <label for="nameCreate">Nama *</label>
-                        <input type="text" id="nameCreate" name="name" required>
-                        <label for="divisionCreate">Pilih Departemen*</label>
-                        <select id="divisionCreate" name="division" required>
-                            <option value="">--Pilih Departemen--</option>
-                            <option value="Pengurus Harian">Pengurus Harian</option>
-                            <option value="Departemen A">Departemen A</option>
-                            <option value="Departemen B">Departemen B</option>
-                            <option value="Departemen C">Departemen C</option>
-                            <option value="Departemen D">Departemen D</option>
-                            <option value="Departemen E">Departemen E</option>
-                            <option value="Departemen F">Departemen F</option>
+                        <label for="namaCreate">Nama *</label>
+                        <input type="nama" id="namaCreate" name="nama" required>
+                        <label for="keteranganCreate">Keterangan *</label>
+                        <input type="keterangan" id="keteranganCreate" name="keterangan" required>
+                        <label for="kategoriCreate">Kategori *</label>
+                        <select id="kategori" name="kategori" required>
+                          <option value="administrasi">--Pilih Kategori--</option>
+                          <option value="administrasi">Administrasi</option>
+                          <option value="persiapan">Persiapan</option>
+                          <option value="hari acara">Hari Acara</option>
                         </select>
-                        <label for="positionCreate">Jabatan *</label>
-                        <select id="positionCreate" name="position" required>
-                            <option value="">--Pilih Jabatan--</option>
-                            <option value="Ketua HIMPROTE">Ketua HIMPROTE</option>
-                            <option value="Wakil Ketua HIMPROTE">Wakil Ketua HIMPROTE</option>
-                            <option value="Sekretaris umum">Sekretaris umum</option>
-                            <option value="Bendahara umum">Bendahara umum</option>
-                            <option value="Sekretaris 2">Sekretaris 2</option>
-                            <option value="Bendahara 2">Bendahara 2</option>
-                            <option value="Ketua Departemen">Ketua Departemen</option>
-                            <option value="Sekretaris Departemen">Sekretaris Departemen</option>
-                            <option value="Staff Ahli">Staff Ahli</option>
-                            <option value="Staf Muda">Staf Muda</option>
-                        </select>
-                        <button type="submit" class="submit-button">
-                            <i class="fas fa-upload"></i> Submit
+                        <label for="division">Pilih Divisi *</label>
+                                <select id="division" name="division" required>
+                                    <option value="">--Pilih Divisi--</option>
+                                    <option value="Acara">Acara</option>
+                                    <option value="Kreatif">Kreatif</option>
+                                    <option value="Humas">Humas</option>
+                                    <option value="Perkab">Perkab</option>
+                                    <option value="PDD">PDD</option>
+                                    <option value="Kestari">Kestari</option>
+                                    <option value="Konsumsi">Konsumsi</option>
+                                    <option value="P3K">P3K</option>
+                                    <option value="Disman">Disman</option>
+                                    <option value="Korlap">Korlap</option>
+                                </select>
+                                <button type="submit" class="submit-button"><i class="fas fa-upload"></i> Submit</button>
                         </button>
                     </div>
                 </div>
