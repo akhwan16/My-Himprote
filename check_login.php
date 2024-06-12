@@ -51,13 +51,13 @@ if(isset($_POST['email'])) {
        
        
          // Tampilkan pesan kesalahan menggunakan jendela peringatan
-         echo '<script>alert("Email '.$email.' tidak terdaftar sebagai FUNGSIONARIS HIMPROTE FT UNNES."); window.location.href = "../index.html";</script>';
+         echo '<script>alert("Email '.$email.' tidak terdaftar sebagai FUNGSIONARIS HIMPROTE FT UNNES."); window.location.href = "../index.php";</script>';
        
         exit;
     }
 } else {
     // Redirect ke halaman utama jika tidak ada email yang dikirimkan
-    echo '<script>window.location.href = "../index.html";</script>';
+    echo '<script>window.location.href = "../index.php";</script>';
     exit;
 }
 ?>
