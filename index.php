@@ -110,7 +110,7 @@
           }
       
           handleLoginResponse(); // Panggil fungsi untuk menangani respons setelah login
-          window.history.replaceState({}, document.title, "My-Himprote");
+
           
     </script>
       

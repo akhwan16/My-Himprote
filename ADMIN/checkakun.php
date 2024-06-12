@@ -20,7 +20,7 @@ if(isset($_SESSION['email'])) {
     $stmt->close();
     $conn->close();
 } else {
-    echo '<script>window.location.href = "../index.html";</script>';
+    echo '<script>window.location.href = "../index.php";</script>';
     exit;
 }
 ?>

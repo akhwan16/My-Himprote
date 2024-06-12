@@ -136,7 +136,7 @@ if (logoutBtn) {
         // Hapus token dari localStorage
         localStorage.removeItem("token");
         // Redirect ke halaman login atau halaman lain yang sesuai
-        window.location.href = "index.html";
+        window.location.href = "index.php";
     });
 }
 
