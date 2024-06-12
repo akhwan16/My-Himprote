@@ -204,9 +204,36 @@
         };
     </script>
 </body>
-
-<?php 
-    include "/My-Himprote/layout/footer.html" 
-?>
-
+<footer>
+    <div class="navbar">
+        <div class="navbar-item " id="home">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+        </div>
+        <div class="navbar-item" id="task">
+            <i class="fas fa-tasks"></i>
+            <span>Progdiv</span>
+        </div>
+        <div class="navbar-item active" id="profile">
+            <i class="fas fa-user"></i>
+            <span>Profil</span>
+        </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var homeNavItem = document.getElementById("home");
+        homeNavItem.addEventListener("click", function () {
+          // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
+          window.location.href = "dashboardadmin.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+        });
+        var progdivNavItem = document.getElementById('task');
+        progdivNavItem.addEventListener('click', function() {
+          // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
+          window.location.href = "progdivadmin.php";  // Ganti "profile.php" dengan URL yang sesuai
+        });
+      });
+      window.history.replaceState({}, document.title, "My-Himprote");
+    </script>
+</footer>
+<script src="nav.js"></script>
 </html>
