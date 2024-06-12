@@ -269,8 +269,48 @@ include 'listview.php';
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="navbar">
+            <div class="navbar-item active" id="home">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </div>
+            <div class="navbar-item" id="progdiv">
+                <i class="fas fa-tasks"></i>
+                <span>Progdiv</span>
+            </div>
+            <div class="navbar-item" id="profile">
+                <i class="fas fa-user"></i>
+                <span>Profil</span>
+            </div>
+        </div>
+        <!-- Bootstrap JS and dependencies -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var progdivNavItem = document.getElementById('progdiv');
+            
+            progdivNavItem.addEventListener('click', function() {
+                // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
+                window.location.href = "progdivadmin.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+            });
+            
+            var profileNavItem = document.getElementById('profile');
+            profileNavItem.addEventListener('click', function() {
+                // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
+                window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
+            });
+        });
+        
+        window.history.replaceState({}, document.title, "My-Himprote");
+        </script>
+    
+        <script src="/Assets/js/nav.js"></script>
+        <script src="/Assets/js/slide.js"></script>
+        <script src="/Assets/js/calendar.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    </footer>
 </body>
-
-<?php include "/My-Himprote/layout/footer.html" ?>
-
 </html>
