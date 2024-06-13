@@ -77,28 +77,27 @@
               </div>
 
               <div class="progja-create">
-                <button id="openPopupBtn2" class="create2">
+                <button id="openPopupBtn2" class="create2-more-info" data-popup-id="popup2">
                   <i class="fa-solid fa-circle-plus"></i>
                 </button>
               </div>
 
               <div id="popup2" class="popup">
-                <div class="popup-content2">
-                  <span id="closePopupBtn2" class="close2">&times;</span>
+                <div class="popup-content">
+                  <span id="closePopupBtn2" class="close">&times;</span>
                   <h2>Silahkan isi form</h2>
-                  <div class="form2">
-                    <label for="namaCreate">Nama *</label>
-                    <input type="nama" id="namaCreate" name="nama" required>
-                    <label for="keteranganCreate">Keterangan *</label>
-                    <input type="keterangan" id="keteranganCreate" name="keterangan" required>
+                  <div class="form">
+                    <label for="namaCreate2">Nama *</label>
+                    <input type="text" id="namaCreate2" name="nama" required>
+                    <label for="keteranganCreate2">Keterangan *</label>
+                    <input type="text" id="keteranganCreate2" name="keterangan" required>
                     <label for="email">Pilih Ketua Melalui Email *</label>
-
-                    <input type="keterangan" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required>
                     <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                    </button>
                   </div>
                 </div>
               </div>
+
             </div>
           </section>
         </div>
@@ -321,7 +320,7 @@
           <!--tambah jobdesk-->
 
           <div class="jobdesk-create">
-            <button id="openPopupBtn1" class="create">
+            <button id="openPopupBtn1" class="create-more-info" data-popup-id="popup1">
               <i class="fa-solid fa-circle-plus"></i>
             </button>
           </div>
@@ -332,18 +331,18 @@
               <h2>Silahkan isi form</h2>
               <div class="form">
                 <label for="namaCreate">Nama *</label>
-                <input type="nama" id="namaCreate" name="nama" required>
+                <input type="text" id="namaCreate" name="nama" required>
                 <label for="keteranganCreate">Keterangan *</label>
-                <input type="keterangan" id="keteranganCreate" name="keterangan" required>
+                <input type="text" id="keteranganCreate" name="keterangan" required>
                 <label for="kategoriCreate">Kategori *</label>
-                <select id="kategori" name="kategori" required>
+                <select id="kategoriCreate" name="kategori" required>
                   <option value="administrasi">--Pilih Kategori--</option>
                   <option value="administrasi">Administrasi</option>
                   <option value="persiapan">Persiapan</option>
                   <option value="hari acara">Hari Acara</option>
                 </select>
-                <label for="division">Pilih Divisi *</label>
-                <select id="division" name="division" required>
+                <label for="divisionCreate">Pilih Divisi *</label>
+                <select id="divisionCreate" name="division" required>
                   <option value="">--Pilih Divisi--</option>
                   <option value="Acara">Acara</option>
                   <option value="Kreatif">Kreatif</option>
@@ -357,10 +356,10 @@
                   <option value="Korlap">Korlap</option>
                 </select>
                 <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                </button>
               </div>
             </div>
           </div>
+
 
           <script src="popup.js"></script>
         </div>

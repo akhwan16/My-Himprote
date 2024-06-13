@@ -391,6 +391,8 @@ button.back:hover {
   padding: 15px;
   margin: 10px;
   position: fixed;
+  border: none;
+  background-color: transparent;
   bottom: 40px;
   left: 50%; /* Posisi kiri elemen di tengah */
   transform: translateX(-50%);
@@ -469,7 +471,7 @@ button.back:hover {
   cursor: pointer;
 }
 
-button.create2 {
+button.create2-more-info {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -480,6 +482,8 @@ button.create2 {
   padding: 15px;
   margin: 10px;
   position: fixed;
+  background-color: transparent;
+  border: none;
   bottom: 40px;
   left: 50%; /* Posisi kiri elemen di tengah */
   transform: translateX(
@@ -494,8 +498,9 @@ button.create2 {
   cursor: pointer;
 }
 
-input[type="nama"],
-input[type="keterangan"],
+input[type="text"],
+input[type="text"],
+input[type="email"],
 select {
   padding: 10px;
   margin-top: 5px;
@@ -542,7 +547,7 @@ select {
   cursor: pointer;
 }
 
-button.create {
+button.create-more-info {
   border: none;
   background-color: transparent;
   cursor: pointer;
