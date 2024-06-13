@@ -31,7 +31,7 @@
             padding: 5px 5px;
             border-bottom: 2px solid #1f4e79;
             width: auto;
-            max-width: 355px;
+            max-width: 365px;
             margin: 0 auto; /* Center the container horizontally */
         }
         .logo {
@@ -232,7 +232,7 @@
           window.location.href = "progdivadmin.php";  // Ganti "profile.php" dengan URL yang sesuai
         });
       });
-      window.history.replaceState({}, document.title, "My-Himprote");
+    
     </script>
 </footer>
 <script src="nav.js"></script>

@@ -28,6 +28,7 @@
 
   <body>
     <main>
+    <div class="card fade-in">
       <div class="slideshow-container">
         <div class="slide fade">
           <div class="search-container">
@@ -322,12 +323,15 @@
           </section>
         </div>
       </div>
+    </div>
     </main>
-    <footer>
+  
+  </body>
+  <footer>
       <div class="navbar">
-        <div class="navbar-item" id="home">
+       <div class="navbar-item" id="home">
           <i class="fas fa-home"></i>
-          <span>Home</span>
+          <span>Beranda</span>
         </div>
         <div class="navbar-item active" id="jobdesk">
           <i class="fas fa-tasks"></i>
@@ -335,7 +339,7 @@
         </div>
         <div class="navbar-item" id="profile">
           <i class="fas fa-user"></i>
-          <span>Profile</span>
+          <span>Profil</span>
         </div>
       </div>
       <script>
@@ -351,7 +355,7 @@
             window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
           });
         });
-        window.history.replaceState({}, document.title, "My-Himprote");
+    
       </script>
       <script src="/Assets/js/nav.js"></script>
       <script src="/Assets/js/calendar.js"></script>
@@ -360,5 +364,4 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
       <script src="/script.js"></script>
     </footer>
-  </body>
 </html>

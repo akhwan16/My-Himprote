@@ -302,7 +302,7 @@ include 'listview.php';
             });
         });
         
-        window.history.replaceState({}, document.title, "My-Himprote");
+    
         </script>
     
         <script src="/Assets/js/nav.js"></script>

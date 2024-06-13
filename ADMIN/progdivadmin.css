@@ -560,25 +560,24 @@ button.back2:hover {
   /* Darker shade of the blue */
 }
 
+nav {
+  width: 100%;
+}
 .navbar {
   display: flex;
   align-items: center;
-  width: 304px;
-  height: 54px;
+  width: 300px;
+  height: 50px;
   background-color: #fff;
   border-radius: 30px;
   position: fixed;
-  bottom: 5px;
-  /* Adjust bottom margin if necessary */
-  left: 50%;
-  /* Center horizontally */
-  transform: translateX(-50%);
-  /* Center horizontally */
-  border: 2px solid #ccc;
-  /* Added border */
+  bottom: 5px; /* Adjust bottom margin if necessary */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  border: 2px solid #ccc; /* Added border */
   justify-content: space-evenly;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* enhanced shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+    /* existing shadow */ 0 6px 20px rgba(0, 0, 0, 0.1); /* enhanced shadow */
 }
 
 .navbar-item {
@@ -587,7 +586,6 @@ button.back2:hover {
   align-items: center;
   color: #333;
   cursor: pointer;
-  padding-top: 1px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -601,6 +599,12 @@ button.back2:hover {
 
 .navbar-item span {
   font-size: 9px;
-  margin-top: 5px;
-  /* Add space between icon and text */
+  margin-top: 5px; /* Add space between icon and text */
+}
+.fade-in {
+  animation: fadeIn ease 1s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
