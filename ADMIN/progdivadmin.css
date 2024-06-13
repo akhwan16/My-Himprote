@@ -386,10 +386,21 @@ button.back:hover {
   /* Warna ketika tugas selesai */
 }
 
+/*css untuk prokja create, jobdesk, jobdesk edit dan more info*/
+/*css untuk prokja create, jobdesk, jobdesk edit dan more info*/
+/*css untuk prokja create, jobdesk, jobdesk edit dan more info*/
+
+
 .jobdesk-create {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
+  max-width: 100%;
+  padding: 15px;
+  margin: 10px;
+  position: fixed;
+  border: none;
+  background-color: transparent;
+  bottom: 40px;
+  left: 50%; /* Posisi kiri elemen di tengah */
+  transform: translateX(-50%);
 }
 
 .popup {
@@ -465,7 +476,7 @@ button.back:hover {
   cursor: pointer;
 }
 
-button.create2 {
+button.create2-more-info {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -476,6 +487,8 @@ button.create2 {
   padding: 15px;
   margin: 10px;
   position: fixed;
+  background-color: transparent;
+  border: none;
   bottom: 40px;
   left: 50%; /* Posisi kiri elemen di tengah */
   transform: translateX(
@@ -490,8 +503,9 @@ button.create2 {
   cursor: pointer;
 }
 
-input[type="nama"],
-input[type="keterangan"],
+input[type="text"],
+input[type="text"],
+input[type="email"],
 select {
   padding: 10px;
   margin-top: 5px;
@@ -522,9 +536,23 @@ select {
   background-color: #2550a2;
 }
 
+.jobdesk-edit {
+  border: none;
+  background-color: transparent;
+}
+.edit-more-info {
+  border: none;
+  background-color: transparent;
+}
+
+.edit-more-info i {
+  font-size: 15px;
+}
+
 .icon-container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 0.7em;
 }
 
@@ -538,7 +566,7 @@ select {
   cursor: pointer;
 }
 
-button.create {
+button.create-more-info {
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -552,6 +580,76 @@ button i {
   font-size: 40px;
   color: #002469;
 }
+
+.jobdesk-more-info {
+  color: black;
+}
+.more-info i {
+  font-size: smaller;
+  color: rgb(184, 48, 48);
+}
+button.more-info {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.more-info i:hover {
+  color: #000080;
+}
+
+.popup3 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content3 {
+  background-color: #fefefe;
+  margin: 80px auto;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid #1f4e79;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  border: 3px solid navy;
+  max-width: 350px;
+  text-align: center;
+}
+
+.popup-content3 .form3 {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.close3 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.form3 p {
+  text-align: left;
+}
+
+/*css untuk prokja create, jobdesk, jobdesk edit dan more info*/
+/*css untuk prokja create, jobdesk, jobdesk edit dan more info*/
+/*css untuk prokja create, jobdesk, jobdesk edit dan more info*/
+
 
 .divisiku {
   width: 200px;
@@ -593,12 +691,6 @@ button i {
 
 .jobdesk:last-child {
   margin-bottom: 10px;
-}
-
-.jobdesk-more-info {
-  color: #2550a2;
-  font-size: 0.6em;
-  font-weight: bold;
 }
 
 .jobdesk-upload {
@@ -744,3 +836,5 @@ nav {
     opacity: 1;
   }
 }
+
+

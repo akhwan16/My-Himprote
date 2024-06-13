@@ -1,43 +1,46 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Tombol untuk membuka popup
-    var openPopupBtn1 = document.getElementById("openPopupBtn1");
-    var openPopupBtn2 = document.getElementById("openPopupBtn2");
+document.addEventListener("DOMContentLoaded", function () {
+  const moreInfo1Btns = document.querySelectorAll(".create-more-info, .create2-more-info, .edit-more-info");
+  const moreInfoBtns = document.querySelectorAll(".more-info");
+  const popups = document.querySelectorAll(".popup");
 
-    // Elemen popup
-    var popup1 = document.getElementById("popup1");
-    var popup2 = document.getElementById("popup2");
-  
-    // Tombol untuk menutup popup
-    var closePopupBtn1 = document.getElementById("closePopupBtn1");
-    var closePopupBtn2 = document.getElementById("closePopupBtn2");
+  // Event listener untuk tombol "More Info" versi 1, versi 2, dan edit-more-info
+  moreInfo1Btns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const popupId = this.getAttribute("data-popup-id");
+      const popup = document.getElementById(popupId);
 
-    // Event untuk membuka popup 1
-    openPopupBtn1.onclick = function() {
-        popup1.style.display = "block";
-    };
+      if (popup) {
+        popup.style.display = "block";
+      }
+    });
+  });
 
-    // Event untuk menutup popup 1
-    closePopupBtn1.onclick = function() {
-        popup1.style.display = "none";
-    };
+  // Event listener untuk tombol "More Info" versi lainnya
+  moreInfoBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const popupId = this.getAttribute("data-popup-id");
+      const popup = document.getElementById(popupId);
 
-    // Event untuk membuka popup 2
-    openPopupBtn2.onclick = function() {
-        popup2.style.display = "block";
-    };
+      if (popup) {
+        popup.style.display = "block";
+      }
+    });
+  });
 
-    // Event untuk menutup popup 2
-    closePopupBtn2.onclick = function() {
-        popup2.style.display = "none";
-    };
+  // Event listener untuk tombol-tombol close
+  popups.forEach((popup) => {
+    const closeBtn = popup.querySelector(".close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        popup.style.display = "none";
+      });
+    }
 
-    // Event untuk menutup popup ketika mengklik di luar area popup
-    window.onclick = function(event) {
-        if (event.target == popup1) {
-            popup1.style.display = "none";
-        }
-        if (event.target == popup2) {
-            popup2.style.display = "none";
-        }
-    };
+    // Menutup popup saat mengklik di luar area popup
+    window.addEventListener("click", function (event) {
+      if (event.target === popup) {
+        popup.style.display = "none";
+      }
+    });
+  });
 });
