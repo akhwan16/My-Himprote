@@ -277,10 +277,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
             
-            
-            <div id="popup1" class="popup">
-
-              </div>
 
               <div id="popup1" class="popup">
 
