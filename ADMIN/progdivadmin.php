@@ -151,7 +151,6 @@
             </div>
           </section>
           <section id="choice">
-<<<<<<< HEAD
             
   <div class="choice">
     
@@ -174,7 +173,7 @@
   <div class="job-list">
     
   <div class="jobdesk-create">
-=======
+
             <div class="choice">
               <div class="choice-item" id="administrasi">
                 <span>Administrasi</span>
@@ -269,7 +268,7 @@
 
 
               <div class="jobdesk-create">
->>>>>>> 95358f079b3406d5ce845561eb35f1eb03f6b428
+
                 <button id="openPopupBtn1" class="create">
                   <i class="fa-solid fa-circle-plus"></i>
                 </button>
@@ -374,11 +373,11 @@ document.addEventListener("DOMContentLoaded", function () {
             
             
             <div id="popup1" class="popup">
-=======
+
               </div>
 
               <div id="popup1" class="popup">
->>>>>>> 95358f079b3406d5ce845561eb35f1eb03f6b428
+
                 <div class="popup-content">
                   <span id="closePopupBtn1" class="close">&times;</span>
                   <h2>Silahkan isi form</h2>
