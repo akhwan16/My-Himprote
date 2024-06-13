@@ -168,104 +168,10 @@
   
 </section>
 
-<section id="job-list">
-  
-  <div class="job-list">
-    
-  <div class="jobdesk-create">
 
-            <div class="choice">
-              <div class="choice-item" id="administrasi">
-                <span>Administrasi</span>
-              </div>
-              <div class="choice-item" id="Persiapan">
-                <span>Persiapan</span>
-              </div>
-              <div class="choice-item" id="Hari Acara">
-                <span>Hari Acara</span>
-              </div>
-            </div>
-
-            <script>
-              document.addEventListener("DOMContentLoaded", function() {
-                const choiceItems = document.querySelectorAll(".choice-item");
-
-                choiceItems.forEach(item => {
-                  item.addEventListener("click", function() {
-                    // Remove active class from all items
-                    choiceItems.forEach(i => i.classList.remove("active"));
-
-                    // Add active class to the clicked item
-                    this.classList.add("active");
-
-                    // Optional: Scroll to the relevant section or perform any other action
-
-                  });
-                });
-              });
-            </script>
-          </section>
           <section id="job-list">
             <div class="job-list">
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">Absensi Rapat ELCO</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
-                  <div class="jobdesk-more-info">
-                    More info <i class="fa-solid fa-circle-exclamation"></i>
-                  </div>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="icon1"></i>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">LPJ</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
-                  <div class="jobdesk-more-info">
-                    More info <i class="fa-solid fa-circle-exclamation"></i>
-                  </div>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="icon1"></i>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">LPJ</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
-                  <div class="jobdesk-more-info">
-                    More info <i class="fa-solid fa-circle-exclamation"></i>
-                  </div>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="icon1"></i>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-              </div>
-
-
+              
 
               <div class="jobdesk-create">
 
