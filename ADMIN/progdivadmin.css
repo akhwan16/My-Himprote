@@ -457,10 +457,13 @@ button.create2 {
 .progja-create {
   max-width: 100%;
   padding: 15px;
-  margin: 10px auto;
+  margin: 10px;
   position: fixed;
-  bottom: 50px;
+  bottom: 40px;
+  left: 50%; /* Posisi kiri elemen di tengah */
+  transform: translateX(-50%); /* Menggeser elemen ke kiri sebesar 50% dari lebar elemen itu sendiri */
 }
+
 
 .close:hover,
 .close:focus {
