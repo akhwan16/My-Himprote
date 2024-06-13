@@ -393,9 +393,7 @@ button.back:hover {
   position: fixed;
   bottom: 40px;
   left: 50%; /* Posisi kiri elemen di tengah */
-  transform: translateX(
-    -50%
-  );
+  transform: translateX(-50%);
 }
 
 .popup {
@@ -601,12 +599,6 @@ button i {
   margin-bottom: 10px;
 }
 
-.jobdesk-more-info {
-  color: #2550a2;
-  font-size: 0.6em;
-  font-weight: bold;
-}
-
 .jobdesk-upload {
   margin: 1px auto;
   display: flex;
@@ -706,19 +698,19 @@ nav {
   }
 }
 
-.jobdesk-more-info{
+.jobdesk-more-info {
   color: black;
 }
-.more-info i{
+.more-info i {
   font-size: smaller;
   color: rgb(184, 48, 48);
 }
-button.more-info{
+button.more-info {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-.more-info i:hover{
+.more-info i:hover {
   color: #000080;
 }
 
@@ -767,6 +759,6 @@ button.more-info{
   text-decoration: none;
   cursor: pointer;
 }
-.form3 p{
+.form3 p {
   text-align: left;
 }

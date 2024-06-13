@@ -169,20 +169,18 @@
                     Electrical Campus Observation
                   </div>
 
-
-                  <!--more info-->
+                  <!-- More info 1 -->
                   <div class="jobdesk-more-info">
                     More info
-                    <button id="openPopupBtn3" class="more-info">
+                    <button class="more-info" data-popup-id="moreInfo1">
                       <i class="fa-solid fa-circle-exclamation"></i>
                     </button>
-                    <!--more info-->
-                    <div id="popup3" class="popup">
-
+                    <!-- Popup 1 -->
+                    <div id="moreInfo1" class="popup">
                       <div class="popup-content">
-                        <span id="closePopupBtn3" class="close">&times;</span>
-                        <h2>Silahkan isi form</h2>
-                        <div class="form3">
+                        <span class="close">&times;</span>
+                        <h2>Details 1</h2>
+                        <div class="form">
                           <p>
                             1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
                             2. Mencari tempat lomba. (bersama sie perkap) <br>
@@ -194,8 +192,7 @@
                       </div>
                     </div>
                   </div>
-                  <!--more info-->
-
+                  <!-- End More info 1 -->
 
                   <div class="icon-container">
                     <i class="fa-solid fa-pencil" id="icon1"></i>
@@ -215,19 +212,18 @@
                     Electrical Campus Observation
                   </div>
 
-                  <!--more info-->
+                  <!-- More info 2 -->
                   <div class="jobdesk-more-info">
                     More info
-                    <button id="openPopupBtn3" class="more-info">
+                    <button class="more-info" data-popup-id="moreInfo2">
                       <i class="fa-solid fa-circle-exclamation"></i>
                     </button>
-                    <!--more info-->
-                    <div id="popup3" class="popup">
-
+                    <!-- Popup 2 -->
+                    <div id="moreInfo2" class="popup">
                       <div class="popup-content">
-                        <span id="closePopupBtn3" class="close">&times;</span>
-                        <h2>Silahkan isi form</h2>
-                        <div class="form3">
+                        <span class="close">&times;</span>
+                        <h2>Details 2</h2>
+                        <div class="form">
                           <p>
                             1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
                             2. Mencari tempat lomba. (bersama sie perkap) <br>
@@ -239,8 +235,7 @@
                       </div>
                     </div>
                   </div>
-                  <!--more info-->
-                  <script src="popup.js"></script>
+                  <!-- End More info 2 -->
 
                   <div class="icon-container">
                     <i class="fa-solid fa-pencil" id="icon1"></i>
@@ -248,31 +243,30 @@
                   </div>
                 </div>
               </div>
-
 
               <div class="jobdesk hari-acara" style="display: none;">
                 <input type="checkbox" class="jobdesk-checkbox" />
                 <div class="jobdesk-time">
                   <i class="fa-solid fa-list-check"></i>
                 </div>
-                <div class="jobdesk-content ">
+                <div class="jobdesk-content">
                   <div class="jobdesk-title">LPJ Hari Acara</div>
                   <div class="jobdesk-subtitle">
                     Electrical Campus Observation
                   </div>
-                  <!--more info-->
+
+                  <!-- More info 3 -->
                   <div class="jobdesk-more-info">
                     More info
-                    <button id="openPopupBtn3" class="more-info">
+                    <button class="more-info" data-popup-id="moreInfo3">
                       <i class="fa-solid fa-circle-exclamation"></i>
                     </button>
-                    <!--more info-->
-                    <div id="popup3" class="popup">
-
+                    <!-- Popup 3 -->
+                    <div id="moreInfo3" class="popup">
                       <div class="popup-content">
-                        <span id="closePopupBtn3" class="close">&times;</span>
-                        <h2>Silahkan isi form</h2>
-                        <div class="form3">
+                        <span class="close">&times;</span>
+                        <h2>Details 3</h2>
+                        <div class="form">
                           <p>
                             1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
                             2. Mencari tempat lomba. (bersama sie perkap) <br>
@@ -284,43 +278,44 @@
                       </div>
                     </div>
                   </div>
-                  <!--more info-->
+                  <!-- End More info 3 -->
+
                   <div class="icon-container">
                     <i class="fa-solid fa-pencil" id="icon1"></i>
                     <i class="fa-solid fa-trash" id="icon2"></i>
                   </div>
                 </div>
               </div>
+            </div>
+            <script>
+              document.addEventListener("DOMContentLoaded", function() {
+                const choiceItems = document.querySelectorAll(".choice-item");
+                const jobDeskItems = document.querySelectorAll(".jobdesk");
 
-              <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                  const choiceItems = document.querySelectorAll(".choice-item");
-                  const jobDeskItems = document.querySelectorAll(".jobdesk");
+                choiceItems.forEach(item => {
+                  item.addEventListener("click", function() {
+                    const target = this.getAttribute("data-target");
 
-                  choiceItems.forEach(item => {
-                    item.addEventListener("click", function() {
-                      const target = this.getAttribute("data-target");
+                    // Remove active class from all choice items
+                    choiceItems.forEach(i => i.classList.remove("active"));
+                    // Add active class to the clicked item
+                    this.classList.add("active");
 
-                      // Remove active class from all choice items
-                      choiceItems.forEach(i => i.classList.remove("active"));
-                      // Add active class to the clicked item
-                      this.classList.add("active");
-
-                      // Hide all jobdesk items
-                      jobDeskItems.forEach(job => {
-                        job.style.display = "none";
-                      });
-
-                      // Show the jobdesk items corresponding to the clicked category
-                      document.querySelectorAll(`.jobdesk.${target}`).forEach(job => {
-                        job.style.display = "";
-                      });
-
-                      // Optional: Scroll to the relevant section or perform any other action
+                    // Hide all jobdesk items
+                    jobDeskItems.forEach(job => {
+                      job.style.display = "none";
                     });
+
+                    // Show the jobdesk items corresponding to the clicked category
+                    document.querySelectorAll(`.jobdesk.${target}`).forEach(job => {
+                      job.style.display = "";
+                    });
+
+                    // Optional: Scroll to the relevant section or perform any other action
                   });
                 });
-              </script>
+              });
+            </script>
 
           </section>
           <!--tambah jobdesk-->
