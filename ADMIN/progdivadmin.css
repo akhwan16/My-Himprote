@@ -166,6 +166,23 @@ button.back:hover {
   /* Darker shade of the blue */
 }
 
+.slider {
+  display: flex;
+  margin: auto;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  color: navy;
+  font-weight: bold;
+  font-size: 15px;
+  user-select: none;
+  padding: 1px 10px;
+}
+
 .progja-ketua {
   max-width: 360px;
   display: flex;
@@ -285,7 +302,7 @@ button.back:hover {
   width: 90%;
   max-width: 100%;
   padding: 10px;
-  padding-top:0px;
+  padding-top: 0px;
   border: 2px solid #002469;
   /* Tambahkan border biru tua */
 }
@@ -364,7 +381,7 @@ button.back:hover {
   /* Warna biru tua */
 }
 
-.jobdesk-checkbox:checked+.jobdesk:before {
+.jobdesk-checkbox:checked + .jobdesk:before {
   background-color: lightblue;
   /* Warna ketika tugas selesai */
 }
@@ -461,9 +478,10 @@ button.create2 {
   position: fixed;
   bottom: 40px;
   left: 50%; /* Posisi kiri elemen di tengah */
-  transform: translateX(-50%); /* Menggeser elemen ke kiri sebesar 50% dari lebar elemen itu sendiri */
+  transform: translateX(
+    -50%
+  ); /* Menggeser elemen ke kiri sebesar 50% dari lebar elemen itu sendiri */
 }
-
 
 .close:hover,
 .close:focus {
@@ -500,7 +518,7 @@ select {
   color: white;
   font-size: small;
 }
-.submit-button:hover{
+.submit-button:hover {
   background-color: #2550a2;
 }
 
@@ -572,12 +590,11 @@ button i {
   font-size: small;
   font-weight: 200;
 }
+
 .jobdesk:last-child {
   margin-bottom: 10px;
 }
-.choice-item.active {
-  
-}
+
 .jobdesk-more-info {
   color: #2550a2;
   font-size: 0.6em;
@@ -595,9 +612,7 @@ button i {
   display: flex;
   flex-direction: column;
   margin: auto;
-
 }
-
 
 button.back2 {
   display: flex;
@@ -644,8 +659,7 @@ nav {
   /* Added border */
   justify-content: space-evenly;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-    /* existing shadow */
-    0 6px 20px rgba(0, 0, 0, 0.1);
+    /* existing shadow */ 0 6px 20px rgba(0, 0, 0, 0.1);
   /* enhanced shadow */
 }
 
