@@ -38,7 +38,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  padding-bottom: 100px;
+  padding-bottom: 160px;
   width: 100%;
 }
 
@@ -83,7 +83,7 @@ main {
 .progja-list {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 340px;
   max-width: 100%;
   margin: auto;
 }
@@ -94,15 +94,6 @@ main {
   max-width: 100%;
   padding: 15px;
   margin: 10px auto;
-}
-
-.progja-create {
-  max-width: 100%;
-  margin: auto ;
-}
-.progja-list .progja-create{
-  position: fixed;
-  bottom: 90px;
 }
 
 .progja .judul {
@@ -422,6 +413,54 @@ button.back:hover {
   font-weight: bold;
 }
 
+.popup-content2 {
+  background-color: #fefefe;
+  margin: 80px auto;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid #1f4e79;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  border: 3px solid navy;
+  max-width: 350px;
+  text-align: center;
+}
+
+.popup-content2 .form2 {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.close2 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button.create2 {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.progja-create {
+  max-width: 100%;
+  padding: 15px;
+  margin: 10px auto;
+  position: fixed;
+  bottom: 50px;
+}
+
 .close:hover,
 .close:focus {
   color: black;
@@ -456,6 +495,9 @@ select {
   margin-right: 5px;
   color: white;
   font-size: small;
+}
+.submit-button:hover{
+  background-color: #2550a2;
 }
 
 .icon-container {

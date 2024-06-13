@@ -75,19 +75,17 @@
                 </div>
               </div>
 
-
-
               <div class="progja-create">
-                <button id="openPopupBtn1" class="create">
+                <button id="openPopupBtn2" class="create2">
                   <i class="fa-solid fa-circle-plus"></i>
                 </button>
               </div>
 
-              <div id="popup1" class="popup">
-                <div class="popup-content">
-                  <span id="closePopupBtn1" class="close">&times;</span>
+              <div id="popup2" class="popup">
+                <div class="popup-content2">
+                  <span id="closePopupBtn2" class="close2">&times;</span>
                   <h2>Silahkan isi form</h2>
-                  <div class="form">
+                  <div class="form2">
                     <label for="namaCreate">Nama *</label>
                     <input type="nama" id="namaCreate" name="nama" required>
                     <label for="keteranganCreate">Keterangan *</label>
