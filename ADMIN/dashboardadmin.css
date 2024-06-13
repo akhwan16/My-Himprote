@@ -3,8 +3,10 @@ body {
 
   margin: 0;
   padding: 0;
-  flex-direction: column; /* Mengatur semua elemen body agar vertikal */
-  align-items: center; /* Menyelaraskan konten secara horizontal di tengah */
+  flex-direction: column;
+  /* Mengatur semua elemen body agar vertikal */
+  align-items: center;
+  /* Menyelaraskan konten secara horizontal di tengah */
 }
 
 .header-container {
@@ -15,7 +17,8 @@ body {
   border-bottom: 2px solid #1f4e79;
   width: auto;
   max-width: 355px;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
+  /* Center the container horizontally */
 }
 
 .containerlist {
@@ -30,8 +33,8 @@ body {
 
 .card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -41,12 +44,25 @@ body {
   width: 80%;
   /* Mengurangi lebar */
   max-width: 280px;
+  position: relative;
   /* Mengurangi lebar maksimal */
 }
 
+.icon-container {
+
+  display: flex;
+  align-items: center; /* Align icons vertically */
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  margin-right: 5px;
+}
+
 .card-content {
+  margin: auto 5px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .profile-image {
@@ -136,10 +152,7 @@ select {
   margin-right: 5px;
 }
 
-.icon-container {
-  display: flex;
-  align-items: center; /* Align icons vertically */
-}
+
 
 #icon1 {
   color: darkgreen;
@@ -156,18 +169,22 @@ select {
   display: flex;
   align-items: left;
 }
+
 .logo img {
   height: 25px;
 }
+
 .reminder {
   font-size: small;
   font-weight: bold;
   color: black;
 }
+
 .welcome-container {
   padding: 15px 0px;
   content: center;
 }
+
 .welcome-message {
   font-size: 13px;
   font-weight: bold;
@@ -177,12 +194,14 @@ select {
   margin: auto;
   justify-content: flex-start;
 }
+
 .sub-message {
   font-size: small;
   text-align: center;
   margin-left: -120px;
   margin-top: -2px;
 }
+
 .sub-message span {
   color: #002469;
   text-decoration: none;
@@ -245,6 +264,7 @@ select {
   transition: all ease;
   pointer-events: none;
 }
+
 .calendar-days div span {
   position: absolute;
   pointer-events: none;
@@ -264,7 +284,8 @@ select {
   cursor: pointer;
   transition: all ease;
 
-  pointer-events: auto; /* Keep pointer events enabled */
+  pointer-events: auto;
+  /* Keep pointer events enabled */
 }
 
 .calendar-footer {
@@ -283,12 +304,12 @@ select {
   color: #002469;
 }
 
-.month-list > div {
+.month-list>div {
   display: grid;
   place-items: center;
 }
 
-.month-list > div > div {
+.month-list>div>div {
   width: 100%;
   padding: 5px;
   border-radius: 10px;
@@ -297,27 +318,32 @@ select {
   color: white;
 }
 
-.month-list > div > div:hover {
+.month-list>div>div:hover {
   background-color: #666666;
 }
 
 .event {
   background-color: #002469;
 }
+
 .event form {
   background-color: aqua;
 }
 
 .calendar-week-day div {
-  font-family: "Poppins", sans-serif; /* Menggunakan font Poppins */
-  font-weight: bold; /* Mengatur tebal (bold) */
-  font-size: 10px; /* Ukuran font */
+  font-family: "Poppins", sans-serif;
+  /* Menggunakan font Poppins */
+  font-weight: bold;
+  /* Mengatur tebal (bold) */
+  font-size: 10px;
+  /* Ukuran font */
 }
 
 .task-list {
   width: 350px;
   padding-top: 15px;
-  margin: 0 auto; /* Menempatkan di tengah */
+  margin: 0 auto;
+  /* Menempatkan di tengah */
   padding-bottom: 15px;
 }
 
@@ -327,7 +353,8 @@ select {
 
   border-radius: 10px;
   margin-bottom: 10px;
-  width: 90%; /* Mengurangi lebar */
+  width: 90%;
+  /* Mengurangi lebar */
   height: 50px;
 }
 
@@ -368,7 +395,8 @@ select {
 }
 
 .task {
-  position: relative; /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
+  position: relative;
+  /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
 }
 
 .task-date {
@@ -376,10 +404,14 @@ select {
 
   padding-bottom: 10px;
 }
+
 .task-date span {
-  margin-left: 30px; /* Menggeser border ke kanan */
-  border-bottom: 2px solid #1f4e79; /* Menambahkan border ke kanan */
+  margin-left: 30px;
+  /* Menggeser border ke kanan */
+  border-bottom: 2px solid #1f4e79;
+  /* Menambahkan border ke kanan */
 }
+
 .slideshow-container {
   max-width: 600px;
   margin: 0 auto;
@@ -398,6 +430,7 @@ select {
   from {
     opacity: 0.4;
   }
+
   to {
     opacity: 1;
   }
@@ -419,6 +452,7 @@ select {
   left: 20%;
   padding: 10px;
 }
+
 .popup {
   display: none;
   /* Hidden by default */
@@ -509,6 +543,7 @@ select {
 nav {
   width: 100%;
 }
+
 .navbar {
   display: flex;
   align-items: center;
@@ -517,13 +552,19 @@ nav {
   background-color: #fff;
   border-radius: 30px;
   position: fixed;
-  bottom: 5px; /* Adjust bottom margin if necessary */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  border: 2px solid #ccc; /* Added border */
+  bottom: 5px;
+  /* Adjust bottom margin if necessary */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center horizontally */
+  border: 2px solid #ccc;
+  /* Added border */
   justify-content: space-evenly;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-    /* existing shadow */ 0 6px 20px rgba(0, 0, 0, 0.1); /* enhanced shadow */
+    /* existing shadow */
+    0 6px 20px rgba(0, 0, 0, 0.1);
+  /* enhanced shadow */
 }
 
 .navbar-item {
@@ -545,5 +586,6 @@ nav {
 
 .navbar-item span {
   font-size: 9px;
-  margin-top: 5px; /* Add space between icon and text */
+  margin-top: 5px;
+  /* Add space between icon and text */
 }
