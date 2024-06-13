@@ -272,7 +272,7 @@
                 <button id="openPopupBtn1" class="create">
                   <i class="fa-solid fa-circle-plus"></i>
                 </button>
-<<<<<<< HEAD
+
             </div>
     <div class="jobdesk administrasi">
       <input type="checkbox" class="jobdesk-checkbox" />
