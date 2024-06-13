@@ -45,7 +45,7 @@
                   <button class="divisi" onclick="changeSlide(2)">Divisi</button>
                 </div>
               </div>
-              
+
               <div class="progja">
                 <div class="judul">Electrical Campus Observation</div>
                 <div class="button">
@@ -55,7 +55,7 @@
                   <button class="divisi" onclick="changeSlide(2)">Divisi</button>
                 </div>
               </div>
-              
+
               <div class="progja">
                 <div class="judul">Electrical Campus Observation</div>
                 <div class="button">
@@ -65,7 +65,7 @@
                   <button class="divisi" onclick="changeSlide(2)">Divisi</button>
                 </div>
               </div>
-              
+
               <div class="progja">
                 <div class="judul">Electrical Campus Observation</div>
                 <div class="button">
@@ -92,7 +92,7 @@
                     <label for="keteranganCreate">Keterangan *</label>
                     <input type="keterangan" id="keteranganCreate" name="keterangan" required>
                     <label for="email">Pilih Ketua Melalui Email *</label>
-                   
+
                     <input type="keterangan" id="email" name="email" required>
                     <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
                     </button>
@@ -108,12 +108,12 @@
             <button class="back" onclick="changeSlide(-1)">
               <i class="fa-solid fa-arrow-left"></i>
             </button>
-            <div class="slider">            
+            <div class="slider">
               <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
               <a class="next" onclick="changeSlide(-3)">&#10095;</a>
             </div>
           </div>
-          
+
           <section id="progja-ketua">
             <div class="progja-ketua">
               <div class="nama-progja">
@@ -140,7 +140,7 @@
               </div>
             </div>
           </section>
-          
+
           <section id="choice">
             <div class="choice">
               <div class="choice-item active" data-target="administrasi">
@@ -154,107 +154,107 @@
               </div>
             </div>
           </section>
-          
+
           <section id="job-list">
             <div class="job-list">
               <div class="jobdesk-create">
                 <button id="openPopupBtn1" class="create">
                   <i class="fa-solid fa-circle-plus"></i>
                 </button>
-            </div>
+              </div>
 
-            <div class="jobdesk administrasi">
-              <input type="checkbox" class="jobdesk-checkbox" />
-              <div class="jobdesk-time">
-                <i class="fa-solid fa-list-check"></i>
+              <div class="jobdesk administrasi">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">Absensi Rapat ELCO</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
+                  </div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
+                  </div>
+                </div>
               </div>
-              <div class="jobdesk-content">
-                <div class="jobdesk-title">Absensi Rapat ELCO</div>
-                <div class="jobdesk-subtitle">
-                  Electrical Campus Observation
-                </div>
-                <div class="jobdesk-more-info">
-                  More info <i class="fa-solid fa-circle-exclamation"></i>
-                </div>
-                <div class="icon-container">
-                  <i class="fa-solid fa-pencil" id="icon1"></i>
-                  <i class="fa-solid fa-trash" id="icon2"></i>
-                </div>
-              </div>
-            </div>
 
-            <div class="jobdesk persiapan" style="display: none;">
-              <input type="checkbox" class="jobdesk-checkbox" />
-              <div class="jobdesk-time">
-                <i class="fa-solid fa-list-check"></i>
+              <div class="jobdesk persiapan" style="display: none;">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">LPJ Persiapan</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
+                  </div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
+                  </div>
+                </div>
               </div>
-              <div class="jobdesk-content">
-                <div class="jobdesk-title">LPJ Persiapan</div>
-                <div class="jobdesk-subtitle">
-                  Electrical Campus Observation
-                </div>
-                <div class="jobdesk-more-info">
-                  More info <i class="fa-solid fa-circle-exclamation"></i>
-                </div>
-                <div class="icon-container">
-                  <i class="fa-solid fa-pencil" id="icon1"></i>
-                  <i class="fa-solid fa-trash" id="icon2"></i>
-                </div>
-              </div>
-            </div>
 
-            <div class="jobdesk hari-acara" style="display: none;">
-              <input type="checkbox" class="jobdesk-checkbox" />
-              <div class="jobdesk-time">
-                <i class="fa-solid fa-list-check"></i>
+              <div class="jobdesk hari-acara" style="display: none;">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content ">
+                  <div class="jobdesk-title">LPJ Hari Acara</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
+                  </div>
+                  <div class="jobdesk-more-info">
+                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  </div>
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
+                  </div>
+                </div>
               </div>
-              <div class="jobdesk-content "  >
-                <div class="jobdesk-title">LPJ Hari Acara</div>
-                <div class="jobdesk-subtitle">
-                  Electrical Campus Observation
-                </div>
-                <div class="jobdesk-more-info">
-                  More info <i class="fa-solid fa-circle-exclamation"></i>
-                </div>
-                <div class="icon-container">
-                  <i class="fa-solid fa-pencil" id="icon1"></i>
-                  <i class="fa-solid fa-trash" id="icon2"></i>
-                </div>
-              </div>
-            </div>
- 
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                const choiceItems = document.querySelectorAll(".choice-item");
-                const jobDeskItems = document.querySelectorAll(".jobdesk");
-              
-                choiceItems.forEach(item => {
-                  item.addEventListener("click", function () {
-                    const target = this.getAttribute("data-target");
-                  
-                    // Remove active class from all choice items
-                    choiceItems.forEach(i => i.classList.remove("active"));
-                    // Add active class to the clicked item
-                    this.classList.add("active");
-                  
-                    // Hide all jobdesk items
-                    jobDeskItems.forEach(job => {
-                      job.style.display = "none";
+
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  const choiceItems = document.querySelectorAll(".choice-item");
+                  const jobDeskItems = document.querySelectorAll(".jobdesk");
+
+                  choiceItems.forEach(item => {
+                    item.addEventListener("click", function() {
+                      const target = this.getAttribute("data-target");
+
+                      // Remove active class from all choice items
+                      choiceItems.forEach(i => i.classList.remove("active"));
+                      // Add active class to the clicked item
+                      this.classList.add("active");
+
+                      // Hide all jobdesk items
+                      jobDeskItems.forEach(job => {
+                        job.style.display = "none";
+                      });
+
+                      // Show the jobdesk items corresponding to the clicked category
+                      document.querySelectorAll(`.jobdesk.${target}`).forEach(job => {
+                        job.style.display = "";
+                      });
+
+                      // Optional: Scroll to the relevant section or perform any other action
                     });
-                  
-                    // Show the jobdesk items corresponding to the clicked category
-                    document.querySelectorAll(`.jobdesk.${target}`).forEach(job => {
-                      job.style.display = "";
-                    });
-                  
-                    // Optional: Scroll to the relevant section or perform any other action
                   });
                 });
-              });
-            </script>
-            
+              </script>
 
-            <div id="popup1" class="popup">
+
+              <div id="popup1" class="popup">
                 <div class="popup-content">
                   <span id="closePopupBtn1" class="close">&times;</span>
                   <h2>Silahkan isi form</h2>
@@ -288,9 +288,9 @@
                     </button>
                   </div>
                 </div>
-            </div>
+              </div>
 
-            <script src="popup.js"></script>
+              <script src="popup.js"></script>
           </section>
         </div>
 
@@ -304,7 +304,7 @@
                 <img src="/Assets/img/div.png" alt="" />HUMAS
               </div>
           </section>
-          
+
           <section id="job-list">
             <div class="job-list">
               <div class="progress">Progress</div>
@@ -375,57 +375,71 @@
             </div>
           </section>
         </div>
-        
+
         <div class="slide fade">
-            <div class="button-back">
-              <button class="back" onclick="changeSlide(1)">
-                <i class="fa-solid fa-arrow-left"></i>
-              </button>
-              <div class="slider">            
-                  <a class="prev" onclick="changeSlide(-2)">&#10094;</a>
-                  <a class="next" onclick="changeSlide(-3)">&#10095;</a>
+          <div class="button-back">
+            <button class="back" onclick="changeSlide(1)">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div class="slider">
+              <a class="prev" onclick="changeSlide(-2)">&#10094;</a>
+              <a class="next" onclick="changeSlide(-3)">&#10095;</a>
+            </div>
+          </div>
+
+          <div class="container-anggota-progdiv">
+            <div class="tambah-anggota">
+              <form method="POST" action="create.php">
+                <button id="openPopupBtn1" type="button" class="action-button"><i class="fas fa-cog"></i></button>
+                <div id="popup1" class="popup">
+                  <div class="popup-content">
+                    <span id="closePopupBtn1" class="close">&times;</span>
+                    <h2>Silahkan isi form</h2>
+                    <div class="form">
+                      <label for="email">Email *</label>
+                      <input type="email" id="email" name="email" required>
+                      <label for="name">Nama *</label>
+                      <input type="text" id="name" name="name" required>
+                      <label for="division">Pilih Departemen*</label>
+                      <select id="division" name="division" required>
+                        <option value="">--Pilih Departemen--</option>
+                        <option value="Pengurus Harian">Pengurus Harian</option>
+                        <option value="Departemen A">Departemen A</option>
+                        <option value="Departemen B">Departemen B</option>
+                        <option value="Departemen C">Departemen C</option>
+                        <option value="Departemen D">Departemen D</option>
+                        <option value="Departemen E">Departemen E</option>
+                        <option value="Departemen F">Departemen F</option>
+                      </select>
+                      <label for="position">Jabatan *</label>
+                      <select id="position" name="position" required>
+                        <option value="">--Pilih Jabatan--</option>
+                        <option value="Ketua HIMPROTE">Ketua HIMPROTE</option>
+                        <option value="Wakil Ketua HIMPROTE">Wakil Ketua HIMPROTE</option>
+                        <option value="Sekretaris umum">Sekretaris umum</option>
+                        <option value="Bendahara umum">Bendahara umum</option>
+                        <option value="Sekretaris 2">Sekretaris 2</option>
+                        <option value="Bendahara 2">Bendahara 2</option>
+                        <option value="Ketua Departemen">Ketua Departemen</option>
+                        <option value="Sekretaris Departemen">Sekretaris Departemen</option>
+                        <option value="Staff Ahli">Staff Ahli</option>
+                        <option value="Staf Muda">Staff Muda</option>
+                      </select>
+                      <button type="submit" class="submit-button"><i class="fas fa-upload"></i> Submit</button>
+                    </div>
+                  </div>
+                </div>
+                <script src="popup.js"></script>
+              </form>
+              <div class="cari-anggota">
+                <form method="GET" action="search.php">
+                  <input type="text" class="box-tambah-anggota" name="q" placeholder="Cari Akun">
+                  <button type="submit" class="search-tambah-anggota"><i class="fas fa-search"></i></button>
+                </form>
               </div>
             </div>
-            <form method="POST" action="create.php">
-              <div class="popup-content">
-                <span id="closePopupBtn1" class="close">&times;</span>
-                <h2>Silahkan isi form</h2>
-                <div class="form">
-                  <label for="email">Email *</label>
-                  <input type="email" id="email" name="email" required>
-                  <label for="name">Nama *</label>
-                  <input type="text" id="name" name="name" required>
-                  <label for="division">Pilih Departemen*</label>
-                  <select id="division" name="division" required>
-                      <option value="">--Pilih Departemen--</option>
-                      <option value="Pengurus Harian">Pengurus Harian</option>
-                      <option value="Departemen A">Departemen A</option>
-                      <option value="Departemen B">Departemen B</option>
-                      <option value="Departemen C">Departemen C</option>
-                      <option value="Departemen D">Departemen D</option>
-                      <option value="Departemen E">Departemen E</option>
-                      <option value="Departemen F">Departemen F</option>
-                  </select>
-                  <label for="position">Jabatan *</label>
-                  <select id="position" name="position" required>
-                      <option value="">--Pilih Jabatan--</option>
-                      <option value="Ketua HIMPROTE">Ketua HIMPROTE</option>
-                      <option value="Wakil Ketua HIMPROTE">Wakil Ketua HIMPROTE</option>
-                      <option value="Sekretaris umum">Sekretaris umum</option>
-                      <option value="Bendahara umum">Bendahara umum</option>
-                      <option value="Sekretaris 2">Sekretaris 2</option>
-                      <option value="Bendahara 2">Bendahara 2</option>
-                      <option value="Ketua Departemen">Ketua Departemen</option>
-                      <option value="Sekretaris Departemen">Sekretaris Departemen</option>
-                      <option value="Staff Ahli">Staff Ahli</option>
-                      <option value="Staf Muda">Staff Muda</option>
-                  </select>
-                  <button type="submit" class="submit-button"><i class="fas fa-upload"></i> Submit</button>
-                </div>
-              </div>
-              <script src="popup.js"></script>
-            </form>
           </div>
+        </div>
       </div>
     </div>
   </main>

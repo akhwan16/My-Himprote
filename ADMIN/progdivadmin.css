@@ -637,6 +637,51 @@ button.back2:hover {
   /* Darker shade of the blue */
 }
 
+.container-anggota-progdiv{
+  display: flex;
+  margin: 5px auto;
+  max-width: 342px;
+  justify-content: center;
+}
+
+.tambah-anggota {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.tambah-anggota .cari-anggota form {
+
+  display: flex;
+  justify-content: space-between;
+  gap : 30px;
+}
+
+i.fas.fa-cog {
+  font-size: 25px;
+}
+
+.action-button {
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.box-tambah-anggota {
+  border-radius: 20px;
+  margin-left: -13px;
+  margin-right: -24px;
+  padding-left: 10px;
+  padding-right: 66px;
+}
+.fas.fa-search {
+  font-size: 30px;
+}
+
+.search-tambah-anggota {
+  border: none;
+  background-color: white;
+}
+
 nav {
   width: 100%;
 }
