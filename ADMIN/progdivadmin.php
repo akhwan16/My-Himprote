@@ -24,6 +24,7 @@
         <div class="reminder">PROGDIV!</div>
       </div>
     </div>
+
   </head>
 
   <body>
@@ -69,6 +70,8 @@
             </div>
           </section>
         </div>
+
+        
         <div class="slide fade">
           <div class="button-back">
             <button class="back" onclick="changeSlide(-1)">
@@ -101,104 +104,129 @@
             </div>
           </section>
           <section id="choice">
-            <div class="choice">
-              <div class="choice-item" id="administrasi">
-                <span>Administrasi</span>
-              </div>
-              <div class="choice-item" id="Persiapan">
-                <span>Persiapan</span>
-              </div>
-              <div class="choice-item" id="Hari Acara">
-                <span>Hari Acara</span>
-              </div>
-            </div>
-
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                const choiceItems = document.querySelectorAll(".choice-item");
-              
-                choiceItems.forEach(item => {
-                  item.addEventListener("click", function () {
-                    // Remove active class from all items
-                    choiceItems.forEach(i => i.classList.remove("active"));
-                    
-                    // Add active class to the clicked item
-                    this.classList.add("active");
-              
-                    // Optional: Scroll to the relevant section or perform any other action
-                    
-                  });
-                });
-              });              
-            </script>
-          </section>
-          <section id="job-list">
-            <div class="job-list">
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">Absensi Rapat ELCO</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
-                  <div class="jobdesk-more-info">
-                    More info <i class="fa-solid fa-circle-exclamation"></i>
-                  </div>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="icon1"></i>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">LPJ</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
-                  <div class="jobdesk-more-info">
-                    More info <i class="fa-solid fa-circle-exclamation"></i>
-                  </div>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="icon1"></i>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">LPJ</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
-                  <div class="jobdesk-more-info">
-                    More info <i class="fa-solid fa-circle-exclamation"></i>
-                  </div>
-                  <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="icon1"></i>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-              </div>
-
-              
             
-              <div class="jobdesk-create">
+  <div class="choice">
+    
+    <div class="choice-item active" data-target="administrasi">
+      <span>Administrasi</span>
+    </div>
+    <div class="choice-item" data-target="persiapan">
+      <span>Persiapan</span>
+    </div>
+    <div class="choice-item" data-target="hari-acara">
+      <span>Hari Acara</span>
+    </div>
+    
+  </div>
+  
+</section>
+
+<section id="job-list">
+  
+  <div class="job-list">
+    
+  <div class="jobdesk-create">
                 <button id="openPopupBtn1" class="create">
                     <i class="fa-solid fa-circle-plus"></i>
                 </button>
             </div>
+    <div class="jobdesk administrasi">
+      <input type="checkbox" class="jobdesk-checkbox" />
+      <div class="jobdesk-time">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+      <div class="jobdesk-content">
+        <div class="jobdesk-title">Absensi Rapat ELCO</div>
+        <div class="jobdesk-subtitle">
+          Electrical Campus Observation
+        </div>
+        <div class="jobdesk-more-info">
+          More info <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+        <div class="icon-container">
+          <i class="fa-solid fa-pencil" id="icon1"></i>
+          <i class="fa-solid fa-trash" id="icon2"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="jobdesk persiapan" style="display: none;">
+      <input type="checkbox" class="jobdesk-checkbox" />
+      <div class="jobdesk-time">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+      <div class="jobdesk-content">
+        <div class="jobdesk-title">LPJ Persiapan</div>
+        <div class="jobdesk-subtitle">
+          Electrical Campus Observation
+        </div>
+        <div class="jobdesk-more-info">
+          More info <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+        <div class="icon-container">
+          <i class="fa-solid fa-pencil" id="icon1"></i>
+          <i class="fa-solid fa-trash" id="icon2"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="jobdesk hari-acara" style="display: none;">
+      <input type="checkbox" class="jobdesk-checkbox" />
+      <div class="jobdesk-time">
+        <i class="fa-solid fa-list-check"></i>
+      </div>
+      <div class="jobdesk-content "  >
+        <div class="jobdesk-title">LPJ Hari Acara</div>
+        <div class="jobdesk-subtitle">
+          Electrical Campus Observation
+        </div>
+        <div class="jobdesk-more-info">
+          More info <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+        <div class="icon-container">
+          <i class="fa-solid fa-pencil" id="icon1"></i>
+          <i class="fa-solid fa-trash" id="icon2"></i>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const choiceItems = document.querySelectorAll(".choice-item");
+  const jobDeskItems = document.querySelectorAll(".jobdesk");
+
+  choiceItems.forEach(item => {
+    item.addEventListener("click", function () {
+      const target = this.getAttribute("data-target");
+
+      // Remove active class from all choice items
+      choiceItems.forEach(i => i.classList.remove("active"));
+      // Add active class to the clicked item
+      this.classList.add("active");
+
+      // Hide all jobdesk items
+      jobDeskItems.forEach(job => {
+        job.style.display = "none";
+      });
+
+      // Show the jobdesk items corresponding to the clicked category
+      document.querySelectorAll(`.jobdesk.${target}`).forEach(job => {
+        job.style.display = "";
+      });
+
+      // Optional: Scroll to the relevant section or perform any other action
+    });
+  });
+});
+
+
+</script>
+            
             
             <div id="popup1" class="popup">
                 <div class="popup-content">

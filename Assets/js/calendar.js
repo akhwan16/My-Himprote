@@ -108,4 +108,3 @@ document.querySelector('#prev-year').onclick = () => {
     }
     generateCalendar(curr_month.value, curr_year.value); // Generate calendar for new month and year
 };
-xa

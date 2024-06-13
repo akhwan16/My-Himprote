@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="profile.css" />
     <title>Profil</title>
     <div class="svg-container">
         <div class="header-container">
@@ -18,126 +19,6 @@
             </div>
         </div>
     </div>
-    <style>       
-        body {
-            background-color: #f0f2f5;
-            font-family: Poppins;
-            overflow: hidden;
-        }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 5px 5px;
-            border-bottom: 2px solid #1f4e79;
-            width: auto;
-            max-width: 365px;
-            margin: 0 auto; /* Center the container horizontally */
-        }
-        .logo {
-            display: flex;
-            align-items: left;
-        }
-        .logo img {
-            height: 25px;
-        }
-        .reminder {
-            font-size: small;
-            font-weight: bold;
-            color: black;
-        }
-        .container {
-            display: flex;
-            padding-top: 100px;
-            justify-content: center;
-            align-items: flex-start; /* Changed to flex-start */
-            height: 100vh;
-        }
-        .card {
-            align-items: top;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 2px solid #1f4e79;
-            padding: 20px;
-            max-width: 400px;
-            position: relative; /* Position relative for absolute positioning */
-        }
-        .profile-image {
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px; /* Center horizontally and add bottom margin */
-            display: block; /* Ensure it's treated as a block element */
-        }
-        .text-content {
-            text-align: center;
-        }
-        .title {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .name, .email, .division, .position {
-            margin-bottom: 0px;
-            font-size: 11px;
-        }
-        .division {
-            font-weight: bold;
-        }
-        .position {
-            font-style: italic;
-        }
-        .logout-btn {
-            position: absolute;
-            bottom: -60px; /* Adjust as needed */
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        nav {
-            width: 100%;
-        }
-        .navbar {
-            display: flex;
-            align-items: center;
-            width: 304px;
-            height: 54px;
-            background-color: #fff;
-            border-radius: 30px;
-            position: fixed;
-            bottom: 5px; /* Adjust bottom margin if necessary */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Center horizontally */
-            border: 2px solid #ccc; /* Added border */
-            justify-content: space-evenly;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* enhanced shadow */
-        }
-        .navbar-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #333;
-            cursor: pointer;
-            padding-top: 1px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .navbar-item.active {
-            color: #002469;
-        }
-        .navbar-item i {
-            font-size: 15px;
-        }
-        .navbar-item span {
-            font-size: 9px;
-            margin-top: 5px; /* Add space between icon and text */
-        }
-        .fade-in {
-            animation: fadeIn ease 1s;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
