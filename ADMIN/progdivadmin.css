@@ -96,6 +96,15 @@ main {
   margin: 10px auto;
 }
 
+.progja-create {
+  max-width: 100%;
+  margin: auto ;
+}
+.progja-list .progja-create{
+  position: fixed;
+  bottom: 90px;
+}
+
 .progja .judul {
   font-size: 15px;
   font-weight: bold;
@@ -467,6 +476,7 @@ select {
 
 button.create {
   border: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -475,7 +485,7 @@ button i:hover {
 }
 
 button i {
-  font-size: 35px;
+  font-size: 40px;
   color: #002469;
 }
 
@@ -563,6 +573,7 @@ button.back2:hover {
 nav {
   width: 100%;
 }
+
 .navbar {
   display: flex;
   align-items: center;
@@ -571,13 +582,19 @@ nav {
   background-color: #fff;
   border-radius: 30px;
   position: fixed;
-  bottom: 5px; /* Adjust bottom margin if necessary */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  border: 2px solid #ccc; /* Added border */
+  bottom: 5px;
+  /* Adjust bottom margin if necessary */
+  left: 50%;
+  /* Center horizontally */
+  transform: translateX(-50%);
+  /* Center horizontally */
+  border: 2px solid #ccc;
+  /* Added border */
   justify-content: space-evenly;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-    /* existing shadow */ 0 6px 20px rgba(0, 0, 0, 0.1); /* enhanced shadow */
+    /* existing shadow */
+    0 6px 20px rgba(0, 0, 0, 0.1);
+  /* enhanced shadow */
 }
 
 .navbar-item {
@@ -599,12 +616,20 @@ nav {
 
 .navbar-item span {
   font-size: 9px;
-  margin-top: 5px; /* Add space between icon and text */
+  margin-top: 5px;
+  /* Add space between icon and text */
 }
+
 .fade-in {
   animation: fadeIn ease 1s;
 }
+
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
