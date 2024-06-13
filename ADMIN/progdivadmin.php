@@ -18,13 +18,6 @@
       </div>
       <div class="reminder">PROGDIV!</div>
     </div>
-<<<<<<< HEAD
-
-  </head>
-=======
-  </div>
-</head>
->>>>>>> 95358f079b3406d5ce845561eb35f1eb03f6b428
 
 <body>
   <main>
