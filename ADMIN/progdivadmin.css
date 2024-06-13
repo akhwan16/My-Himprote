@@ -531,9 +531,25 @@ select {
   background-color: #2550a2;
 }
 
+.jobdesk-edit{
+  border: none;
+  background-color: transparent;
+
+}
+.edit-more-info{
+  border: none;
+  background-color: transparent;
+}
+
+.edit-more-info i{
+  font-size: 15px;
+}
+
+
 .icon-container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 0.7em;
 }
 
@@ -545,7 +561,7 @@ select {
 #icon2 {
   color: darkred;
   cursor: pointer;
-}
+} 
 
 button.create-more-info {
   border: none;
@@ -767,3 +783,6 @@ button.more-info {
 .form3 p {
   text-align: left;
 }
+
+
+
