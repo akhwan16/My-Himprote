@@ -599,24 +599,3 @@
 </footer>
 
 </html>
-
-<div class="jobdesk-edit">
-  <button id="openPopupBtn1" class="edit-more-info" data-popup-id="popup1">
-    <i class="fa-solid fa-pencil" id="icon1"></i>
-  </button>
-</div>
-<div id="popup2" class="popup">
-  <div class="popup-content">
-    <span id="closePopupBtn2" class="close">&times;</span>
-    <h2>Silahkan isi form</h2>
-    <div class="form">
-      <label for="namaedit2">Nama *</label>
-      <input type="text" id="namaedit2" name="nama" required>
-      <label for="keteranganCreate2">Keterangan *</label>
-      <input type="text" id="keteranganedit2" name="keterangan" required>
-      <label for="email">Pilih Ketua Melalui Email *</label>
-      <input type="email" id="email" name="email" required>
-      <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-    </div>
-  </div>
-</div>
