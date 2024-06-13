@@ -198,124 +198,172 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <!--more info-->
+
+
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jobdesk persiapan" style="display: none;">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content">
+                  <div class="jobdesk-title">LPJ Persiapan</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
+                  </div>
+
+                  <!--more info-->
+                  <div class="jobdesk-more-info">
+                    More info
+                    <button id="openPopupBtn3" class="more-info">
+                      <i class="fa-solid fa-circle-exclamation"></i>
+                    </button>
                     <!--more info-->
+                    <div id="popup3" class="popup">
 
-
-                    <div class="icon-container">
-                      <i class="fa-solid fa-pencil" id="icon1"></i>
-                      <i class="fa-solid fa-trash" id="icon2"></i>
+                      <div class="popup-content">
+                        <span id="closePopupBtn3" class="close">&times;</span>
+                        <h2>Silahkan isi form</h2>
+                        <div class="form3">
+                          <p>
+                            1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
+                            2. Mencari tempat lomba. (bersama sie perkap) <br>
+                            3. Mengantar dan mengecek semua surat-surat kegiatan. <br>
+                            4. Menghubungi komting kelas/rombel untuk menyiapkan tim dan pendaftaran <br>
+                            5. Menghubungi tamu undangan. <br>
+                          </p>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <!--more info-->
+                  <script src="popup.js"></script>
+
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
                   </div>
                 </div>
+              </div>
 
-                <div class="jobdesk persiapan" style="display: none;">
-                  <input type="checkbox" class="jobdesk-checkbox" />
-                  <div class="jobdesk-time">
-                    <i class="fa-solid fa-list-check"></i>
+              <div class="jobdesk hari-acara" style="display: none;">
+                <input type="checkbox" class="jobdesk-checkbox" />
+                <div class="jobdesk-time">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="jobdesk-content ">
+                  <div class="jobdesk-title">LPJ Hari Acara</div>
+                  <div class="jobdesk-subtitle">
+                    Electrical Campus Observation
                   </div>
-                  <div class="jobdesk-content">
-                    <div class="jobdesk-title">LPJ Persiapan</div>
-                    <div class="jobdesk-subtitle">
-                      Electrical Campus Observation
+                  <!--more info-->
+                  <div class="jobdesk-more-info">
+                    More info
+                    <button id="openPopupBtn3" class="more-info">
+                      <i class="fa-solid fa-circle-exclamation"></i>
+                    </button>
+                    <!--more info-->
+                    <div id="popup3" class="popup">
+
+                      <div class="popup-content">
+                        <span id="closePopupBtn3" class="close">&times;</span>
+                        <h2>Silahkan isi form</h2>
+                        <div class="form3">
+                          <p>
+                            1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
+                            2. Mencari tempat lomba. (bersama sie perkap) <br>
+                            3. Mengantar dan mengecek semua surat-surat kegiatan. <br>
+                            4. Menghubungi komting kelas/rombel untuk menyiapkan tim dan pendaftaran <br>
+                            5. Menghubungi tamu undangan. <br>
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="jobdesk-more-info">
-                      More info <i class="fa-solid fa-circle-exclamation"></i>
-                    </div>
-                    <div class="icon-container">
-                      <i class="fa-solid fa-pencil" id="icon1"></i>
-                      <i class="fa-solid fa-trash" id="icon2"></i>
-                    </div>
+                  </div>
+                  <!--more info-->
+                  <div class="icon-container">
+                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-trash" id="icon2"></i>
                   </div>
                 </div>
+              </div>
 
-                <div class="jobdesk hari-acara" style="display: none;">
-                  <input type="checkbox" class="jobdesk-checkbox" />
-                  <div class="jobdesk-time">
-                    <i class="fa-solid fa-list-check"></i>
-                  </div>
-                  <div class="jobdesk-content ">
-                    <div class="jobdesk-title">LPJ Hari Acara</div>
-                    <div class="jobdesk-subtitle">
-                      Electrical Campus Observation
-                    </div>
-                    <div class="jobdesk-more-info">
-                      More info <i class="fa-solid fa-circle-exclamation"></i>
-                    </div>
-                    <div class="icon-container">
-                      <i class="fa-solid fa-pencil" id="icon1"></i>
-                      <i class="fa-solid fa-trash" id="icon2"></i>
-                    </div>
-                  </div>
-                </div>
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  const choiceItems = document.querySelectorAll(".choice-item");
+                  const jobDeskItems = document.querySelectorAll(".jobdesk");
 
-                <script>
-                  document.addEventListener("DOMContentLoaded", function() {
-                    const choiceItems = document.querySelectorAll(".choice-item");
-                    const jobDeskItems = document.querySelectorAll(".jobdesk");
+                  choiceItems.forEach(item => {
+                    item.addEventListener("click", function() {
+                      const target = this.getAttribute("data-target");
 
-                    choiceItems.forEach(item => {
-                      item.addEventListener("click", function() {
-                        const target = this.getAttribute("data-target");
+                      // Remove active class from all choice items
+                      choiceItems.forEach(i => i.classList.remove("active"));
+                      // Add active class to the clicked item
+                      this.classList.add("active");
 
-                        // Remove active class from all choice items
-                        choiceItems.forEach(i => i.classList.remove("active"));
-                        // Add active class to the clicked item
-                        this.classList.add("active");
-
-                        // Hide all jobdesk items
-                        jobDeskItems.forEach(job => {
-                          job.style.display = "none";
-                        });
-
-                        // Show the jobdesk items corresponding to the clicked category
-                        document.querySelectorAll(`.jobdesk.${target}`).forEach(job => {
-                          job.style.display = "";
-                        });
-
-                        // Optional: Scroll to the relevant section or perform any other action
+                      // Hide all jobdesk items
+                      jobDeskItems.forEach(job => {
+                        job.style.display = "none";
                       });
+
+                      // Show the jobdesk items corresponding to the clicked category
+                      document.querySelectorAll(`.jobdesk.${target}`).forEach(job => {
+                        job.style.display = "";
+                      });
+
+                      // Optional: Scroll to the relevant section or perform any other action
                     });
                   });
-                </script>
+                });
+              </script>
 
 
-                <div id="popup1" class="popup">
-                  <div class="popup-content">
-                    <span id="closePopupBtn1" class="close">&times;</span>
-                    <h2>Silahkan isi form</h2>
-                    <div class="form">
-                      <label for="namaCreate">Nama *</label>
-                      <input type="nama" id="namaCreate" name="nama" required>
-                      <label for="keteranganCreate">Keterangan *</label>
-                      <input type="keterangan" id="keteranganCreate" name="keterangan" required>
-                      <label for="kategoriCreate">Kategori *</label>
-                      <select id="kategori" name="kategori" required>
-                        <option value="administrasi">--Pilih Kategori--</option>
-                        <option value="administrasi">Administrasi</option>
-                        <option value="persiapan">Persiapan</option>
-                        <option value="hari acara">Hari Acara</option>
-                      </select>
-                      <label for="division">Pilih Divisi *</label>
-                      <select id="division" name="division" required>
-                        <option value="">--Pilih Divisi--</option>
-                        <option value="Acara">Acara</option>
-                        <option value="Kreatif">Kreatif</option>
-                        <option value="Humas">Humas</option>
-                        <option value="Perkab">Perkab</option>
-                        <option value="PDD">PDD</option>
-                        <option value="Kestari">Kestari</option>
-                        <option value="Konsumsi">Konsumsi</option>
-                        <option value="P3K">P3K</option>
-                        <option value="Disman">Disman</option>
-                        <option value="Korlap">Korlap</option>
-                      </select>
-                      <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                      </button>
-                    </div>
+              <div id="popup1" class="popup">
+                <div class="popup-content">
+                  <span id="closePopupBtn1" class="close">&times;</span>
+                  <h2>Silahkan isi form</h2>
+                  <div class="form">
+                    <label for="namaCreate">Nama *</label>
+                    <input type="nama" id="namaCreate" name="nama" required>
+                    <label for="keteranganCreate">Keterangan *</label>
+                    <input type="keterangan" id="keteranganCreate" name="keterangan" required>
+                    <label for="kategoriCreate">Kategori *</label>
+                    <select id="kategori" name="kategori" required>
+                      <option value="administrasi">--Pilih Kategori--</option>
+                      <option value="administrasi">Administrasi</option>
+                      <option value="persiapan">Persiapan</option>
+                      <option value="hari acara">Hari Acara</option>
+                    </select>
+                    <label for="division">Pilih Divisi *</label>
+                    <select id="division" name="division" required>
+                      <option value="">--Pilih Divisi--</option>
+                      <option value="Acara">Acara</option>
+                      <option value="Kreatif">Kreatif</option>
+                      <option value="Humas">Humas</option>
+                      <option value="Perkab">Perkab</option>
+                      <option value="PDD">PDD</option>
+                      <option value="Kestari">Kestari</option>
+                      <option value="Konsumsi">Konsumsi</option>
+                      <option value="P3K">P3K</option>
+                      <option value="Disman">Disman</option>
+                      <option value="Korlap">Korlap</option>
+                    </select>
+                    <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
+                    </button>
                   </div>
                 </div>
+              </div>
 
-                <script src="popup.js"></script>
+              <script src="popup.js"></script>
           </section>
         </div>
 
