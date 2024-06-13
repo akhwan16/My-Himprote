@@ -108,10 +108,7 @@
             <button class="back" onclick="changeSlide(-1)">
               <i class="fa-solid fa-arrow-left"></i>
             </button>
-            <div class="slider">            
-              <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-              <a class="next" onclick="changeSlide(-3)">&#10095;</a>
-            </div>
+         
           </div>
           
           <section id="progja-ketua">
