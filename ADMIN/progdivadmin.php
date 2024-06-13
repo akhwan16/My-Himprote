@@ -112,7 +112,7 @@
               <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
               <a class="next" onclick="changeSlide(-3)">&#10095;</a>
             </div>
-         
+
           </div>
 
           <section id="progja-ketua">
@@ -158,12 +158,6 @@
 
           <section id="job-list">
             <div class="job-list">
-              <div class="jobdesk-create">
-                <button id="openPopupBtn1" class="create">
-                  <i class="fa-solid fa-circle-plus"></i>
-                </button>
-              </div>
-
               <div class="jobdesk administrasi">
                 <input type="checkbox" class="jobdesk-checkbox" />
                 <div class="jobdesk-time">
@@ -255,6 +249,7 @@
                 </div>
               </div>
 
+
               <div class="jobdesk hari-acara" style="display: none;">
                 <input type="checkbox" class="jobdesk-checkbox" />
                 <div class="jobdesk-time">
@@ -327,46 +322,55 @@
                 });
               </script>
 
-
-              <div id="popup1" class="popup">
-                <div class="popup-content">
-                  <span id="closePopupBtn1" class="close">&times;</span>
-                  <h2>Silahkan isi form</h2>
-                  <div class="form">
-                    <label for="namaCreate">Nama *</label>
-                    <input type="nama" id="namaCreate" name="nama" required>
-                    <label for="keteranganCreate">Keterangan *</label>
-                    <input type="keterangan" id="keteranganCreate" name="keterangan" required>
-                    <label for="kategoriCreate">Kategori *</label>
-                    <select id="kategori" name="kategori" required>
-                      <option value="administrasi">--Pilih Kategori--</option>
-                      <option value="administrasi">Administrasi</option>
-                      <option value="persiapan">Persiapan</option>
-                      <option value="hari acara">Hari Acara</option>
-                    </select>
-                    <label for="division">Pilih Divisi *</label>
-                    <select id="division" name="division" required>
-                      <option value="">--Pilih Divisi--</option>
-                      <option value="Acara">Acara</option>
-                      <option value="Kreatif">Kreatif</option>
-                      <option value="Humas">Humas</option>
-                      <option value="Perkab">Perkab</option>
-                      <option value="PDD">PDD</option>
-                      <option value="Kestari">Kestari</option>
-                      <option value="Konsumsi">Konsumsi</option>
-                      <option value="P3K">P3K</option>
-                      <option value="Disman">Disman</option>
-                      <option value="Korlap">Korlap</option>
-                    </select>
-                    <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <script src="popup.js"></script>
           </section>
+          <!--tambah jobdesk-->
+
+          <div class="jobdesk-create">
+            <button id="openPopupBtn1" class="create">
+              <i class="fa-solid fa-circle-plus"></i>
+            </button>
+          </div>
+
+          <div id="popup1" class="popup">
+            <div class="popup-content">
+              <span id="closePopupBtn1" class="close">&times;</span>
+              <h2>Silahkan isi form</h2>
+              <div class="form">
+                <label for="namaCreate">Nama *</label>
+                <input type="nama" id="namaCreate" name="nama" required>
+                <label for="keteranganCreate">Keterangan *</label>
+                <input type="keterangan" id="keteranganCreate" name="keterangan" required>
+                <label for="kategoriCreate">Kategori *</label>
+                <select id="kategori" name="kategori" required>
+                  <option value="administrasi">--Pilih Kategori--</option>
+                  <option value="administrasi">Administrasi</option>
+                  <option value="persiapan">Persiapan</option>
+                  <option value="hari acara">Hari Acara</option>
+                </select>
+                <label for="division">Pilih Divisi *</label>
+                <select id="division" name="division" required>
+                  <option value="">--Pilih Divisi--</option>
+                  <option value="Acara">Acara</option>
+                  <option value="Kreatif">Kreatif</option>
+                  <option value="Humas">Humas</option>
+                  <option value="Perkab">Perkab</option>
+                  <option value="PDD">PDD</option>
+                  <option value="Kestari">Kestari</option>
+                  <option value="Konsumsi">Konsumsi</option>
+                  <option value="P3K">P3K</option>
+                  <option value="Disman">Disman</option>
+                  <option value="Korlap">Korlap</option>
+                </select>
+                <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <script src="popup.js"></script>
         </div>
+
+        <!--tambah jobdesk-->
 
         <div class="slide fade">
           <section id="divisiku">
