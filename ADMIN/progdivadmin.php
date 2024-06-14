@@ -1,6 +1,3 @@
-<?php
-include'../db.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,29 +48,59 @@ include'../db.php';
                 </div>
               </div>
 
+              <div class="progja">
+                <div class="judul">Electrical Campus Observation</div>
+                <div class="button">
+                  <button class="details" onclick="changeSlide(1)">
+                    Details
+                  </button>
+                  <button class="divisi" onclick="changeSlide(2)">Divisi</button>
+                </div>
+              </div>
+
+              <div class="progja">
+                <div class="judul">Electrical Campus Observation</div>
+                <div class="button">
+                  <button class="details" onclick="changeSlide(1)">
+                    Details
+                  </button>
+                  <button class="divisi" onclick="changeSlide(2)">Divisi</button>
+                </div>
+              </div>
+
+              <div class="progja">
+                <div class="judul">Electrical Campus Observation</div>
+                <div class="button">
+                  <button class="details" onclick="changeSlide(1)">
+                    Details
+                  </button>
+                  <button class="divisi" onclick="changeSlide(2)">Divisi</button>
+                </div>
+              </div>
 
               <div class="progja-create">
-                <button id="openPopupBtn2" class="create2-more-info" data-popup-id="popup2">
+                <button id="openPopupBtn2" class="create2">
                   <i class="fa-solid fa-circle-plus"></i>
                 </button>
               </div>
 
               <div id="popup2" class="popup">
-                <div class="popup-content">
-                  <span id="closePopupBtn2" class="close">&times;</span>
+                <div class="popup-content2">
+                  <span id="closePopupBtn2" class="close2">&times;</span>
                   <h2>Silahkan isi form</h2>
-                  <div class="form">
-                    <label for="namaCreate2">Nama *</label>
-                    <input type="text" id="namaCreate2" name="nama" required>
-                    <label for="keteranganCreate2">Keterangan *</label>
-                    <input type="text" id="keteranganCreate2" name="keterangan" required>
+                  <div class="form2">
+                    <label for="namaCreate">Nama *</label>
+                    <input type="nama" id="namaCreate" name="nama" required>
+                    <label for="keteranganCreate">Keterangan *</label>
+                    <input type="keterangan" id="keteranganCreate" name="keterangan" required>
                     <label for="email">Pilih Ketua Melalui Email *</label>
-                    <input type="email" id="email" name="email" required>
+
+                    <input type="keterangan" id="email" name="email" required>
                     <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
+                    </button>
                   </div>
                 </div>
               </div>
-
             </div>
           </section>
         </div>
@@ -138,7 +165,10 @@ include'../db.php';
                 <div class="field">Jane Smith - Marketing</div>
                 <div class="delete-icon"><i class="fas fa-trash-alt"></i></div>
             </div>
-         
+        </div>
+        </div>
+    </div>
+</div>
           </div>
 
           <section id="progja-ketua">
@@ -178,7 +208,7 @@ include'../db.php';
                 </button>
               </div>
 
-              <div class="jobdesk administrasi">
+              <div class="jobdesk">
                 <input type="checkbox" class="jobdesk-checkbox" />
                 <div class="jobdesk-time">
                   <i class="fa-solid fa-list-check"></i>
@@ -189,67 +219,6 @@ include'../db.php';
                     Electrical Campus Observation
                   </div>
 
-                  <!-- More info 1 -->
-                  <div class="jobdesk-more-info">
-                    More info
-                    <button class="more-info" data-popup-id="moreInfo1">
-                      <i class="fa-solid fa-circle-exclamation"></i>
-                    </button>
-                    <!-- Popup 1 -->
-                    <div id="moreInfo1" class="popup">
-                      <div class="popup-content">
-                        <span class="close">&times;</span>
-                        <h2>Details 1</h2>
-                        <div class="form">
-                          <p>
-                            1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
-                            2. Mencari tempat lomba. (bersama sie perkap) <br>
-                            3. Mengantar dan mengecek semua surat-surat kegiatan. <br>
-                            4. Menghubungi komting kelas/rombel untuk menyiapkan tim dan pendaftaran <br>
-                            5. Menghubungi tamu undangan. <br>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End More info 1 -->
-
-                  <div class="icon-container">
-                    <div class="jobdesk-edit">
-                      <button id="openPopupBtn1" class="edit-more-info" data-popup-id="popup1">
-                        <i class="fa-solid fa-pencil" id="icon1"></i>
-                      </button>
-                    </div>
-                    <div id="popup2" class="popup">
-                      <div class="popup-content">
-                        <span id="closePopupBtn2" class="close">&times;</span>
-                        <h2>Silahkan isi form</h2>
-                        <div class="form">
-                          <label for="namaedit2">Nama *</label>
-                          <input type="text" id="namaedit2" name="nama" required>
-                          <label for="keteranganCreate2">Keterangan *</label>
-                          <input type="text" id="keteranganedit2" name="keterangan" required>
-                          <label for="email">Pilih Ketua Melalui Email *</label>
-                          <input type="email" id="email" name="email" required>
-                          <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                        </div>
-                      </div>
-                    </div>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="jobdesk persiapan" style="display: none;">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">LPJ Persiapan</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
 
                   <!--more info-->
                   <div class="jobdesk-more-info">
@@ -276,7 +245,7 @@ include'../db.php';
                     </div>
                   </div>
                   <!--more info-->
-                  <script src="popup.js"></script>
+
 
                   <div class="icon-container">
                     <i class="fa-solid fa-pencil" id="icon1"></i>
@@ -285,78 +254,8 @@ include'../db.php';
                 </div>
               </div>
 
-              <div class="jobdesk hari-acara" style="display: none;">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content ">
-                  <div class="jobdesk-title">LPJ Hari Acara</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
-                  <!--more info-->
-                  <div class="jobdesk-more-info">
-                    More info
-                    <button id="openPopupBtn3" class="more-info">
-                      <i class="fa-solid fa-circle-exclamation"></i>
-                    </button>
-                    <!--more info-->
-                    <div id="popup3" class="popup">
-
-                      <div class="popup-content">
-                        <span id="closePopupBtn3" class="close">&times;</span>
-                        <h2>Silahkan isi form</h2>
-                        <div class="form3">
-                          <p>
-                            1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
-                            2. Mencari tempat lomba. (bersama sie perkap) <br>
-                            3. Mengantar dan mengecek semua surat-surat kegiatan. <br>
-                            4. Menghubungi komting kelas/rombel untuk menyiapkan tim dan pendaftaran <br>
-                            5. Menghubungi tamu undangan. <br>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!--more info-->
-                  <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="icon1"></i>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-              </div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                  const choiceItems = document.querySelectorAll(".choice-item");
-                  const jobDeskItems = document.querySelectorAll(".jobdesk");
-
-                  choiceItems.forEach(item => {
-                    item.addEventListener("click", function() {
-                      const target = this.getAttribute("data-target");
-
-                      // Remove active class from all choice items
-                      choiceItems.forEach(i => i.classList.remove("active"));
-                      // Add active class to the clicked item
-                      this.classList.add("active");
-
-                      // Hide all jobdesk items
-                      jobDeskItems.forEach(job => {
-                        job.style.display = "none";
-                      });
-
-                      // Show the jobdesk items corresponding to the clicked category
-                      document.querySelectorAll(`.jobdesk.${target}`).forEach(job => {
-                        job.style.display = "";
-                      });
-
-                      // Optional: Scroll to the relevant section or perform any other action
-                    });
-                  });
-                });
-              </script>
-
+           
+           
 
               <div id="popup1" class="popup">
                 <div class="popup-content">
@@ -367,13 +266,7 @@ include'../db.php';
                     <input type="nama" id="namaCreate" name="nama" required>
                     <label for="keteranganCreate">Keterangan *</label>
                     <input type="keterangan" id="keteranganCreate" name="keterangan" required>
-                    <label for="kategoriCreate">Kategori *</label>
-                    <select id="kategori" name="kategori" required>
-                      <option value="administrasi">--Pilih Kategori--</option>
-                      <option value="administrasi">Administrasi</option>
-                      <option value="persiapan">Persiapan</option>
-                      <option value="hari acara">Hari Acara</option>
-                    </select>
+                
                     <label for="division">Pilih Divisi *</label>
                     <select id="division" name="division" required>
                       <option value="">--Pilih Divisi--</option>
@@ -394,10 +287,9 @@ include'../db.php';
                 </div>
               </div>
 
-          <script src="popup.js"></script>
+              <script src="popup.js"></script>
+          </section>
         </div>
-
-        <!--tambah jobdesk-->
 
         <div class="slide fade">
           <section id="divisiku">
