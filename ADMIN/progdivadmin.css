@@ -142,6 +142,36 @@ main {
   display: flex;
   margin: auto;
 }
+.anggotadiv {
+  position: relative; /* Needed for positioning the popup */
+  margin-top:5px;
+  padding:3px;
+}
+/* CSS untuk list view */
+.list-view {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item .field {
+  flex: 1;
+  text-align: left;
+}
+
+.list-item .delete-icon {
+  cursor: pointer;
+  color: red;
+  margin-left: 10px; /* Jarak antara ikon dengan teks */
+}
 
 button.back {
   display: flex;
