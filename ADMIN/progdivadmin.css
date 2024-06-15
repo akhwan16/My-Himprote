@@ -891,7 +891,7 @@ button.more-info{
 .upload-container {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; /*ubah posisi ke kanan*/
 }
 
 .custom-file-upload {
@@ -905,11 +905,12 @@ button.more-info{
   font-weight: bold;
 }
 
-.custom-file-upload i {
-  margin: 0;
+/*ubah posisi icon uploadnya disini*/
+.custom-file-upload i { 
+  margin: 0;  
 }
 
 #file-upload {
-  display: none;
+  display: none; /* ngilangin hal tidak penting*/
 }
 /* Upload-Divisi*/
