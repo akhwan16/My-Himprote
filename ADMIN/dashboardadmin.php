@@ -80,6 +80,7 @@ include 'listview.php';
                     <div class="task-date"><span>29 May 2024</span></div>
                     <div class="task">
                         <div class="task-time">18:40</div>
+                        
                         <div class="task-content">
                             <div class="task-title">Absensi Rapat ELCO</div>
                             <div class="task-subtitle">Electrical Campus Observation</div>

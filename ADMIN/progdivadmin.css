@@ -257,6 +257,16 @@ button.back:hover {
   font-size: small;
   font-weight: 600;
 }
+#openPopupBtn1 {
+  font-size: 20px; /* Ubah angka sesuai dengan ukuran yang diinginkan */
+  background: none;
+  color: black; /* Warna teks saat tidak di-hover */
+  transition: color 0.3s ease; /* Transisi perubahan warna */
+}
+
+#openPopupBtn1:hover {
+  color: navy; /* Warna teks saat di-hover */
+}
 
 .choice {
   display: flex;
@@ -283,6 +293,7 @@ button.back:hover {
   padding: 5px;
   color: #000000;
   cursor: pointer;
+
   transition: color 0.3s ease, transform 0.3s ease;
   font-weight: 600;
   position: relative;
@@ -293,7 +304,7 @@ button.back:hover {
 }
 
 .choice-item span {
-  font-size: 15px;
+  font-size: 12px;
   margin-top: 5px;
 }
 
@@ -393,6 +404,7 @@ button.back:hover {
   position: relative;
   /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
 }
+
 
 .jobdesk-time:before {
   content: " ";
@@ -793,4 +805,74 @@ button.more-info{
 }
 .form3 p{
   text-align: left;
+}
+
+
+#openPopupBtn7 {
+  background-color: #4CAF50; /* Hijau */
+  border: none; /* Menghilangkan border */
+  color: white; /* Warna teks */
+  padding: 5px 5px; /* Padding untuk membuat tombol lebih besar */
+  text-align: center; /* Pusat teks */
+  text-decoration: none; /* Menghilangkan garis bawah pada teks */
+  display: inline-block; /* Membuat tombol sebagai elemen blok */
+  font-size: 16px; /* Ukuran font */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Menambahkan kursor pointer saat hover */
+  border-radius: 5px; /* Membuat sudut tombol melengkung */
+  transition: background-color 0.3s ease; /* Animasi perubahan warna background */
+  float: left; /* Mengapungkan tombol ke kanan */
+}
+
+#openPopupBtn7:hover {
+  background-color: #45a049; /* Warna background saat hover */
+}
+#openPopupBtn6 {
+  background-color: #002469; /* Hijau */
+  border: none; /* Menghilangkan border */
+  color: white; /* Warna teks */
+  padding: 5px 5px; /* Padding untuk membuat tombol lebih besar */
+  text-align: center; /* Pusat teks */
+  text-decoration: none; /* Menghilangkan garis bawah pada teks */
+  display: inline-block; /* Membuat tombol sebagai elemen blok */
+  font-size: 16px; /* Ukuran font */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Menambahkan kursor pointer saat hover */
+  border-radius: 5px; /* Membuat sudut tombol melengkung */
+  transition: background-color 0.3s ease; /* Animasi perubahan warna background */
+  float: left; /* Mengapungkan tombol ke kanan */
+
+}
+
+#openPopupBtn6:hover {
+  background-color: navy;; /* Warna background saat hover */
+}
+#pengaturanprogja {
+  width: 100%; /* Menyesuaikan lebar container */
+  overflow: auto; /* Menghindari masalah dengan float */
+  margin-left: 10px;
+
+}
+.filter-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
 }
