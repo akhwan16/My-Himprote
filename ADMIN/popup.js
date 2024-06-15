@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var openPopupBtn1 = document.getElementById("openPopupBtn1");
     var openPopupBtn2 = document.getElementById("openPopupBtn2");
     var openPopupBtn3 = document.getElementById("openPopupBtn3");
+    var openPopupBtn4 = document.getElementById("openPopupBtn4");
     var openPopupBtn6 = document.getElementById("openPopupBtn6");
     var openPopupBtn7 = document.getElementById("openPopupBtn7");
     var openPopupBtn8 = document.getElementById("openPopupBtn8");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var popup1 = document.getElementById("popup1");
     var popup2 = document.getElementById("popup2");
     var popup3 = document.getElementById("popup3");
+    var popup4 = document.getElementById("popup4");
     var popup6 = document.getElementById("popup6");
     var popup7 = document.getElementById("popup7");
     var popup8 = document.getElementById("popup8");
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var closePopupBtn1 = document.getElementById("closePopupBtn1");
     var closePopupBtn2 = document.getElementById("closePopupBtn2");
     var closePopupBtn3 = document.getElementById("closePopupBtn3");
+    var closePopupBtn4 = document.getElementById("closePopupBtn4");
     var closePopupBtn6 = document.getElementById("closePopupBtn6");
     var closePopupBtn7 = document.getElementById("closePopupBtn7");
     var closePopupBtn8 = document.getElementById("closePopupBtn8");
@@ -65,6 +68,18 @@ document.addEventListener("DOMContentLoaded", function() {
     if (closePopupBtn3 && popup3) {
         closePopupBtn3.onclick = function() {
             popup3.style.display = "none";
+        };
+    }
+    if (openPopupBtn4 && popup4) {
+        openPopupBtn4.onclick = function() {
+            popup4.style.display = "block";
+        };
+    }
+
+    // Event untuk menutup popup 3
+    if (closePopupBtn4 && popup4) {
+        closePopupBtn4.onclick = function() {
+            popup4.style.display = "none";
         };
     }
 
@@ -134,6 +149,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (event.target == popup3) {
             popup3.style.display = "none";
+        }
+        if (event.target == popup4) {
+            popup4.style.display = "none";
         }
         if (event.target == popup6) {
             popup6.style.display = "none";

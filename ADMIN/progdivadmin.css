@@ -886,3 +886,30 @@ button.more-info{
   padding: 10px;
   font-family: "Poppins", sans-serif;
 }
+
+/* Upload-Divisi*/
+.upload-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 5px;
+  color: black;
+  background-color: transparent;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.custom-file-upload i {
+  margin: 0;
+}
+
+#file-upload {
+  display: none;
+}
+/* Upload-Divisi*/

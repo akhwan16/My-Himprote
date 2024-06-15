@@ -82,37 +82,37 @@
               <i class="fa-solid fa-arrow-left"></i>
 
             </button>
-           
-              <!--more info-->
-              <div id="popup7" class="popup">
 
-                <div class="popup-content">
-                  <span id="closePopupBtn7" class="close">&times;</span>
+            <!--more info-->
+            <div id="popup7" class="popup">
 
-                  <h2>Silahkan isi form</h2>
-                  <div class="form">
-                    <label for="namaCreate">Nama *</label>
-                    <input type="nama" id="namaCreate" name="nama" required>
-                    <label for="division">Pilih Divisi *</label>
-                    <select id="division" name="division" required>
-                      <option value="">--Pilih Divisi--</option>
-                      <option value="Acara">Acara</option>
-                      <option value="Kreatif">Kreatif</option>
-                      <option value="Humas">Humas</option>
-                      <option value="Perkab">Perkab</option>
-                      <option value="PDD">PDD</option>
-                      <option value="Kestari">Kestari</option>
-                      <option value="Konsumsi">Konsumsi</option>
-                      <option value="P3K">P3K</option>
-                      <option value="Disman">Disman</option>
-                      <option value="Korlap">Korlap</option>
-                    </select>
-                    <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                    </button>
-                  </div>
+              <div class="popup-content">
+                <span id="closePopupBtn7" class="close">&times;</span>
+
+                <h2>Silahkan isi form</h2>
+                <div class="form">
+                  <label for="namaCreate">Nama *</label>
+                  <input type="nama" id="namaCreate" name="nama" required>
+                  <label for="division">Pilih Divisi *</label>
+                  <select id="division" name="division" required>
+                    <option value="">--Pilih Divisi--</option>
+                    <option value="Acara">Acara</option>
+                    <option value="Kreatif">Kreatif</option>
+                    <option value="Humas">Humas</option>
+                    <option value="Perkab">Perkab</option>
+                    <option value="PDD">PDD</option>
+                    <option value="Kestari">Kestari</option>
+                    <option value="Konsumsi">Konsumsi</option>
+                    <option value="P3K">P3K</option>
+                    <option value="Disman">Disman</option>
+                    <option value="Korlap">Korlap</option>
+                  </select>
+                  <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
+                  </button>
                 </div>
               </div>
-         
+            </div>
+
             <!-- Popup 6 -->
             <div class="anggotadiv">
               <div id="popup6" class="popup">
@@ -231,19 +231,19 @@
               <div class="choice-item" data-target="hari-acara">
                 <span>Hari Acara</span>
               </div>
-          
-                  <i  id="openPopupBtn1" class="fa-solid fa-circle-plus"></i>
-            
+
+              <i id="openPopupBtn1" class="fa-solid fa-circle-plus"></i>
+
             </div>
-            
+
           </section>
 
 
           <section id="job-list">
             <div class="job-list">
-              
+
               <div class="jobdesk-create">
-              
+
               </div>
 
               <div class="jobdesk">
@@ -287,29 +287,29 @@
 
                   <div class="icon-container">
                     <i class="fa-solid fa-pencil" id="openPopupBtn8"></i>
-                     <!--more info-->
-              <div id="popup8" class="popup">
+                    <!--more info-->
+                    <div id="popup8" class="popup">
 
-<div class="popup-content">
-  <span id="closePopupBtn8" class="close">&times;</span>
+                      <div class="popup-content">
+                        <span id="closePopupBtn8" class="close">&times;</span>
 
-  <h2>Silahkan isi form</h2>
-  <div class="form">
-    <label for="namaCreate">Nama *</label>
-    <input type="nama" id="namaCreate" name="nama" required>
-    <label for="moreinfoCreate">More Info *</label>
-    <input type="nama" id="namaCreate" name="nama" required>
-    <label for="deskripsi">Deskripsi *</label>
-    <textarea name="textbox" id="deskripsi-box"></textarea>
-    <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-    </button>
-  </div>
-</div>
-</div>
+                        <h2>Silahkan isi form</h2>
+                        <div class="form">
+                          <label for="namaCreate">Nama *</label>
+                          <input type="nama" id="namaCreate" name="nama" required>
+                          <label for="moreinfoCreate">More Info *</label>
+                          <input type="nama" id="namaCreate" name="nama" required>
+                          <label for="deskripsi">Deskripsi *</label>
+                          <textarea name="textbox" id="deskripsi-box"></textarea>
+                          <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                     <i class="fa-solid fa-trash" id="icon2"></i>
                   </div>
                 </div>
-                
+
               </div>
 
 
@@ -370,14 +370,38 @@
                 <div class="jobdesk-content">
                   <div class="jobdesk-title">Absensi Rapat ELCO</div>
                   <div class="jobdesk-subtitle">Electrical Campus Observation</div>
-                  <div class="jobdesk-more-info">
-                    More info <i class="fa-solid fa-circle-exclamation"></i>
+                  <!--EDITT BENTAR -->
+                  <!--more info-->
+                  <div class="jobdesk-more-info divisi">
+                    More info
+                    <button id="openPopupBtn4" class="more-info divisi">
+                      <i class="fa-solid fa-circle-exclamation"></i>
+                    </button>
+                    <!--more info-->
+                    <div id="popup4" class="popup">
+
+                      <div class="popup-content">
+                        <span id="closePopupBtn4" class="close">&times;</span>
+                        <h2>Silahkan isi form</h2>
+                        <div class="form4">
+                          <p>
+                            1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
+                            2. Mencari tempat lomba. (bersama sie perkap) <br>
+                            3. Mengantar dan mengecek semua surat-surat kegiatan. <br>
+                            4. Menghubungi komting kelas/rombel untuk menyiapkan tim dan pendaftaran <br>
+                            5. Menghubungi tamu undangan. <br>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="jobdesk-upload">
-                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                  <div class="upload-container">
+                    <label for="file-upload" class="custom-file-upload">
+                      <i class="fas fa-arrow-up-from-bracket"></i>
+                    </label>
+                    <input id="file-upload" type="file" name="upload">
                   </div>
                 </div>
-              </div>
 
           </section>
         </div>
