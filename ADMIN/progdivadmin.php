@@ -299,7 +299,8 @@
     <input type="nama" id="namaCreate" name="nama" required>
     <label for="moreinfoCreate">More Info *</label>
     <input type="nama" id="namaCreate" name="nama" required>
-   
+    <label for="deskripsi">Deskripsi *</label>
+    <textarea name="textbox" id="deskripsi-box"></textarea>
     <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
     </button>
   </div>

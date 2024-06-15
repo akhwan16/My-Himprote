@@ -879,3 +879,9 @@ button.more-info{
   background-color: #007bff;
   color: white;
 }
+
+#deskripsi-box {
+  height: 200px;
+  vertical-align: top;
+  padding: 10px;
+}
