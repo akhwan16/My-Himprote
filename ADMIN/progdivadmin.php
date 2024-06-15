@@ -82,7 +82,7 @@
               <i class="fa-solid fa-arrow-left"></i>
 
             </button>
-            <div class="anggotadiv">
+           
               <!--more info-->
               <div id="popup7" class="popup">
 
@@ -112,7 +112,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+         
             <!-- Popup 6 -->
             <div class="anggotadiv">
               <div id="popup6" class="popup">
@@ -286,7 +286,25 @@
 
 
                   <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="icon1"></i>
+                    <i class="fa-solid fa-pencil" id="openPopupBtn8"></i>
+                     <!--more info-->
+              <div id="popup8" class="popup">
+
+<div class="popup-content">
+  <span id="closePopupBtn8" class="close">&times;</span>
+
+  <h2>Silahkan isi form</h2>
+  <div class="form">
+    <label for="namaCreate">Nama *</label>
+    <input type="nama" id="namaCreate" name="nama" required>
+    <label for="moreinfoCreate">More Info *</label>
+    <input type="nama" id="namaCreate" name="nama" required>
+   
+    <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
+    </button>
+  </div>
+</div>
+</div>
                     <i class="fa-solid fa-trash" id="icon2"></i>
                   </div>
                 </div>

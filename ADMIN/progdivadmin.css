@@ -267,7 +267,10 @@ button.back:hover {
 #openPopupBtn1:hover {
   color: navy; /* Warna teks saat di-hover */
 }
-
+#openPopupBtn8{
+  color: darkgreen;
+  cursor: pointer;
+}
 .choice {
   display: flex;
   justify-content: space-around;
