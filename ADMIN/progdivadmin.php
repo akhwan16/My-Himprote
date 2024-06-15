@@ -195,7 +195,7 @@
                 Ketua: Haikal Rijaldi
 
               </div>
-              <div id="pengaturanprogja"> <i id="openPopupBtn7" class="fa-solid fa-plus"></i>
+              <div id="pengaturanprogja"> <i id="openPopupBtn7" class="fa-solid fa-cog"></i>
                 <i id="openPopupBtn6" class="fas fa-user-circle"></i>
               </div>
             </div>
