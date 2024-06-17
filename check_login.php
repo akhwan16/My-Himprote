@@ -40,7 +40,7 @@ if(isset($_POST['email'])) {
             exit;
         } elseif($user['role'] == 'user') {
             // Jika pengguna adalah user, arahkan ke halaman user menggunakan PHP header
-            header("Location: ../dashboarduser1.php");
+            header("Location: ../ADMIN/dashboardadmin.php");
             exit;
         } 
     } else {

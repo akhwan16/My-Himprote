@@ -21,9 +21,14 @@ include 'listview.php';
             <div class="logo">
                 <img src="../Assets/img/Group 207.png" alt="Logo">
             </div>
-            <div class="reminder">            
+            <div class="reminder">   
+                  
+              <?php if ($role === 'admin') : ?>
+       
+           
                 <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
                 <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                <?php endif; ?> 
             </div>
         </div>
     </div>
@@ -36,7 +41,7 @@ include 'listview.php';
                 <div class="container-fluid">
                     <div class="welcome-container">
                         <div class="welcome-message">Selamat datang, <?php echo htmlspecialchars($nama); ?></div>
-                        <div class="sub-message">Kamu login sebagai <span><?php echo htmlspecialchars($role); ?></span>!</div>
+                        <div class="sub-message">Kamu login sebagai <span><?php echo htmlspecialchars($role); ?></span> !</div>
                     </div>
                 </div>
             </div>

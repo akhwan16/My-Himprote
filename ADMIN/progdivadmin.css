@@ -93,7 +93,7 @@ main {
   border-radius: 15px;
   max-width: 100%;
   padding: 15px;
-  margin: 10px auto;
+  margin: 15px;
 }
 
 .progja .judul {
@@ -116,6 +116,7 @@ main {
   font-weight: bold;
   background-color: transparent;
   cursor: pointer;
+  padding:5px;
 }
 
 .button .details:hover {
@@ -468,6 +469,19 @@ button.back:hover {
   flex-direction: column;
   margin: 10px;
 }
+.form4
+{
+  text-align:justify;
+}
+button.hapus {
+  background-color: transparent;
+  border:none;
+cursor:pointer;
+ 
+justify-content:center;
+text-align:right;
+}
+
 
 .close {
   color: #aaa;
