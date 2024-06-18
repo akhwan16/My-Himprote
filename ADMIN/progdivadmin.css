@@ -585,6 +585,7 @@ select {
   color: white;
   font-size: small;
 }
+
 .submit-button:hover {
   background-color: #2550a2;
 }
@@ -609,10 +610,6 @@ button.create {
   border: none;
   background-color: transparent;
   cursor: pointer;
-}
-
-button i:hover {
-  color: #2550a2;
 }
 
 button i {
