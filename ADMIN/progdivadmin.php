@@ -28,7 +28,9 @@
         <div class="search-container">
     <form method="GET">
         <div class="search-wrapper">
+        <i class="fas fa-search"></i>
             <input type="text" class="search-box" name="q" placeholder="Cari Progja" value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q']) : ''; ?>"/>
+            
             <button type="submit" class="search-button">
                 <i class="fas fa-search"></i>
             </button>
@@ -200,61 +202,7 @@ $conn->close();
           </section>
         </div>
 
-        <div class="slide fade">
-          <section id="divisiku">
-            <div class="button-back2">
-              <button class="back2" onclick="changeSlide(-2)">
-                <i class="fa-solid fa-arrow-left"></i>
-              </button>
-              <div class="divisiku">
-                <img src="/Assets/img/div.png" alt="" />HUMAS
-              </div>
-          </section>
-
-          <section id="job-list">
-            <div class="job-list">
-              <div class="progress">Progress</div>
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">Absensi Rapat ELCO</div>
-                  <div class="jobdesk-subtitle">Electrical Campus Observation</div>
-                  <!--EDITT BENTAR -->
-                  <!--more info-->
-                  <div class="jobdesk-more-info divisi">
-                    More info
-                    <button id="openPopupBtn4" class="more-info divisi">
-                      <i class="fa-solid fa-circle-exclamation"></i>
-                    </button>
-                    <!--more info-->
-                    <div id="popup4" class="popup">
-
-                      <div class="popup-content">
-                        <span id="closePopupBtn4" class="close">&times;</span>
-                        <h2>More Info</h2>
-                        <div class="form4">
-                          <p>
-                            1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
-                            2. Mencari tempat lomba. (bersama sie perkap) <br>
-                            3. Mengantar dan mengecek semua surat-surat kegiatan. <br>
-                            4. Menghubungi komting kelas/rombel untuk menyiapkan tim dan pendaftaran <br>
-                            5. Menghubungi tamu undangan. <br>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="upload-container">
-                    <label for="file-upload" class="custom-file-upload">
-                      <i class="fas fa-arrow-up-from-bracket"></i>
-                    </label>
-                    <input id="file-upload" type="file" name="upload">
-                  </div>
-                </div>
-
+       
           </section>
         </div>
 
@@ -292,9 +240,9 @@ $conn->close();
       });
     });
   </script>
-  <script src="/Assets/js/nav.js"></script>
+ 
   <script src="/Assets/js/calendar.js"></script>
-  <script src="/Assets/js/slide.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
   <script src="/script.js"></script>

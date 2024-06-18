@@ -1,6 +1,4 @@
 <?php
-// upload.php
-
 // Pastikan session dimulai dan sertakan file koneksi ke database (db.php)
 session_start();
 include '../db.php';
@@ -15,11 +13,12 @@ if (!file_exists($targetDir)) {
     }
 }
 
-// Periksa apakah terdapat file yang diunggah
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
+// Periksa apakah terdapat file yang diunggah dan post_id tersedia
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"]) && isset($_POST['post_id'])) {
     $file = $_FILES["upload"];
     $fileName = basename($file["name"]);
     $targetFile = $targetDir . $fileName; // Path lengkap file yang akan disimpan
+    $post_id = $_POST['post_id'];
 
     // Cek apakah file sudah diunggah dengan benar
     if (move_uploaded_file($file["tmp_name"], $targetFile)) {
@@ -29,67 +28,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
         if (isset($_SESSION['program_id'])) {
             $programId = $_SESSION['program_id'];
 
-            // Ambil judul dan konten dari database berdasarkan post_id
-            $post_id = $_POST['post_id'];
-            $sqlSelect = "SELECT judul, konten FROM post WHERE id = ?";
-            $stmtSelect = $conn->prepare($sqlSelect);
-            $stmtSelect->bind_param("i", $post_id);
-            $stmtSelect->execute();
-            $stmtSelect->bind_result($judul, $konten);
+            // Update kolom file untuk post yang ada
+            $sqlUpdate = "UPDATE post SET file = ? WHERE id = ?";
+            $stmtUpdate = $conn->prepare($sqlUpdate);
+            $stmtUpdate->bind_param("si", $targetFile, $post_id);
 
-            // Ambil hasil query
-            $stmtSelect->fetch();
-            $stmtSelect->close();
-
-            // Periksa apakah file dengan nama yang sama sudah ada di database
-            $sqlCheck = "SELECT id FROM post WHERE program_id = ? AND file = ?";
-            $stmtCheck = $conn->prepare($sqlCheck);
-            $stmtCheck->bind_param("is", $programId, $targetFile);
-            $stmtCheck->execute();
-            $stmtCheck->store_result();
-
-            if ($stmtCheck->num_rows > 0) {
-                // Jika file sudah ada, update data yang sudah ada
-                $sqlUpdate = "UPDATE post SET judul = ?, konten = ? WHERE program_id = ? AND file = ?";
-                $stmtUpdate = $conn->prepare($sqlUpdate);
-                $stmtUpdate->bind_param("ssis", $judul, $konten, $programId, $targetFile);
-
-                if ($stmtUpdate->execute()) {
-                    echo "File berhasil diunggah dan data post berhasil diperbarui.";
-                } else {
-                    echo "Terjadi kesalahan saat memperbarui data post: " . $stmtUpdate->error;
-                }
-
-                $stmtUpdate->close();
+            if ($stmtUpdate->execute()) {
+                echo "File berhasil diunggah dan data post berhasil diperbarui.";
             } else {
-                // Jika file belum ada, buat entri baru
-                $sqlInsert = "INSERT INTO post (program_id, judul, konten, file) VALUES (?, ?, ?, ?)";
-                $stmtInsert = $conn->prepare($sqlInsert);
-                $stmtInsert->bind_param("isss", $programId, $judul, $konten, $targetFile);
-
-                if ($stmtInsert->execute()) {
-                    echo "File baru berhasil diunggah dan data post baru berhasil disimpan.";
-                } else {
-                    echo "Terjadi kesalahan saat menyimpan data post baru: " . $stmtInsert->error;
-                }
-
-                $stmtInsert->close();
+                echo "Terjadi kesalahan saat memperbarui data post: " . $stmtUpdate->error;
             }
 
-            $stmtCheck->close();
+            $stmtUpdate->close();
         } else {
             echo "Program ID tidak tersedia dalam sesi.";
         }
     } else {
-        echo "Terjadi kesalahan saat mengunggah file.";
+        // Tampilkan kesalahan yang terjadi saat mengunggah file
+        $uploadError = $_FILES["upload"]["error"];
+        switch ($uploadError) {
+            case UPLOAD_ERR_INI_SIZE:
+                $message = "File melebihi batas ukuran yang diizinkan oleh konfigurasi php.ini.";
+                break;
+            case UPLOAD_ERR_FORM_SIZE:
+                $message = "File melebihi batas ukuran yang diizinkan oleh formulir HTML.";
+                break;
+            case UPLOAD_ERR_PARTIAL:
+                $message = "File hanya sebagian yang diunggah.";
+                break;
+            case UPLOAD_ERR_NO_FILE:
+                $message = "Tidak ada file yang diunggah.";
+                break;
+            case UPLOAD_ERR_NO_TMP_DIR:
+                $message = "Direktori sementara hilang.";
+                break;
+            case UPLOAD_ERR_CANT_WRITE:
+                $message = "Gagal menulis file ke disk.";
+                break;
+            case UPLOAD_ERR_EXTENSION:
+                $message = "Ekstensi PHP menghentikan pengunggahan file.";
+                break;
+            default:
+                $message = "Kesalahan tidak diketahui.";
+                break;
+        }
+        echo "Terjadi kesalahan saat mengunggah file: " . $message;
     }
 } else {
-    // Jika tidak ada file yang diunggah
-    echo "Mohon unggah file.";
-
-    // Atau tambahkan pesan untuk kasus khusus jika kolom 'file' masih kosong
+    // Jika tidak ada file yang diunggah atau post_id tidak tersedia
+    echo "Mohon unggah file dan pastikan post_id disertakan.";
     if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_FILES["upload"]["name"])) {
         echo " Kolom 'file' masih kosong.";
+    }
+    if (!isset($_POST['post_id'])) {
+        echo " Post ID tidak tersedia.";
     }
 }
 
