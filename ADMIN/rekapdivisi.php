@@ -159,7 +159,7 @@
                 $class = 'validasi-0-no-file'; // Merah
             }
             echo "<div class='post $class'></div>";
-            echo "<div class='post-title'>{$row['nama']}</div>";
+            echo "<div class='post-title'>{$row['post_nama']}</div>";
  
        
     
