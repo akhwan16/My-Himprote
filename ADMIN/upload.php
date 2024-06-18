@@ -1,55 +1,87 @@
 <?php
 // upload.php
+
+// Pastikan session dimulai dan sertakan file koneksi ke database (db.php)
+session_start();
+include '../db.php';
+
+// Konfigurasi direktori penyimpanan file
 $targetDir = "uploads/";
 
-// Periksa apakah direktori sudah ada, jika belum, buat
+// Pastikan direktori sudah ada atau buat jika belum
 if (!file_exists($targetDir)) {
     if (!mkdir($targetDir, 0777, true)) {
         die('Gagal membuat direktori uploads...');
     }
 }
-// Pastikan file telah diunggah dengan benar
+
+// Periksa apakah terdapat file yang diunggah
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
     $file = $_FILES["upload"];
-
-    // Konfigurasi direktori penyimpanan file
-    $targetDir = "uploads/"; // Direktori tempat menyimpan file
-    $targetFile = $targetDir . basename($file["name"]); // Path lengkap file yang akan disimpan
+    $fileName = basename($file["name"]);
+    $targetFile = $targetDir . $fileName; // Path lengkap file yang akan disimpan
 
     // Cek apakah file sudah diunggah dengan benar
     if (move_uploaded_file($file["tmp_name"], $targetFile)) {
         // File berhasil diunggah, sekarang masukkan informasi ke dalam tabel post
-        session_start();
-        include 'db.php'; // Include koneksi ke database
 
-        // Pastikan program_id telah diset di sesi sebelumnya
+        // Dapatkan program_id dari session
         if (isset($_SESSION['program_id'])) {
             $programId = $_SESSION['program_id'];
             $judul = "Judul postingan"; // Misalnya, Anda dapat mengganti dengan judul yang diperlukan
             $konten = "Konten postingan"; // Misalnya, Anda dapat mengganti dengan konten yang diperlukan
 
-            // Siapkan query untuk menyimpan data ke dalam tabel post
-            $sql = "INSERT INTO post (program_id, judul, konten, file) VALUES (?, ?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("isss", $programId, $judul, $konten, $targetFile); // Mengikat parameter ke statement
+            // Periksa apakah file dengan nama yang sama sudah ada di database
+            $sqlCheck = "SELECT id FROM post WHERE program_id = ? AND file = ?";
+            $stmtCheck = $conn->prepare($sqlCheck);
+            $stmtCheck->bind_param("is", $programId, $targetFile);
+            $stmtCheck->execute();
+            $stmtCheck->store_result();
 
-            // Lakukan eksekusi query
-            if ($stmt->execute()) {
-                echo "File berhasil diunggah dan data post berhasil disimpan.";
+            if ($stmtCheck->num_rows > 0) {
+                // Jika file sudah ada, update data yang sudah ada
+                $sqlUpdate = "UPDATE post SET judul = ?, konten = ? WHERE program_id = ? AND file = ?";
+                $stmtUpdate = $conn->prepare($sqlUpdate);
+                $stmtUpdate->bind_param("ssis", $judul, $konten, $programId, $targetFile);
+
+                if ($stmtUpdate->execute()) {
+                    echo "File berhasil diunggah dan data post berhasil diperbarui.";
+                } else {
+                    echo "Terjadi kesalahan saat memperbarui data post: " . $stmtUpdate->error;
+                }
+
+                $stmtUpdate->close();
             } else {
-                echo "Terjadi kesalahan saat menyimpan data post: " . $stmt->error;
+                // Jika file belum ada, buat entri baru
+                $sqlInsert = "INSERT INTO post (program_id, judul, konten, file) VALUES (?, ?, ?, ?)";
+                $stmtInsert = $conn->prepare($sqlInsert);
+                $stmtInsert->bind_param("isss", $programId, $judul, $konten, $targetFile);
+
+                if ($stmtInsert->execute()) {
+                    echo "File baru berhasil diunggah dan data post baru berhasil disimpan.";
+                } else {
+                    echo "Terjadi kesalahan saat menyimpan data post baru: " . $stmtInsert->error;
+                }
+
+                $stmtInsert->close();
             }
 
-            $stmt->close();
+            $stmtCheck->close();
         } else {
             echo "Program ID tidak tersedia dalam sesi.";
         }
-
-        $conn->close();
     } else {
         echo "Terjadi kesalahan saat mengunggah file.";
     }
 } else {
+    // Jika tidak ada file yang diunggah
     echo "Mohon unggah file.";
+
+    // Atau tambahkan pesan untuk kasus khusus jika kolom 'file' masih kosong
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($_FILES["upload"]["name"])) {
+        echo " Kolom 'file' masih kosong.";
+    }
 }
+
+$conn->close(); // Tutup koneksi database setelah selesai
 ?>
