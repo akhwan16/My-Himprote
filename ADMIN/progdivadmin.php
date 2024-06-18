@@ -74,37 +74,55 @@ if ($resultRole->num_rows > 0) {
 $programs = [];
 
 // Query untuk mendapatkan program kerja
-$sql = "SELECT pk.id, pk.nama, pk.deskripsi 
+$sql = "SELECT pk.id, pk.nama, pk.deskripsi, pk.ketua_email 
         FROM ProgramKerja pk ";
+
 // Ambil kata kunci pencarian dari URL
 $q = isset($_GET['q']) ? $_GET['q'] : '';
 
 // Query untuk mendapatkan program kerja berdasarkan pencarian
 if (!empty($q)) {
-    $sql = "SELECT pk.id, pk.nama, pk.deskripsi 
-            FROM ProgramKerja pk
-            WHERE pk.nama LIKE '%$q%'";
+    $sql .= "WHERE pk.nama LIKE '%$q%'";
 } else {
-   
     if ($role === 'admin') {
-      // Jika role adalah admin, tampilkan semua program kerja
-      $sql .= "LEFT JOIN PenggunaProgramDivisi ppd ON pk.id = ppd.program_id ";
-  } else {
-      // Jika bukan admin, tampilkan program kerja yang diikuti oleh pengguna
-      $sql .= "LEFT JOIN PenggunaProgramDivisi ppd ON pk.id = ppd.program_id 
-               WHERE ppd.email_pengguna = '$email' ";
-      
-      // Jika pengguna juga adalah ketua dari suatu program kerja, tambahkan kondisi OR
-      $sql .= "OR pk.ketua_email = '$email' ";
-  }
-  
+        // Jika role adalah admin, tampilkan semua program kerja
+        $sql .= "LEFT JOIN PenggunaProgramDivisi ppd ON pk.id = ppd.program_id ";
+    } else {
+        // Jika bukan admin, tampilkan program kerja yang diikuti oleh pengguna
+        $sql .= "LEFT JOIN PenggunaProgramDivisi ppd ON pk.id = ppd.program_id 
+                 WHERE ppd.email_pengguna = '$email' ";
+        
+        // Jika pengguna juga adalah ketua dari suatu program kerja, tambahkan kondisi OR
+        $sql .= "OR pk.ketua_email = '$email' ";
+    }
 }
 
 $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $programs[] = $row;
+        $program_id = $row['id'];
+        $nama_program = htmlspecialchars($row['nama']);
+        $deskripsi_program = htmlspecialchars($row['deskripsi']);
+        $ketua_email = $row['ketua_email'];
+
+        // Query untuk mendapatkan nama ketua berdasarkan email ketua
+        $sql_ketua = "SELECT nama FROM akun WHERE email = ?";
+        $stmt_ketua = $conn->prepare($sql_ketua);
+        $stmt_ketua->bind_param("s", $ketua_email);
+        $stmt_ketua->execute();
+        $stmt_ketua->bind_result($nama_ketua);
+        $stmt_ketua->fetch();
+        $stmt_ketua->close();
+
+        // Tambahkan data program ke array $programs
+        $programs[] = [
+            'id' => $program_id,
+            'nama' => $nama_program,
+            'deskripsi' => $deskripsi_program,
+            'ketua_email' => $ketua_email,
+            'nama_ketua' => $nama_ketua
+        ];
     }
 }
 
@@ -117,23 +135,24 @@ $conn->close();
               
                 <?php foreach ($programs as $program) : ?>
                     <div class="progja">
-                        <div class="judul"><?php echo htmlspecialchars($program['nama']); ?></div>
+                        <div class="judul"><?php echo htmlspecialchars($program['nama']); ?> <br>Ketua : <?php echo htmlspecialchars($program['nama_ketua']); ?></div>
+                        <div class="konten"> </div>
               
                         <div class="button">
                             <form method="GET" action="details.php">
                             <input type="hidden" name="program_id" value="<?php echo htmlspecialchars($program['id']); ?>">
-                                <button type="submit"class="fa-solid fa-info-circle" style="background-color: transparent; border:none; cursor:pointer;"></button>
+                                <button type="submit"class="fa-solid fa-info-circle" style="background-color: transparent; border:none;  color: darkblue; cursor:pointer;"></button>
                             </form>
                             <form method="GET" action="divisi.php">
                                 <input type="hidden" name="program_id" value="<?php echo htmlspecialchars($program['id']); ?>">
-                                <button type="submit" onclick="changeSlide(2)" class="fa-solid fa-users" style="background-color: transparent; border:none; cursor:pointer;"></button>
+                                <button type="submit" onclick="changeSlide(2)" class="fa-solid fa-users" style="background-color: transparent; border:none;  color: orange; cursor:pointer; "></button>
                             </form>
                             <?php if ($role === 'admin') : ?>
                                 <!-- Form untuk menghapus program kerja -->
                                 <form method="POST" action="hapus_program.php" onsubmit="return confirm('Apakah Anda yakin ingin menghapus program kerja ini?')">
                                     <input type="hidden" name="program_id" value="<?php echo htmlspecialchars($program['id']); ?>">
                                     <button type="submit" class="hapus">
-                                        <i class="fa-solid fa-trash" style="font-size: 14px; color: black;"></i> 
+                                        <i class="fa-solid fa-trash" style="font-size: 14px; color: darkred;"></i> 
                                     </button>
                                 </form>
                             <?php endif; ?>
@@ -174,299 +193,6 @@ $conn->close();
             </div>
           </section>
         </div>
-
-        <div class="slide fade">
-
-          <div class="button-back">
-
-            <button class="back" onclick="changeSlide(-1)">
-              <i class="fa-solid fa-arrow-left"></i>
-
-            </button>
-
-            <!--more info-->
-            <div id="popup7" class="popup">
-
-              <div class="popup-content">
-                <span id="closePopupBtn7" class="close">&times;</span>
-
-                <h2>Silahkan isi form</h2>
-                <div class="form">
-                  <label for="namaCreate">Nama *</label>
-                  <input type="nama" id="namaCreate" name="nama" required>
-                  <label for="division">Pilih Divisi *</label>
-                  <select id="division" name="division" required>
-                    <option value="">--Pilih Divisi--</option>
-                    <option value="Acara">Acara</option>
-                    <option value="Kreatif">Kreatif</option>
-                    <option value="Humas">Humas</option>
-                    <option value="Perkab">Perkab</option>
-                    <option value="PDD">PDD</option>
-                    <option value="Kestari">Kestari</option>
-                    <option value="Konsumsi">Konsumsi</option>
-                    <option value="P3K">P3K</option>
-                    <option value="Disman">Disman</option>
-                    <option value="Korlap">Korlap</option>
-                  </select>
-                  <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Popup 6 -->
-            <div class="anggotadiv">
-              <div id="popup6" class="popup">
-                <div class="popup-content">
-                  <span id="closePopupBtn6" class="close">&times;</span>
-                  <h2>Daftar Anggota</h2>
-                  <div class="list-view" id="listView">
-                    <!-- Example Items -->
-                    <div class="list-item">
-                      <div class="field">John Doe - HR</div>
-                      <div class="delete-icon"><i class="fas fa-trash-alt"></i></div>
-                    </div>
-                    <div class="list-item">
-                      <div class="field">Jane Smith - Marketing</div>
-                      <div class="delete-icon"><i class="fas fa-trash-alt"></i></div>
-                    </div>
-                    <div class="list-item">
-                      <div class="field">Alice Johnson - IT</div>
-                      <div class="delete-icon"><i class="fas fa-trash-alt"></i></div>
-                    </div>
-                    <!-- Add more items here as needed, total at least 15 for demo -->
-                  </div>
-                  <div class="pagination" id="pagination"></div>
-                </div>
-              </div>
-            </div>
-
-            <script>
-              // Pagination Functionality
-              const itemsPerPage = 10;
-              let currentPage = 1;
-              const listView = document.getElementById('listView');
-              const pagination = document.getElementById('pagination');
-
-              function displayItems(items, page) {
-                listView.innerHTML = '';
-                const start = (page - 1) * itemsPerPage;
-                const end = start + itemsPerPage;
-                const paginatedItems = items.slice(start, end);
-
-                paginatedItems.forEach(item => {
-                  listView.appendChild(item);
-                });
-              }
-
-              function setupPagination(items) {
-                pagination.innerHTML = '';
-                const pageCount = Math.ceil(items.length / itemsPerPage);
-                for (let i = 1; i <= pageCount; i++) {
-                  const btn = document.createElement('button');
-                  btn.textContent = i;
-                  btn.classList.add('page-btn');
-                  if (i === currentPage) btn.classList.add('active');
-                  btn.addEventListener('click', () => {
-                    currentPage = i;
-                    displayItems(items, currentPage);
-                    document.querySelector('.pagination button.active').classList.remove('active');
-                    btn.classList.add('active');
-                  });
-                  pagination.appendChild(btn);
-                }
-              }
-
-              // Initial setup
-              const listItems = Array.from(document.querySelectorAll('.list-item'));
-              setupPagination(listItems);
-              displayItems(listItems, currentPage);
-            </script>
-
-          </div>
-
-          <section id="progja-ketua">
-
-            <div class="progja-ketua">
-
-              <div class="nama-progja">
-              <?php echo htmlspecialchars($program['nama']); ?>
-              </div>
-              <div class="nama-ketua">
-                Ketua: Haikal Rijaldi
-
-              </div>
-              <div id="pengaturanprogja"> <i id="openPopupBtn7" class="fa-solid fa-plus"></i>
-                <i id="openPopupBtn6" class="fas fa-user-circle"></i>
-              </div>
-            </div>
-
-          </section>
-
-          <section id="deskripsi">
-
-            <div class="deskripsi">
-
-              <div class="judul">Deskripsi :</div>
-              <div class="teks">
-                Elektro Bersuara 2024 adalah forum inisiatif HIMPROTE Fakultas
-                Teknik Universitas Negeri Semarang, membuka ruang bagi mahasiswa
-                Teknik Elektro untuk menyampaikan aspirasi dan solusi inovatif
-                kepada pihak birokrasi. Melalui dialog konstruktif, kami
-                berharap menjembatani kesenjangan antara mahasiswa dan
-                birokrasi, menciptakan lingkungan akademik yang inklusif dan
-                responsif. Kegiatan ini bukan hanya wacana, tapi langkah konkret
-                menuju perubahan positif bagi kemajuan bersama.
-              </div>
-            </div>
-          </section>
-
-          <section id="choice">
-            <div class="choice">
-              <div class="choice-item active">
-                <span>Administrasi</span>
-              </div>
-              <div class="choice-item" >
-                <span>Persiapan</span>
-              </div>
-              <div class="choice-item" >
-                <span>Hari Acara</span>
-              </div>
-
-              <i id="openPopupBtn1" class="fa-solid fa-circle-plus"></i>
-
-            </div>
-
-          </section>
-
-          <div id="popup1" class="popup">
-                <div class="popup-content">
-                  <span id="closePopupBtn1" class="close">&times;</span>
-                  <h2>Silahkan isi form</h2>
-                  <div class="form">
-                    <label for="namaCreate">Nama *</label>
-                    <input type="nama" id="namaCreate" name="nama" required>
-                    <label for="deskripsi">More Info *</label>
-                    <textarea name="textbox" id="deskripsi-box"></textarea>
-                    <label for="kategori">Pilih Kategori *</label>
-                    <select id="katgeori" name="katgeori" required>
-                      <option value="">--Pilih Kategori--</option>
-                      <option value="Administrasi">Administrasi</option>
-                      <option value="Persiapan">Persiapan</option>
-                      <option value="Harid Acara">Hari Acara</option>
-                    </select>
-                    <label for="division">Pilih Divisi *</label>
-                    <select id="division" name="division" required>
-                      <option value="">--Pilih Divisi--</option>
-                      <option value="Acara">Acara</option>
-                      <option value="Kreatif">Kreatif</option>
-                      <option value="Humas">Humas</option>
-                      <option value="Perkab">Perkab</option>
-                      <option value="PDD">PDD</option>
-                      <option value="Kestari">Kestari</option>
-                      <option value="Konsumsi">Konsumsi</option>
-                      <option value="P3K">P3K</option>
-                      <option value="Disman">Disman</option>
-                      <option value="Korlap">Korlap</option>
-                    </select>
-                    <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-          <section id="job-list">
-            <div class="job-list">
-
-              <div class="jobdesk-create">
-
-              </div>
-
-              <div class="jobdesk">
-                <input type="checkbox" class="jobdesk-checkbox" />
-                <div class="jobdesk-time">
-                  <i class="fa-solid fa-list-check"></i>
-                </div>
-                <div class="jobdesk-content">
-                  <div class="jobdesk-title">Absensi Rapat ELCO</div>
-                  <div class="jobdesk-subtitle">
-                    Electrical Campus Observation
-                  </div>
-
-
-                  <!--more info-->
-                  <div class="jobdesk-more-info">
-                    More info
-                    <button id="openPopupBtn3" class="more-info">
-                      <i class="fa-solid fa-circle-exclamation"></i>
-                    </button>
-                    <!--more info-->
-                    <div id="popup3" class="popup">
-
-                      <div class="popup-content">
-                        <span id="closePopupBtn3" class="close">&times;</span>
-                        <h2>More Info</h2>
-                        <div class="form3">
-                          <p>
-                            1. Meminta tanda tangan untuk surat- surat dan proposal. <br>
-                            2. Mencari tempat lomba. (bersama sie perkap) <br>
-                            3. Mengantar dan mengecek semua surat-surat kegiatan. <br>
-                            4. Menghubungi komting kelas/rombel untuk menyiapkan tim dan pendaftaran <br>
-                            5. Menghubungi tamu undangan. <br>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!--more info-->
-
-
-                  <div class="icon-container">
-                    <i class="fa-solid fa-pencil" id="openPopupBtn8"></i>
-                    <!--more info-->
-                    <div id="popup8" class="popup">
-
-                      <div class="popup-content">
-                        <span id="closePopupBtn8" class="close">&times;</span>
-
-                        <h2>Silahkan isi form</h2>
-                        <div class="form">
-                          <label for="namaCreate">Nama *</label>
-                          <input type="nama" id="namaCreate" name="nama" required>
-                          <label for="deskripsi">More Info *</label>
-                          <textarea name="textbox" id="deskripsi-box"></textarea>
-                          <label for="kategori">Pilih Kategori *</label>
-                    <select id="katgeori" name="katgeori" required>
-                      <option value="">--Pilih Kategori--</option>
-                      <option value="Administrasi">Administrasi</option>
-                      <option value="Persiapan">Persiapan</option>
-                      <option value="Harid Acara">Hari Acara</option>
-                    </select>
-                    <label for="division">Pilih Divisi *</label>
-                    <select id="division" name="division" required>
-                      <option value="">--Pilih Divisi--</option>
-                      <option value="Acara">Acara</option>
-                      <option value="Kreatif">Kreatif</option>
-                      <option value="Humas">Humas</option>
-                      <option value="Perkab">Perkab</option>
-                      <option value="PDD">PDD</option>
-                      <option value="Kestari">Kestari</option>
-                      <option value="Konsumsi">Konsumsi</option>
-                      <option value="P3K">P3K</option>
-                      <option value="Disman">Disman</option>
-                      <option value="Korlap">Korlap</option>
-                    </select>
-                          <button type="submit" class="submit-button"><i class="fa-solid fa-upload"></i>Submit</button>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <i class="fa-solid fa-trash" id="icon2"></i>
-                  </div>
-                </div>
-
-              </div>
-
 
 
 
