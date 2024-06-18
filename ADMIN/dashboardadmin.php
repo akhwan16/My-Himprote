@@ -81,24 +81,7 @@ include 'listview.php';
                 </section>
             </header>
             <main>
-                <div class="task-list">
-                    <div class="task-date"><span>29 May 2024</span></div>
-                    <div class="task">
-                        <div class="task-time">18:40</div>
-                        
-                        <div class="task-content">
-                            <div class="task-title">Absensi Rapat ELCO</div>
-                            <div class="task-subtitle">Electrical Campus Observation</div>
-                        </div>
-                    </div>
-                    <div class="task">
-                        <div class="task-time">23:59</div>
-                        <div class="task-content">
-                            <div class="task-title">LPJ</div>
-                            <div class="task-subtitle">Electrical Campus Observation</div>
-                        </div>
-                    </div>
-                </div>
+                
             </main>
         </div>
     </div>
