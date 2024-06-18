@@ -13,7 +13,7 @@ if (isset($_POST['program_id'])) {
         // Jika penghapusan berhasil, catat pesan sukses dalam log
         $log_message = "Program kerja dengan ID $program_id berhasil dihapus.";
         error_log($log_message);
-
+        echo "<script>alert('Berhasil Menghapus Progam Kerja'); </script>";
         // Kembali ke halaman sebelumnya
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;

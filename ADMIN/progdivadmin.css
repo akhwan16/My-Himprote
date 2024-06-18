@@ -366,7 +366,7 @@ button.back:hover {
 .jobdesk-time {
   font-size: 1.1em;
   margin-right: -18px;
-  color: #333;
+  color: #444;
   width: 50px;
   padding-left: 25px;
 }
@@ -410,7 +410,8 @@ button.back:hover {
 }
 
 
-.jobdesk-time:before {
+
+#bundar{
   content: " ";
   position: absolute;
   left: 15px;
@@ -423,12 +424,11 @@ button.back:hover {
   /* Mengurangi tinggi */
   border-radius: 50%;
   /* Membuat lingkaran */
-  background-color: red;
-  /* Warna biru tua */
+font-size:10px;
 }
-
 .jobdesk-checkbox:checked + .jobdesk:before {
   background-color: lightblue;
+  
   /* Warna ketika tugas selesai */
 }
 
