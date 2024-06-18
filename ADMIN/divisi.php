@@ -144,7 +144,10 @@ $conn->close();
                     <label for="file-upload" class="custom-file-upload">
                       <i class="fas fa-arrow-up-from-bracket"></i>
                     </label>
-                    <input id="file-upload" type="file" name="upload">
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <input id="file-upload" type="file" name="upload">
+    <button type="submit">Submit</button>
+</form>
                   </div>
                   
                 </div>
