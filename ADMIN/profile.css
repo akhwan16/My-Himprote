@@ -1,20 +1,29 @@
 body {
-  background-color: #f0f2f5;
-  font-family: Poppins;
-  box-sizing: border-box;
-}
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-header img {
-  width: 400px;
-  max-width: 100%;
-  height: auto;
-  margin: 0;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
   padding: 0;
+  margin: 0;
+  max-width: 400px;
+  margin: auto; /* Auto margins to center */
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  background-image: url('/Assets/img/wave-haikei.svg'); /* Gambar latar belakang */
+  background-repeat: no-repeat; /* Tidak mengulangi gambar */
+  background-size: cover; /* Menutupi seluruh area header */
+  padding: 15px 0 0 10px;
+  align-items: center;
+  height: 150px; /* Tinggi tetap untuk header, sesuaikan sesuai kebutuhan */
+}
+
+/* Styling untuk Logo */
+#logohimprote {
+  width: 270px; /* Lebar tetap untuk logo */
+}
+
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,25 +33,23 @@ header img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 60vh;
 }
 .card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border: 2px solid #1f4e79;
-  padding: 20px;
-  max-width: 400px;
-  position: relative; /* Position relative for absolute positioning */
+border: none;
+outline: none;
+background-color: transparent;
 }
 .profile-image {
+  border: 3px solid #002469;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto 20px; /* Center horizontally and add bottom margin */
   display: block; /* Ensure it's treated as a block element */
+  box-shadow: -2px 4px 6px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -2px 4px 6px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px 4px 6px 0px rgba(0,0,0,0.75);
 }
 .text-content {
   text-align: center;
@@ -70,12 +77,19 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
-  background-color: #002469;
+  margin: 30px 0;
   border-radius: 25px;
   border: none;
   outline: none;
   width: 129px;
+  background-color: #002469;
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Mengurangi blur menjadi 5px dan opacity menjadi 0.5 */
+  border: 2px solid rgba(255, 255, 255, 0.5);   /* Mengurangi opacity border menjadi 0.5 */
+  
+}
+.logout-btn:hover{
+  transform: scale(1.1);
 }
 
 nav {
