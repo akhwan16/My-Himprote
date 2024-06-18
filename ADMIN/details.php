@@ -467,16 +467,16 @@ document.addEventListener('DOMContentLoaded', function() {
     <h2>Silahkan isi form</h2>
     <form action="create_post.php" method="POST">
       <div class="form">
-        <label for="judulCreate">Judul *</label>
+        <label for="judulCreate" style="margin: 0;">Judul *</label>
         <input type="text" id="judulCreate" name="judul" required>
 
-        <label for="kontenCreate">Konten *</label>
+        <label for="kontenCreate" style="margin: 0;">Konten *</label>
         <textarea name="konten" id="kontenCreate" required></textarea>
 
-        <label for="tanggalCreate">Tanggal *</label>
+        <label for="tanggalCreate" style="margin: 0;">Tanggal *</label>
         <input type="date" id="tanggalCreate" name="tanggal" required>
 
-        <label for="kategoriCreate">Pilih Kategori *</label>
+        <label for="kategoriCreate" style="margin: 0;">Pilih Kategori *</label>
         <select id="kategoriCreate" name="kategori" required>
           <option value="">--Pilih Kategori--</option>
           <option value="Administrasi">Administrasi</option>
@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <option value="Hari Acara">Hari Acara</option>
         </select>
 
-        <label for="divisionCreate">Pilih Divisi *</label>
+        <label for="divisionCreate" style="margin: 0;">Pilih Divisi *</label>
         <select id="divisionCreate" name="division" required>
           <option value="">--Pilih Divisi--</option>
           <option value="Acara">Acara</option>
