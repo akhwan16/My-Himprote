@@ -522,7 +522,7 @@ select {
 .search-button {
   border: none;
   border-radius: 10px;
-
+  background: transparent;
   color: #1f4e79;
   font-size: 16px;
   cursor: pointer;

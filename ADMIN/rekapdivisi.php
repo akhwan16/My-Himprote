@@ -62,9 +62,9 @@
     }
 
     .post {
-      width: 25px;
-      height: 25px;
-      border-radius: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
       margin: 3px;
       display: inline-block;
     }
@@ -86,6 +86,16 @@
       margin-left: 5px;
     }
 
+    .back-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0px 8px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+
     /* Responsif */
     @media (max-width: 768px) {
       .container {
@@ -103,6 +113,7 @@
 <body>
 
   <div class="container">
+  <a href="progdivadmin.php" class="back-button"><i class="fa-solid fa-arrow-left-long"></i></a>
     <h1>Rekap Program Kerja</h1>
 
     <?php
@@ -159,6 +170,10 @@
                 $class = 'validasi-0-no-file'; // Merah
             }
             echo "<div class='post $class'></div>";
+            echo "<div class='post-title'>{$row['post_nama']}</div>";
+ 
+       
+    
         }
         echo "</div>"; // tutup post-box
         echo "</div>"; // tutup divisi

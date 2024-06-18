@@ -52,6 +52,11 @@ main {
   display: inline-block;
 }
 
+.fa-book:before {
+  content: "\f02d";
+  color: white;
+}
+
 .search-box {
   padding: 10px;
   border: 1px solid #ccc;
