@@ -28,7 +28,7 @@
         <div class="search-container">
     <form method="GET">
         <div class="search-wrapper">
-        <i class="fas fa-search"></i>
+        <a href="/ADMIN/rekapdivisi.php"><i class="fa-solid fa-book" style="border: 2px;padding: 5px;border-radius: 5px;background: green;"></i></a>
             <input type="text" class="search-box" name="q" placeholder="Cari Progja" value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q']) : ''; ?>"/>
             
             <button type="submit" class="search-button">

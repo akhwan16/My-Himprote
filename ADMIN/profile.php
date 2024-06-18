@@ -15,10 +15,11 @@
 
 <body>
     <header>
-        <img src="/Assets/img/wave-profile.svg" alt="wave">
+        <div class="logo">
+            <img id="logohimprote" src="/Assets/img/Group 75.png" alt="Logo" />
+        </div>
     </header>
     <main>
-
         <div class="container">
             <div class="card fade-in">
                 <img id="profileImage" src="" alt="Profile Image" class="profile-image">
