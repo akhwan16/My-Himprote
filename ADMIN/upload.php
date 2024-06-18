@@ -28,8 +28,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
         // Dapatkan program_id dari session
         if (isset($_SESSION['program_id'])) {
             $programId = $_SESSION['program_id'];
-            $judul = "Judul postingan"; // Misalnya, Anda dapat mengganti dengan judul yang diperlukan
-            $konten = "Konten postingan"; // Misalnya, Anda dapat mengganti dengan konten yang diperlukan
+
+            // Ambil judul dan konten dari database berdasarkan post_id
+            $post_id = $_POST['post_id'];
+            $sqlSelect = "SELECT judul, konten FROM post WHERE id = ?";
+            $stmtSelect = $conn->prepare($sqlSelect);
+            $stmtSelect->bind_param("i", $post_id);
+            $stmtSelect->execute();
+            $stmtSelect->bind_result($judul, $konten);
+
+            // Ambil hasil query
+            $stmtSelect->fetch();
+            $stmtSelect->close();
 
             // Periksa apakah file dengan nama yang sama sudah ada di database
             $sqlCheck = "SELECT id FROM post WHERE program_id = ? AND file = ?";
