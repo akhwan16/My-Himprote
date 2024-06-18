@@ -62,9 +62,9 @@
     }
 
     .post {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      border-radius: 5px;
       margin: 3px;
       display: inline-block;
     }
@@ -106,71 +106,77 @@
     <h1>Rekap Program Kerja</h1>
 
     <?php
-    // Menggunakan include untuk menyertakan file db.php yang mengandung koneksi ke database
-    include '../db.php';
+// Menggunakan include untuk menyertakan file db.php yang mengandung koneksi ke database
+include '../db.php';
 
-    // Query untuk mendapatkan semua program kerja beserta divisi dan jumlah post per divisi
-    $query = "SELECT pk.id AS program_id, pk.nama AS program_nama, 
-                    d.id AS divisi_id, d.nama AS divisi_nama,
-                    COUNT(p.id) AS jumlah_post,
-                    COUNT(CASE WHEN p.validasi = 1 THEN p.id END) AS validasi_1_count,
-                    COUNT(CASE WHEN p.validasi = 0 AND p.file IS NOT NULL THEN p.id END) AS validasi_0_file_count
-            FROM programkerja pk
+// Query untuk mendapatkan semua program kerja beserta divisi dan jumlah post per divisi
+$query = "SELECT 
+            pk.id AS program_id, pk.nama AS program_nama, 
+            d.id AS divisi_id, d.nama AS divisi_nama,
+            p.judul,  -- Assuming this column stores the title of the post
+            COUNT(p.id) AS jumlah_post,
+            COUNT(CASE WHEN p.validasi = 1 THEN p.id END) AS validasi_1_count,
+            COUNT(CASE WHEN p.validasi = 0 AND p.file IS NOT NULL THEN p.id END) AS validasi_0_file_count
+          FROM 
+            programkerja pk
             LEFT JOIN divisi d ON pk.id = d.program_id
             LEFT JOIN post p ON d.id = p.divisi_id
-            GROUP BY pk.id, pk.nama, d.id, d.nama
-            ORDER BY pk.id, d.id";
+          GROUP BY 
+            pk.id, pk.nama, d.id, d.nama, p.judul
+          ORDER BY 
+            pk.id, d.id";
 
-    $result = $conn->query($query);
 
-    // Memeriksa jika query berhasil dieksekusi
-    if (!$result) {
-        die("Query error: " . $conn->error);
+$result = $conn->query($query);
+
+// Memeriksa jika query berhasil dieksekusi
+if (!$result) {
+    die("Query error: " . $conn->error);
+}
+
+// Inisialisasi variabel untuk menyimpan program dan divisi saat ini
+$current_program_id = null;
+$current_divisi_id = null;
+
+// Loop through the results and display data
+while ($row = $result->fetch_assoc()) {
+    // Jika program kerja berubah, tampilkan nama program kerja baru
+    if ($row['program_id'] !== $current_program_id) {
+        // Tampilkan nama program kerja sebagai judul h2 yang bisa di-klik
+        echo "<h2 onclick=\"toggleDivisi('divisi-{$row['program_id']}')\">{$row['program_nama']} <i class='fas fa-chevron-down'></i></h2>";
+        // Simpan program_id saat ini
+        $current_program_id = $row['program_id'];
     }
 
-    // Inisialisasi variabel untuk menyimpan program dan divisi saat ini
-    $current_program_id = null;
-    $current_divisi_id = null;
+    // Tampilkan divisi dan jumlah postnya dengan class yang spesifik
+    echo "<div class='divisi program-divisi divisi-{$row['program_id']}'>";
+    echo "<h3>{$row['divisi_nama']}</h3>";
+    echo "<p>Jumlah Post: {$row['jumlah_post']}</p>";
 
-    // Loop through the results and display data
-    while ($row = $result->fetch_assoc()) {
-        // Jika program kerja berubah, tampilkan nama program kerja baru
-        if ($row['program_id'] !== $current_program_id) {
-            // Tampilkan nama program kerja sebagai judul h2 yang bisa di-klik
-            echo "<h2 onclick=\"toggleDivisi('divisi-{$row['program_id']}')\">{$row['program_nama']} <i class='fas fa-chevron-down'></i></h2>";
-            // Simpan program_id saat ini
-            $current_program_id = $row['program_id'];
+    // Tentukan warna untuk setiap kotak post berdasarkan validasi dan keberadaan file
+    echo "<div class='post-box'>";
+    for ($i = 0; $i < $row['jumlah_post']; $i++) {
+        $class = '';
+        if ($i < $row['validasi_1_count']) {
+            $class = 'validasi-1'; // Hijau
+        } elseif ($i < $row['validasi_0_file_count']) {
+            $class = 'validasi-0-file'; // Orange
+        } else {
+            $class = 'validasi-0-no-file'; // Merah
         }
 
-        // Tampilkan divisi dan jumlah postnya dengan class yang spesifik
-        echo "<div class='divisi program-divisi divisi-{$row['program_id']}'>";
-        echo "<h3>{$row['divisi_nama']}</h3>";
-        echo "<p>Jumlah Post: {$row['jumlah_post']}</p>";
-
-        // Tentukan warna untuk setiap kotak post berdasarkan validasi dan keberadaan file
-        echo "<div class='post-box'>";
-        for ($i = 0; $i < $row['jumlah_post']; $i++) {
-            $class = '';
-            if ($i < $row['validasi_1_count']) {
-                $class = 'validasi-1'; // Hijau
-            } elseif ($i < $row['validasi_0_file_count']) {
-                $class = 'validasi-0-file'; // Orange
-            } else {
-                $class = 'validasi-0-no-file'; // Merah
-            }
-            echo "<div class='post $class'></div>";
-            echo "<div class='post-title'>{$row['post_nama']}</div>";
- 
+        // Tampilkan nama post di samping dot
        
-    
-        }
-        echo "</div>"; // tutup post-box
-        echo "</div>"; // tutup divisi
+        echo "<div class='post $class' ></div>";
     }
+    echo "</div>"; // tutup post-box
+    echo "</div>"; // tutup divisi
+}
 
-    // Tutup koneksi database
-    $conn->close();
-    ?>
+// Tutup koneksi database
+$conn->close();
+?>
+
 
   </div>
 
