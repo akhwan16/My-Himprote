@@ -161,7 +161,7 @@
             if ($current_divisi_id !== null) {
                 echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
                 echo "<h3>{$current_divisi_nama}</h3>";
-                echo "<p>Jumlah Jobdesk: " . count($divisi_posts) . "</p>";
+                echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
                 echo "<div class='post-box'>";
                 foreach ($divisi_posts as $post) {
                     $class = '';
@@ -172,12 +172,7 @@
                     } else {
                         $class = 'validasi-0-no-file';
                     }
-                    
-                    echo "<div class='post $class' data-title='" . htmlspecialchars($post['judul'], ENT_QUOTES, 'UTF-8') . "'>
-                     
-                    </div>";
-               
-                    echo "<div >{$post['judul']}</div>";
+                    echo "<div class='post $class' data-title='" . htmlspecialchars($post['judul'], ENT_QUOTES, 'UTF-8') . "'>{$post['judul']}</div>";
                 }
                 echo "</div>";
                 echo "</div>";
@@ -192,7 +187,7 @@
             if ($current_divisi_id !== null) {
                 echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
                 echo "<h3>{$current_divisi_nama}</h3>";
-                echo "<p>Jumlah Jobdesk: " . count($divisi_posts) . "</p>";
+                echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
                 echo "<div class='post-box'>";
                 foreach ($divisi_posts as $post) {
                     $class = '';
@@ -203,8 +198,7 @@
                     } else {
                         $class = 'validasi-0-no-file';
                     }
-          
-                    
+                    echo "<div class='post $class' data-title='" . htmlspecialchars($post['judul'], ENT_QUOTES, 'UTF-8') . "'></div>";
                 }
                 echo "</div>";
                 echo "</div>";
@@ -227,7 +221,7 @@
     if ($current_divisi_id !== null) {
         echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
         echo "<h3>{$current_divisi_nama}</h3>";
-        echo "<p>Jumlah Jobdesk: " . count($divisi_posts) . "</p>";
+        echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
         echo "<div class='post-box'>";
         foreach ($divisi_posts as $post) {
             $class = '';
@@ -238,7 +232,7 @@
             } else {
                 $class = 'validasi-0-no-file';
             }
-           
+            echo "<div class='post $class' data-title='" . htmlspecialchars($post['judul'], ENT_QUOTES, 'UTF-8') . "'></div>";
         }
         echo "</div>";
         echo "</div>";
