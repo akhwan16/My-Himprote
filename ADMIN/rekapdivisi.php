@@ -62,9 +62,9 @@
     }
 
     .post {
-      width: 25px;
-      height: 25px;
-      border-radius: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
       margin: 3px;
       display: inline-block;
     }
@@ -170,6 +170,10 @@
                 $class = 'validasi-0-no-file'; // Merah
             }
             echo "<div class='post $class'></div>";
+            echo "<div class='post-title'>{$row['post_nama']}</div>";
+ 
+       
+    
         }
         echo "</div>"; // tutup post-box
         echo "</div>"; // tutup divisi
