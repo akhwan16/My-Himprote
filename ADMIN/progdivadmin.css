@@ -96,6 +96,14 @@ main {
   margin: 15px;
 }
 
+.progja:hover {
+  transform: scale(1.1);
+  background-color: #fffcfc;
+  box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.75);
+}
+
 .progja .judul {
   font-size: 15px;
   font-weight: bold;
@@ -116,7 +124,7 @@ main {
   font-weight: bold;
   background-color: transparent;
   cursor: pointer;
-  padding:5px;
+  padding: 5px;
 }
 
 .button .details:hover {
@@ -145,8 +153,8 @@ main {
 }
 .anggotadiv {
   position: relative; /* Needed for positioning the popup */
-  margin-top:5px;
-  padding:3px;
+  margin-top: 5px;
+  padding: 3px;
 }
 /* CSS untuk list view */
 .list-view {
@@ -268,7 +276,7 @@ button.back:hover {
 #openPopupBtn1:hover {
   color: navy; /* Warna teks saat di-hover */
 }
-#openPopupBtn8{
+#openPopupBtn8 {
   color: darkgreen;
   cursor: pointer;
 }
@@ -409,9 +417,7 @@ button.back:hover {
   /* Menetapkan posisi relatif untuk memungkinkan penempatan pseudo-element */
 }
 
-
-
-#bundar{
+#bundar {
   content: " ";
   position: absolute;
   left: 15px;
@@ -424,11 +430,11 @@ button.back:hover {
   /* Mengurangi tinggi */
   border-radius: 50%;
   /* Membuat lingkaran */
-font-size:10px;
+  font-size: 10px;
 }
 .jobdesk-checkbox:checked + .jobdesk:before {
   background-color: lightblue;
-  
+
   /* Warna ketika tugas selesai */
 }
 
@@ -469,19 +475,17 @@ font-size:10px;
   flex-direction: column;
   margin: 10px;
 }
-.form4
-{
-  text-align:justify;
+.form4 {
+  text-align: justify;
 }
 button.hapus {
   background-color: transparent;
-  border:none;
-cursor:pointer;
- 
-justify-content:center;
-text-align:right;
-}
+  border: none;
+  cursor: pointer;
 
+  justify-content: center;
+  text-align: right;
+}
 
 .close {
   color: #aaa;
@@ -759,19 +763,19 @@ nav {
   }
 }
 
-.jobdesk-more-info{
+.jobdesk-more-info {
   color: black;
 }
-.more-info i{
+.more-info i {
   font-size: smaller;
   color: rgb(184, 48, 48);
 }
-button.more-info{
+button.more-info {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-.more-info i:hover{
+.more-info i:hover {
   color: #000080;
 }
 
@@ -820,13 +824,12 @@ button.more-info{
   text-decoration: none;
   cursor: pointer;
 }
-.form3 p{
+.form3 p {
   text-align: left;
 }
 
-
 #openPopupBtn7 {
-  background-color: #4CAF50; /* Hijau */
+  background-color: #4caf50; /* Hijau */
   border: none; /* Menghilangkan border */
   color: white; /* Warna teks */
   padding: 5px 5px; /* Padding untuk membuat tombol lebih besar */
@@ -838,7 +841,6 @@ button.more-info{
   cursor: pointer; /* Menambahkan kursor pointer saat hover */
   border-radius: 5px; /* Membuat sudut tombol melengkung */
   transition: background-color 0.3s ease; /* Animasi perubahan warna background */
-  float: left; /* Mengapungkan tombol ke kanan */
 }
 
 #openPopupBtn7:hover {
@@ -857,18 +859,15 @@ button.more-info{
   cursor: pointer; /* Menambahkan kursor pointer saat hover */
   border-radius: 5px; /* Membuat sudut tombol melengkung */
   transition: background-color 0.3s ease; /* Animasi perubahan warna background */
-  float: left; /* Mengapungkan tombol ke kanan */
-
 }
 
 #openPopupBtn6:hover {
-  background-color: navy;; /* Warna background saat hover */
+  background-color: navy; /* Warna background saat hover */
 }
 #pengaturanprogja {
   width: 100%; /* Menyesuaikan lebar container */
   overflow: auto; /* Menghindari masalah dengan float */
   margin-left: 10px;
-
 }
 .filter-input {
   width: 100%;
@@ -920,8 +919,8 @@ button.more-info{
 }
 
 /*ubah posisi icon uploadnya disini*/
-.custom-file-upload i { 
-  margin: 0;  
+.custom-file-upload i {
+  margin: 0;
 }
 
 #file-upload {
