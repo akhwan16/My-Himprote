@@ -568,7 +568,7 @@ select {
 }
 
 .submit-button {
-  margin: auto;
+  margin: 10px auto;
   /* Membuat tombol berada di tengah secara horizontal */
   padding: 10px 20px;
   background-color: #000080;
