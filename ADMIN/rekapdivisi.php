@@ -161,7 +161,7 @@
             if ($current_divisi_id !== null) {
                 echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
                 echo "<h3>{$current_divisi_nama}</h3>";
-                echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
+                echo "<p>Jumlah Jobdesk: " . count($divisi_posts) . "</p>";
                 echo "<div class='post-box'>";
                 foreach ($divisi_posts as $post) {
                     $class = '';
@@ -187,7 +187,7 @@
             if ($current_divisi_id !== null) {
                 echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
                 echo "<h3>{$current_divisi_nama}</h3>";
-                echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
+                echo "<p>Jumlah Jobdesk: " . count($divisi_posts) . "</p>";
                 echo "<div class='post-box'>";
                 foreach ($divisi_posts as $post) {
                     $class = '';
@@ -221,7 +221,7 @@
     if ($current_divisi_id !== null) {
         echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
         echo "<h3>{$current_divisi_nama}</h3>";
-        echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
+        echo "<p>Jumlah Jobdesk: " . count($divisi_posts) . "</p>";
         echo "<div class='post-box'>";
         foreach ($divisi_posts as $post) {
             $class = '';
