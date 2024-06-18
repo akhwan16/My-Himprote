@@ -841,7 +841,6 @@ button.more-info {
   cursor: pointer; /* Menambahkan kursor pointer saat hover */
   border-radius: 5px; /* Membuat sudut tombol melengkung */
   transition: background-color 0.3s ease; /* Animasi perubahan warna background */
-  float: left; /* Mengapungkan tombol ke kanan */
 }
 
 #openPopupBtn7:hover {
@@ -860,7 +859,6 @@ button.more-info {
   cursor: pointer; /* Menambahkan kursor pointer saat hover */
   border-radius: 5px; /* Membuat sudut tombol melengkung */
   transition: background-color 0.3s ease; /* Animasi perubahan warna background */
-  float: left; /* Mengapungkan tombol ke kanan */
 }
 
 #openPopupBtn6:hover {
