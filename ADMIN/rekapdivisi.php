@@ -67,6 +67,22 @@
       border-radius: 5px;
       margin: 3px;
       display: inline-block;
+      position: relative;
+      background-color: #ccc; /* Default color */
+    }
+
+    .post:hover::after {
+      content: attr(data-title);
+      position: absolute;
+      left: 100%;
+      margin-left: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+      z-index: 10; /* Make sure tooltip is on top */
     }
 
     .validasi-1 {
@@ -117,97 +133,137 @@
     <h1>Rekap Program Kerja</h1>
 
     <?php
-// Menggunakan include untuk menyertakan file db.php yang mengandung koneksi ke database
-include '../db.php';
+    include '../db.php';
 
-// Query untuk mendapatkan semua program kerja beserta divisi dan jumlah post per divisi
-$query = "SELECT 
-            pk.id AS program_id, pk.nama AS program_nama, 
-            d.id AS divisi_id, d.nama AS divisi_nama,
-            p.judul,  -- Assuming this column stores the title of the post
-            COUNT(p.id) AS jumlah_post,
-            COUNT(CASE WHEN p.validasi = 1 THEN p.id END) AS validasi_1_count,
-            COUNT(CASE WHEN p.validasi = 0 AND p.file IS NOT NULL THEN p.id END) AS validasi_0_file_count
-          FROM 
-            programkerja pk
-            LEFT JOIN divisi d ON pk.id = d.program_id
-            LEFT JOIN post p ON d.id = p.divisi_id
-          GROUP BY 
-            pk.id, pk.nama, d.id, d.nama, p.judul
-          ORDER BY 
-            pk.id, d.id";
+    $query = "SELECT 
+                pk.id AS program_id, pk.nama AS program_nama, 
+                d.id AS divisi_id, d.nama AS divisi_nama,
+                p.id AS post_id, p.judul AS post_judul, p.validasi, p.file
+              FROM 
+                programkerja pk
+                LEFT JOIN divisi d ON pk.id = d.program_id
+                LEFT JOIN post p ON d.id = p.divisi_id
+              ORDER BY 
+                pk.id, d.id, p.id";
 
+    $result = $conn->query($query);
 
-$result = $conn->query($query);
-
-// Memeriksa jika query berhasil dieksekusi
-if (!$result) {
-    die("Query error: " . $conn->error);
-}
-
-// Inisialisasi variabel untuk menyimpan program dan divisi saat ini
-$current_program_id = null;
-$current_divisi_id = null;
-
-// Loop through the results and display data
-while ($row = $result->fetch_assoc()) {
-    // Jika program kerja berubah, tampilkan nama program kerja baru
-    if ($row['program_id'] !== $current_program_id) {
-        // Tampilkan nama program kerja sebagai judul h2 yang bisa di-klik
-        echo "<h2 onclick=\"toggleDivisi('divisi-{$row['program_id']}')\">{$row['program_nama']} <i class='fas fa-chevron-down'></i></h2>";
-        // Simpan program_id saat ini
-        $current_program_id = $row['program_id'];
+    if (!$result) {
+        die("Query error: " . $conn->error);
     }
 
-    // Tampilkan divisi dan jumlah postnya dengan class yang spesifik
-    echo "<div class='divisi program-divisi divisi-{$row['program_id']}'>";
-    echo "<h3>{$row['divisi_nama']}</h3>";
-    echo "<p>Jumlah Post: {$row['jumlah_post']}</p>";
+    $current_program_id = null;
+    $current_divisi_id = null;
+    $divisi_posts = [];
 
-    // Tentukan warna untuk setiap kotak post berdasarkan validasi dan keberadaan file
-    echo "<div class='post-box'>";
-    for ($i = 0; $i < $row['jumlah_post']; $i++) {
-        $class = '';
-        if ($i < $row['validasi_1_count']) {
-            $class = 'validasi-1'; // Hijau
-        } elseif ($i < $row['validasi_0_file_count']) {
-            $class = 'validasi-0-file'; // Orange
-        } else {
-            $class = 'validasi-0-no-file'; // Merah
+    while ($row = $result->fetch_assoc()) {
+        if ($row['program_id'] !== $current_program_id) {
+            if ($current_divisi_id !== null) {
+                echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
+                echo "<h3>{$current_divisi_nama}</h3>";
+                echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
+                echo "<div class='post-box'>";
+                foreach ($divisi_posts as $post) {
+                    $class = '';
+                    if ($post['validasi'] == 1) {
+                        $class = 'validasi-1';
+                    } elseif ($post['validasi'] == 0 && $post['file'] !== null) {
+                        $class = 'validasi-0-file';
+                    } else {
+                        $class = 'validasi-0-no-file';
+                    }
+                    
+                    echo "<div class='post $class' data-title='" . htmlspecialchars($post['judul'], ENT_QUOTES, 'UTF-8') . "'>
+                     
+                    </div>";
+               
+                    echo "<div >{$post['judul']}</div>";
+                }
+                echo "</div>";
+                echo "</div>";
+            }
+
+            echo "<h2 onclick=\"toggleDivisi('divisi-{$row['program_id']}')\">{$row['program_nama']} <i class='fas fa-chevron-down'></i></h2>";
+            $current_program_id = $row['program_id'];
+            $current_divisi_id = null;
         }
 
-        // Tampilkan nama post di samping dot
-       
-        echo "<div class='post $class' ></div>";
+        if ($row['divisi_id'] !== $current_divisi_id) {
+            if ($current_divisi_id !== null) {
+                echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
+                echo "<h3>{$current_divisi_nama}</h3>";
+                echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
+                echo "<div class='post-box'>";
+                foreach ($divisi_posts as $post) {
+                    $class = '';
+                    if ($post['validasi'] == 1) {
+                        $class = 'validasi-1';
+                    } elseif ($post['validasi'] == 0 && $post['file'] !== null) {
+                        $class = 'validasi-0-file';
+                    } else {
+                        $class = 'validasi-0-no-file';
+                    }
+          
+                    
+                }
+                echo "</div>";
+                echo "</div>";
+            }
+
+            $current_divisi_id = $row['divisi_id'];
+            $current_divisi_nama = $row['divisi_nama'];
+            $divisi_posts = [];
+        }
+
+        if ($row['post_id'] !== null) {
+            $divisi_posts[] = [
+                'judul' => $row['post_judul'],
+                'validasi' => $row['validasi'],
+                'file' => $row['file']
+            ];
+        }
     }
-    echo "</div>"; // tutup post-box
-    echo "</div>"; // tutup divisi
-}
 
-// Tutup koneksi database
-$conn->close();
-?>
+    if ($current_divisi_id !== null) {
+        echo "<div class='divisi program-divisi divisi-{$current_program_id}'>";
+        echo "<h3>{$current_divisi_nama}</h3>";
+        echo "<p>Jumlah Post: " . count($divisi_posts) . "</p>";
+        echo "<div class='post-box'>";
+        foreach ($divisi_posts as $post) {
+            $class = '';
+            if ($post['validasi'] == 1) {
+                $class = 'validasi-1';
+            } elseif ($post['validasi'] == 0 && $post['file'] !== null) {
+                $class = 'validasi-0-file';
+            } else {
+                $class = 'validasi-0-no-file';
+            }
+           
+        }
+        echo "</div>";
+        echo "</div>";
+    }
+    ?>
+
+</div>
+
+  <script>
+    function toggleDivisi(divisiClass) {
+      const divisis = document.querySelectorAll('.' + divisiClass);
+      divisis.forEach(divisi => {
+        if (divisi.style.display === "none" || divisi.style.display === "") {
+          divisi.style.display = "block";
+        } else {
+          divisi.style.display = "none";
+        }
+      });
+    }
+  </script>
 
 
-  </div>
 
-  <footer>
-    <script src="/Assets/js/nav.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <script src="popup.js"></script>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    
-    <script>
-      // Fungsi untuk menampilkan atau menyembunyikan divisi saat program kerja di-klik
-      function toggleDivisi(divisiClass) {
-        let divisiElements = document.querySelectorAll(`.${divisiClass}`);
-        divisiElements.forEach(divisi => {
-          divisi.style.display = (divisi.style.display === 'none' || divisi.style.display === '') ? 'block' : 'none';
-        });
-      }
-    </script>
-  </footer>
+
+
 </body>
 </html>
