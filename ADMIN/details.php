@@ -99,7 +99,7 @@ if (isset($_GET['program_id'])) {
         <div class="slide fade">
 
           <div class="button-back">
-          <button class="back" onclick="window.location.href = 'progdivadmin.php';">
+          <button class="back" onclick="window.location.href = 'progdiv.php';">
   <i class="fa-solid fa-arrow-left"></i> 
 </button>
 

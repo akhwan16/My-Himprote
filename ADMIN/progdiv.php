@@ -231,7 +231,7 @@ $conn->close();
       var homeNavItem = document.getElementById("home");
       homeNavItem.addEventListener("click", function() {
         // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-        window.location.href = "dashboardadmin.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+        window.location.href = "dashboard.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
       });
       var profileNavItem = document.getElementById("profile");
       profileNavItem.addEventListener("click", function() {

@@ -40,6 +40,6 @@ $conn->close();
 
 
 
-header("Location: progdivadmin.php");
+header("Location: progdiv.php");
 exit();
 ?>

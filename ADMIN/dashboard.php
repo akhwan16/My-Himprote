@@ -10,7 +10,7 @@ include 'listview.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="dashboardadmin.css">
+    <link rel="stylesheet" href="dashboard.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -281,7 +281,7 @@ include 'listview.php';
             
             progdivNavItem.addEventListener('click', function() {
                 // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-                window.location.href = "progdivadmin.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+                window.location.href = "progdiv.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
             });
             
             var profileNavItem = document.getElementById('profile');

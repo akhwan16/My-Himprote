@@ -129,7 +129,7 @@
 <body>
 
   <div class="container">
-  <a href="progdivadmin.php" class="back-button"><i class="fa-solid fa-arrow-left-long"></i></a>
+  <a href="progdiv.php" class="back-button"><i class="fa-solid fa-arrow-left-long"></i></a>
     <h1>Rekap Program Kerja</h1>
 
     <?php
