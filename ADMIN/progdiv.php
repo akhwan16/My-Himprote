@@ -75,27 +75,33 @@ if ($resultRole->num_rows > 0) {
 // Inisialisasi variabel $programs
 $programs = [];
 
-// Query untuk mendapatkan program kerja
-$sql = "SELECT pk.id, pk.nama, pk.deskripsi, pk.ketua_email 
-        FROM ProgramKerja pk ";
-
 // Ambil kata kunci pencarian dari URL
 $q = isset($_GET['q']) ? $_GET['q'] : '';
 
-// Query untuk mendapatkan program kerja berdasarkan pencarian
-if (!empty($q)) {
-    $sql .= "WHERE pk.nama LIKE '%$q%'";
+// Query untuk mendapatkan program kerja berdasarkan role dan pencarian
+if ($role === 'admin') {
+    // Jika role adalah admin, tampilkan semua program kerja
+    $sql = "SELECT pk.id, pk.nama, pk.deskripsi, pk.ketua_email 
+            FROM ProgramKerja pk ";
+    if (!empty($q)) {
+        $sql .= "WHERE pk.nama LIKE '%$q%'";
+    }
 } else {
-    if ($role === 'admin') {
-        // Jika role adalah admin, tampilkan semua program kerja
-        $sql .= "LEFT JOIN PenggunaProgramDivisi ppd ON pk.id = ppd.program_id ";
-    } else {
-        // Jika bukan admin, tampilkan program kerja yang diikuti oleh pengguna
-        $sql .= "LEFT JOIN PenggunaProgramDivisi ppd ON pk.id = ppd.program_id 
-                 WHERE ppd.email_pengguna = '$email' ";
-        
-        // Jika pengguna juga adalah ketua dari suatu program kerja, tambahkan kondisi OR
-        $sql .= "OR pk.ketua_email = '$email' ";
+    // Jika bukan admin, tampilkan program kerja yang diikuti oleh pengguna atau dikepalai oleh pengguna
+    $sql = "SELECT pk.id, pk.nama, pk.deskripsi, pk.ketua_email 
+            FROM ProgramKerja pk
+            LEFT JOIN PenggunaProgramDivisi ppd ON pk.id = ppd.program_id 
+            WHERE ppd.email_pengguna = '$email' ";
+    if (!empty($q)) {
+        $sql .= "AND pk.nama LIKE '%$q%'";
+    }
+
+    $sql .= " UNION 
+              SELECT pk.id, pk.nama, pk.deskripsi, pk.ketua_email 
+              FROM ProgramKerja pk
+              WHERE pk.ketua_email = '$email' ";
+    if (!empty($q)) {
+        $sql .= "AND pk.nama LIKE '%$q%'";
     }
 }
 

@@ -141,11 +141,12 @@ $conn->close();
                     </div>
                   </div>
                   <div class="upload-container">
+                  <form action="upload.php" method="post" enctype="multipart/form-data">
                     <label for="file-upload" class="custom-file-upload">
                       <i class="fas fa-arrow-up-from-bracket"></i>
                     </label>
        
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+ 
         
         <input type="hidden" name="post_id" id="post_id_input" value="">
         <input id="file-upload" type="file" name="upload">
