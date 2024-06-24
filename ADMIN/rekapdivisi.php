@@ -133,24 +133,63 @@
     <h1>Rekap Program Kerja</h1>
 
     <?php
+    session_start();
     include '../db.php';
 
-    $query = "SELECT 
-                pk.id AS program_id, pk.nama AS program_nama, 
-                d.id AS divisi_id, d.nama AS divisi_nama,
-                p.id AS post_id, p.judul AS post_judul, p.validasi, p.file
-              FROM 
-                programkerja pk
-                LEFT JOIN divisi d ON pk.id = d.program_id
-                LEFT JOIN post p ON d.id = p.divisi_id
-              ORDER BY 
-                pk.id, d.id, p.id";
 
-    $result = $conn->query($query);
+// Ambil email dari session
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
-    if (!$result) {
-        die("Query error: " . $conn->error);
-    }
+if (empty($email)) {
+    die("Email ketua tidak ditemukan di sesi.");
+}
+
+
+// Periksa apakah email ada di tabel akun dengan role admin
+$adminCheckQuery = "SELECT role FROM akun WHERE email = ? AND role = 'admin'";
+$stmt = $conn->prepare($adminCheckQuery);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows > 0) {
+  // Email ditemukan dengan peran admin, jalankan query utama
+  $query = "SELECT 
+              pk.id AS program_id, pk.nama AS program_nama, 
+              d.id AS divisi_id, d.nama AS divisi_nama,
+              p.id AS post_id, p.judul AS post_judul, p.validasi, p.file
+            FROM 
+              programkerja pk
+              LEFT JOIN divisi d ON pk.id = d.program_id
+              LEFT JOIN post p ON d.id = p.divisi_id
+            ORDER BY 
+              pk.id, d.id, p.id";
+} else {
+  // Email tidak ditemukan dengan peran admin, jalankan query untuk ketua
+  $query = "SELECT 
+              pk.id AS program_id, pk.nama AS program_nama, 
+              d.id AS divisi_id, d.nama AS divisi_nama,
+              p.id AS post_id, p.judul AS post_judul, p.validasi, p.file
+            FROM 
+              programkerja pk
+              LEFT JOIN divisi d ON pk.id = d.program_id
+              LEFT JOIN post p ON d.id = p.divisi_id
+            WHERE 
+              pk.ketua_email = ?
+            ORDER BY 
+              pk.id, d.id, p.id";
+}
+
+// Jalankan query yang sesuai
+if ($stmt->num_rows > 0) {
+  $result = $conn->query($query);
+} else {
+  $stmt = $conn->prepare($query);
+  $stmt->bind_param("s", $email);
+  $stmt->execute();
+  $result = $stmt->get_result();
+}
+
 
     $current_program_id = null;
     $current_divisi_id = null;
