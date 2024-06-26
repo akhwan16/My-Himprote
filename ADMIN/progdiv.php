@@ -45,7 +45,7 @@ include '../db.php'; // Pastikan ini mengarah ke file koneksi database yang bena
 $q = isset($_GET['q']) ? $_GET['q'] : '';
 
 // Query SQL untuk mencari program kerja berdasarkan nama
-$sql = "SELECT id, nama, deskripsi FROM ProgramKerja WHERE nama LIKE '%$q%'";
+$sql = "SELECT id, nama, deskripsi FROM programkerja WHERE nama LIKE '%$q%'";
 
 $result = $conn->query($sql);
 
@@ -82,15 +82,15 @@ $q = isset($_GET['q']) ? $_GET['q'] : '';
 if ($role === 'admin') {
     // Jika role adalah admin, tampilkan semua program kerja
     $sql = "SELECT pk.id, pk.nama, pk.deskripsi, pk.ketua_email 
-            FROM ProgramKerja pk ";
+            FROM programkerja pk ";
     if (!empty($q)) {
         $sql .= "WHERE pk.nama LIKE '%$q%'";
     }
 } else {
     // Jika bukan admin, tampilkan program kerja yang diikuti oleh pengguna atau dikepalai oleh pengguna
     $sql = "SELECT pk.id, pk.nama, pk.deskripsi, pk.ketua_email 
-            FROM ProgramKerja pk
-            LEFT JOIN PenggunaProgramDivisi ppd ON pk.id = ppd.program_id 
+            FROM programkerja pk
+            LEFT JOIN penggunaprogramdivisi ppd ON pk.id = ppd.program_id 
             WHERE ppd.email_pengguna = '$email' ";
     if (!empty($q)) {
         $sql .= "AND pk.nama LIKE '%$q%'";
@@ -98,7 +98,7 @@ if ($role === 'admin') {
 
     $sql .= " UNION 
               SELECT pk.id, pk.nama, pk.deskripsi, pk.ketua_email 
-              FROM ProgramKerja pk
+              FROM programkerja pk
               WHERE pk.ketua_email = '$email' ";
     if (!empty($q)) {
         $sql .= "AND pk.nama LIKE '%$q%'";

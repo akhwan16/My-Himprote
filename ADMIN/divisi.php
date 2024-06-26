@@ -13,11 +13,11 @@ if (isset($_SESSION['program_id'])) {
     $posts = [];
 
     // Query untuk memeriksa apakah email ada dalam salah satu divisi di program_id
-    $sql = "SELECT Divisi.id AS divisi_id, Divisi.nama AS nama_divisi, ProgramKerja.nama AS nama_program
-            FROM PenggunaProgramDivisi
-            INNER JOIN Divisi ON PenggunaProgramDivisi.divisi_id = Divisi.id
-            INNER JOIN ProgramKerja ON PenggunaProgramDivisi.program_id = ProgramKerja.id
-            WHERE PenggunaProgramDivisi.program_id = ? AND PenggunaProgramDivisi.email_pengguna = ?";
+    $sql = "SELECT divisi.id AS divisi_id, divisi.nama AS nama_divisi, programkerja.nama AS nama_program
+            FROM penggunaprogramdivisi
+            INNER JOIN divisi ON penggunaprogramdivisi.divisi_id = divisi.id
+            INNER JOIN programkerja ON penggunaprogramdivisi.program_id = programkerja.id
+            WHERE penggunaprogramdivisi.program_id = ? AND penggunaprogramdivisi.email_pengguna = ?";
 
     // Persiapan statement SQL
     $stmt = $conn->prepare($sql);

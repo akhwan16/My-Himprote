@@ -8,7 +8,7 @@ if (isset($_GET['program_id'])) {
 
     // Query untuk mendapatkan detail program kerja
     $sql = "SELECT pk.id, pk.nama, pk.deskripsi, a.nama AS ketua_nama 
-            FROM ProgramKerja pk 
+            FROM programkerja pk 
             JOIN akun a ON pk.ketua_email = a.email 
             WHERE pk.id = '$program_id'";
     
@@ -173,11 +173,11 @@ if (isset($_SESSION['program_id'])) {
     $stmt_role->close();
 
     // Query untuk mendapatkan daftar anggota dari program kerja dan divisinya
-    $sql_anggota = "SELECT akun.nama AS nama_anggota, Divisi.nama AS nama_divisi, PenggunaProgramDivisi.email_pengguna
-                    FROM PenggunaProgramDivisi
-                    INNER JOIN akun ON PenggunaProgramDivisi.email_pengguna = akun.email
-                    INNER JOIN Divisi ON PenggunaProgramDivisi.divisi_id = Divisi.id
-                    WHERE PenggunaProgramDivisi.program_id = ?";
+    $sql_anggota = "SELECT akun.nama AS nama_anggota, divisi.nama AS nama_divisi, penggunaprogramdivisi.email_pengguna
+                    FROM penggunaprogramdivisi
+                    INNER JOIN akun ON penggunaprogramdivisi.email_pengguna = akun.email
+                    INNER JOIN divisi ON penggunaprogramdivisi.divisi_id = divisi.id
+                    WHERE penggunaprogramdivisi.program_id = ?";
 
     $stmt_anggota = $conn->prepare($sql_anggota);
     $stmt_anggota->bind_param("i", $program_id);
