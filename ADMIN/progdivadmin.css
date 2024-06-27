@@ -15,7 +15,7 @@ body {
   padding: 5px 5px;
   border-bottom: 2px solid #1f4e79;
   width: auto;
-  max-width: 355px;
+  max-width: auto;
   margin: 0 auto;
   /* Center the container horizontally */
 }
