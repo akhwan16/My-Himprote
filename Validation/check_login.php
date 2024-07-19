@@ -32,17 +32,9 @@ if(isset($_POST['email'])) {
                 echo "Error updating record: " . $conn->error;
             }
         }
-
-        // Periksa rolenya
-        if($user['role'] == 'admin') {
-            // Jika pengguna adalah admin, atur slideIndex di localStorage dan arahkan ke halaman admin
-            header("Location: ../ADMIN/dashboard.php");
+            header("Location: ../Dashboard/dashboard.php");
             exit;
-        } elseif($user['role'] == 'user') {
-            // Jika pengguna adalah user, arahkan ke halaman user menggunakan PHP header
-            header("Location: ../ADMIN/dashboard.php");
-            exit;
-        } 
+     
     } else {
         // Jika email tidak ditemukan dalam database
         // Hapus token login Google dari local storage

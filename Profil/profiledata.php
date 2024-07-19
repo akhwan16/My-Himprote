@@ -1,6 +1,6 @@
 <?php
 // Sertakan file koneksi ke database
-include '../db.php';
+include '../Database/db.php';
 
 // Mengatur header respons JSON
 header('Content-Type: application/json');

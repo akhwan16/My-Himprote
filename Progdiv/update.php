@@ -1,6 +1,6 @@
 <?php
 // Sertakan file koneksi ke database
-include '../db.php';
+include '../Database/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ambil data dari formulir

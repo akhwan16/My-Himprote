@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../db.php'; // Ubah sesuai dengan lokasi file koneksi database Anda
+include '../Database/db.php'; // Ubah sesuai dengan lokasi file koneksi database Anda
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil data yang dikirimkan melalui form

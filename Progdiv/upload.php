@@ -1,10 +1,10 @@
 <?php
 // Pastikan session dimulai dan sertakan file koneksi ke database (db.php)
 session_start();
-include '../db.php';
+include '../Database/db.php';
 
 // Konfigurasi direktori penyimpanan file
-$targetDir = "uploads/";
+$targetDir = "Uploads/";
 
 // Pastikan direktori sudah ada atau buat jika belum
 if (!file_exists($targetDir)) {

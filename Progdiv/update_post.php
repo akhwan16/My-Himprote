@@ -1,5 +1,5 @@
 <?php
-include '../db.php'; // Pastikan file koneksi database sudah di-include dengan benar
+include '../Database/db.php'; // Pastikan file koneksi database sudah di-include dengan benar
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ambil data dari form

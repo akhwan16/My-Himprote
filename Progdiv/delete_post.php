@@ -1,5 +1,5 @@
 <?php
-include '../db.php';
+include '../Database/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);

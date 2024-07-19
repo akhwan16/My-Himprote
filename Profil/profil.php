@@ -1,6 +1,8 @@
+
 <?php
 // Include file koneksi ke database
 include 'db.php';
+include 'checkakun.php';
 header("Access-Control-Allow-Origin: *");
 // Izinkan metode GET
 header("Access-Control-Allow-Methods: GET");

@@ -1,5 +1,5 @@
 <?php
-include '../db.php';
+include '../Database/db.php';
 
 if (isset($_GET['q'])) {
     // Tangkap kueri pencarian dari URL dan bersihkan untuk mencegah serangan SQL Injection

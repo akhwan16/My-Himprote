@@ -1,7 +1,9 @@
 <?php
 session_start();
-include '../Database/db.php'; // Ubah sesuai dengan lokasi file koneksi database Anda
 
+
+include '../Database/db.php'; // Ubah sesuai dengan lokasi file koneksi database Anda
+include 'checkakun.php';
 // Periksa apakah ID program kerja diterima dari URL
 if (isset($_GET['program_id'])) {
     $program_id = $_GET['program_id'];

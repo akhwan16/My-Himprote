@@ -1,5 +1,5 @@
 <?php
-include '../db.php';
+include '../Database/db.php';
 
 // Pastikan email yang akan dihapus ada dalam permintaan POST
 if(isset($_POST['email'])) {
