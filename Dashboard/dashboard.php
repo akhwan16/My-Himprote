@@ -1,6 +1,6 @@
 <?php
-include 'checkakun.php';
-include 'listview.php';
+include '/My-Himprote/Validation/checkakun.php';
+include '/My-Himprote/Progdiv/listview.php';
 ?>
 <!DOCTYPE html>
 <html lang="id">
