@@ -1,6 +1,6 @@
 <?php
-include '/My-Himprote/Validation/checkakun.php';
-include '/My-Himprote/Progdiv/listview.php';
+include '/Kuliah/My-Himprote/Validation/checkakun.php';
+include '/Kuliah/My-Himprote/Progdiv/listview.php';
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -281,13 +281,13 @@ include '/My-Himprote/Progdiv/listview.php';
             
             progdivNavItem.addEventListener('click', function() {
                 // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-                window.location.href = "progdiv.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+                window.location.href = "/Progdiv/progdiv.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
             });
             
             var profileNavItem = document.getElementById('profile');
             profileNavItem.addEventListener('click', function() {
                 // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-                window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
+                window.location.href = "/Profil/profile.php"; // Ganti "profile.php" dengan URL yang sesuai
             });
         });
         

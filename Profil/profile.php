@@ -106,12 +106,12 @@
             var homeNavItem = document.getElementById("home");
             homeNavItem.addEventListener("click", function() {
                 // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-                window.location.href = "dashboard.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+                window.location.href = "/Dashboard/dashboard.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
             });
             var progdivNavItem = document.getElementById('task');
             progdivNavItem.addEventListener('click', function() {
                 // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-                window.location.href = "progdiv.php"; // Ganti "profile.php" dengan URL yang sesuai
+                window.location.href = "/Progdiv/progdiv.php"; // Ganti "profile.php" dengan URL yang sesuai
             });
         });
     </script>

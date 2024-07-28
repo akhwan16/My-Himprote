@@ -1,9 +1,11 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 
 include '../Database/db.php'; // Ubah sesuai dengan lokasi file koneksi database Anda
-include 'checkakun.php';
+include '/Kuliah/My-Himprote/Validation/checkakun.php';
 // Periksa apakah ID program kerja diterima dari URL
 if (isset($_GET['program_id'])) {
     $program_id = $_GET['program_id'];

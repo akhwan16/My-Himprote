@@ -1,5 +1,5 @@
 <?php
-include 'checkakun.php';
+include '/Kuliah/My-Himprote/Validation/checkakun.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +57,9 @@ $result = $conn->query($sql);
           <section id="progja-list">
             <div class="progja-list">
             <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 include '../Database/db.php';
 
 // Ambil email dari session
@@ -240,12 +242,12 @@ $conn->close();
       var homeNavItem = document.getElementById("home");
       homeNavItem.addEventListener("click", function() {
         // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-        window.location.href = "dashboard.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
+        window.location.href = "/Dashboard/dashboard.php"; // Ganti "progdivadmin1.html" dengan URL yang sesuai
       });
       var profileNavItem = document.getElementById("profile");
       profileNavItem.addEventListener("click", function() {
         // Mengarahkan pengguna ke bagian khusus halaman PHP dengan menambahkan hash fragment di URL
-        window.location.href = "profile.php"; // Ganti "profile.php" dengan URL yang sesuai
+        window.location.href = "/Profil/profile.php"; // Ganti "profile.php" dengan URL yang sesuai
       });
     });
   </script>

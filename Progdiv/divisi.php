@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../Database/db.php'; // Pastikan file koneksi database sudah di-include dengan benar
-include 'checkakun.php';
+include '/Kuliah/My-Himprote/Validation/checkakun.php';
 // Pastikan program_id telah diset di sesi sebelumnya
 if (isset($_SESSION['program_id'])) {
     $program_id = $_SESSION['program_id'];
